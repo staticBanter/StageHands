@@ -27,3 +27,5 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
   - *stagehands.scss*
   - *g_variable.scss*
 - Added *"necolas/normalize.css"* to the project
+- Added Credits & Extra-Credits to CONTRIBUTING.md
+- Added Reliance's to README.md

@@ -7,6 +7,8 @@ Documentation on how to contribute, list issues and bug-reports, for [StageHands
 - [Index](#index)
 - [Contributing to StageHands](#contributing-to-stagehands)
 - [Issues & Bug-Reporting](#issues--bug-reporting)
+- [Credits](#credits)
+- [Extra Credits](#extra-credits)
 
 # Contributing to StageHands
 
@@ -15,3 +17,27 @@ Currently, this project is not taking any other contributors at the moment, as i
 # Issues & Bug-Reporting
 
 Currently, if any issues are found with this project please open an issue report on githubs' issue tracker. We will get to it as soon as we can :smile:
+
+# Credits
+StageHands was built with the help of these wonderful people:
+
+- Jordan Vezina(staticBanter)
+  - Creator
+  - Lead Developer
+
+# Extra Credits
+StageHands was built with the help of these wonderful technologies:
+- HTML
+- CSS
+- Javascript
+- Typescript
+- SASS
+- Normalize-CSS
+- Github
+- Git-CMS
+- Markdown
+- PugJS
+- Browser-Sync IO
+- VSCode
+
+And every other developer out there helping to make the world better :smile:

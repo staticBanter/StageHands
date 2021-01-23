@@ -11,8 +11,15 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
 # January-2021
 
 ## Jan-22-2021
-- Created The project
-- Created CONTRIBUTING.md
-- Created CHANGELOG.md
-- Updated the README
-- Created .gitignore
+- Created The project.
+- Created CONTRIBUTING.md.
+- Created CHANGELOG.md.
+- Updated the README.
+- Created .gitignore.
+- Added dist and src directories.
+  - *dist*: Contains compiled CSS and JS files.
+  - *src*: Contains non-compiled SCSS and TS files.
+- Modified .gitignore.
+  - Removed /dist
+  - Added /dev
+- Updated Readme to clarify directory structure.

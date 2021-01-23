@@ -19,10 +19,10 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
 - Added dist and src directories.
   - *dist*: Contains compiled CSS and JS files.
   - *src*: Contains non-compiled SCSS and TS files.
-- Modified .gitignore.
+- Modified .gitignore:
   - Removed /dist
   - Added /dev
 - Updated Readme to clarify directory structure.
-- Created initial stylesheet files
+- Created initial stylesheet files:
   - *stagehands.scss*
   - *g_variable.scss*

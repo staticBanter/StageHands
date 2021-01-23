@@ -1,15 +1,16 @@
 /*| StageHands : v0.2.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
-
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-
 /*
 * Import Normalize-CSS
 */
 @import "./normalize/normalize.css";
-
 /*
 * Global Variables
 */
-@import "./g_variables.scss";
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+* Global Variables.
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+/*# sourceMappingURL=stagehands.css.map */

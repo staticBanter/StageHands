@@ -23,3 +23,6 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
   - Removed /dist
   - Added /dev
 - Updated Readme to clarify directory structure.
+- Created initial stylesheet files
+  - *stagehands.scss*
+  - *g_variable.scss*

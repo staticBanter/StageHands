@@ -91,4 +91,5 @@ tsconfig.json
 config/testing.*
 
 # Porject Specific Files And Dirs.
-/dev
+/templates
+/tests/layout.html

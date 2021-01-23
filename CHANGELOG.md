@@ -26,3 +26,4 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
 - Created initial stylesheet files:
   - *stagehands.scss*
   - *g_variable.scss*
+- Added *"necolas/normalize.css"* to the project

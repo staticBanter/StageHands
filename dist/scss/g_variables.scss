@@ -1,3 +1,80 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Global Variables.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*
+* Uses.
+*/
+@use "sass:string";
+@use "sass:list";
+@use "sass:meta";
+@use "data" as StageHands_D;
+@use "mixins" as StageHands_M;
+
+/*
+* Min & Max Screen Size.
+*/
+$screenWidthMin: 240px !default;
+$screenWidthMax: 3840px !default;
+$screenHeightMin: 320px !default;
+$screenHeightMax: 2160px !default;
+
+/*
+* Theme Colours.
+*/
+$danger: rgba(255,0,0,1) !default;
+$success: rgba(0,255,0,1) !default;
+$white: rgba(246,246,246,1) !default;
+$black: rgba(0,0,0,1) !default;
+$primary: rgb(92,92,92,1) !default;
+$secondary: rgb(143,143,143,1) !default;
+$accent: rgb(73,73,73,1) !default;
+
+
+/*
+* Text And Fonts
+*/
+$variableFonts: false; // If true fonts will use variable versions. WARNING! Ensure all fonts are variable supported before enabling this.
+
+@each $fontName, $urlGroup in StageHands_D.$fontMap{
+    // @debug($urlGroup);
+    @font-face{
+        @include StageHands_M.FontFaceData($fontName:$fontName,$fontList:StageHands_D.$fontMap);
+    }
+}
+
+// Header And Title Fonts
+$headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+
+// Body Text Fonts(TODO).
+$bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+
+// Neutral Text Fonts(TODO).
+$neutralFontFamily: Inconsolata, "Sans Serif";
+
+// Display Font Text.
+$displayFontFamily: Sansita_Swashed;
+
+
+/*
+* Bind The Variables To The :root pseudo-element.
+*/
+:root{
+    
+    --screenWidthMin: #{$screenWidthMin};
+    --screenWidthMax: #{$screenWidthMax};
+    --screenHeightMin: #{$screenHeightMin};
+    --screenHeightMax: #{$screenHeightMax};
+
+    --danger: #{$danger};
+    --success: #{$success};
+    --white: #{$white};
+    --black: #{$black};
+    --primary: #{$primary};
+    --secondary: #{$secondary};
+    --accent: #{$accent};
+
+    --headerFontFamily: #{meta.inspect($headerFontFamily)};
+    --bodyFontFamily: #{meta.inspect($bodyFontFamily)};
+    --neutralFontFamily: #{meta.inspect($neutralFontFamily)};
+    --displayFontFamily: #{meta.inspect($displayFontFamily)};
+}

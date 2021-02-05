@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>StageHands</title><!--Fonts--><!--Styles--><link rel="stylesheet" href="../src/css/stagehands.css" type="text/css"/><!--Scripts--></head><body><header><h1>StageHands</h1></header><main><section> <h1>Docs</h1></section><section><h1>StageHands</h1>
+<p>A Typescript &amp; SCSS Framework</p>
+<blockquote>
+<p>Version: 0.3.0 - Development
+Last Update: Jan 22, 2021.
+Readme Last Updated: Jan 22, 2021.</p>
+</blockquote>
+<h1>Index</h1>
+<ul>
+<li><a href="#stagehands">StageHands</a></li>
+<li><a href="#index">Index</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#directories">Directories</a></li>
+<li><a href="#scss">SCSS</a>
+<ul>
+<li><a href="#main-files">Main Files.</a>
+<ul>
+<li><a href="#global-variables">Global Variables.</a>
+<ul>
+<li><a href="#screen-sizes">Screen Sizes.</a></li>
+<li><a href="#colour-theming">Colour Theming.</a></li>
+<li><a href="#fonts">Fonts</a></li>
+<li><a href="#overriding-variables">Overriding Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#checkvariableconstraints">CheckVariableConstraints</a></li>
+<li><a href="#createlogmessage">CreateLogMessage</a></li>
+<li><a href="#getstringfromlist">GetStringFromList</a></li>
+<li><a href="#stringreplace">StringReplace</a></li>
+</ul>
+</li>
+<li><a href="#mixins">Mixins</a>
+<ul>
+<li><a href="#fontfacedata">FontFaceData</a></li>
+</ul>
+</li>
+<li><a href="#template-messages">Template Messages</a></li>
+<li><a href="#data-formatting">Data Formatting</a>
+<ul>
+<li><a href="#log-message-data">Log Message Data</a>
+<ul>
+<li><a href="#log-lists">Log Lists</a></li>
+<li><a href="#log-maps">Log Maps</a></li>
+</ul>
+</li>
+<li><a href="#font-data">Font Data</a>
+<ul>
+<li><a href="#font-lists">Font Lists</a></li>
+<li><a href="#font-maps">Font Maps.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#reliances">Reliances</a></li>
+</ul>
+<h1>About</h1>
+<p>StageHands another handy framework :smile:</p>
+<blockquote>
+<p><strong>NOTE [UnStable]</strong> : This project is currently still under development. Some features are either incomplete, may be changed or removed completely. This version is also currently <strong>NOT</strong> stable and has may issues/bugs, this should not but used in any production environment.</p>
+</blockquote>
+<h1>Directories</h1>
+<ul>
+<li><em>src</em>: Contains non-compiled SCSS and TS files.
+<ul>
+<li>Pick and choose what portions of the repo you want to use.</li>
+</ul>
+</li>
+<li><em>dist</em>: Contains compiled CSS and JS files. Can be dropped in any project and ready to use.</li>
+</ul>
+<h1>SCSS</h1>
+<h2>Main Files.</h2>
+<h3>Global Variables.</h3>
+<p>Variables that can be accessed by any stylesheet and are used on every page.</p>
+<h4>Screen Sizes.</h4>
+<p>StageHands will set a global minimum and maximum values for the screens height and width, these values are called;</p>
+<pre><code class="highlight-scss">$screenWidthMin: 240px !default;
+$screenWidthMax: 3840px !default;
+$screenHeightMin: 320px !default;
+$screenHeightMax: 2160px !default;
+</code></pre>
+<p>They will restrict the minium and maximum sizes of the browser window.</p>
+<h4>Colour Theming.</h4>
+<p>Currently StageHands Supports TriColour-Theming(Three Colours), plus green(success), red(danger), a <em>not so white</em> white, and black. The three main theme colours are;</p>
+<pre><code class="highlight-scss">$primary: rgb(92,92,92,1) !default;
+$secondary: rgb(143,143,143,1) !default;
+$accent: rgb(73,73,73,1) !default;
+</code></pre>
+<p>These colours are gray-scale on purpose, though boring, this is to encourage the creation of a custom colour theme.</p>
+<h4>Fonts</h4>
+<p>StageHands breaks fonts into four different categories;</p>
+<ul>
+<li>Header-Fonts : Uses a Script/Serif typeface,</li>
+<li>Body-Fonts : Uses a Sans Serif typeface,</li>
+<li>Neutral-Fonts : Uses a Sans Serif typeface,</li>
+<li>Display-Fonts : Uses a Script typeface.</li>
+</ul>
+<p>Stage Hands is also preparing to support <em>Variable Fonts</em>. This option is enabled by the <code>$variableFonts</code> global variable. Though this feature isn't fully supported/tested.</p>
+<h4>Overriding Variables</h4>
+<p>You may override any global variable by using its name and providing a new value</p>
+<p>Example;</p>
+<pre><code class="highlight-scss">//customStyles.scss
+
+//Importing Stagehands.
+@use &quot;StageHands&quot;;
+
+$screenWidthMin: 480px; // Override for customStyles.scss.
+</code></pre>
+<h2>Functions</h2>
+<h3>CheckVariableConstraints</h3>
+<p>This function is used to check if a variable meets various constraints. This can be used over writing tedious if checks over and over again to check if a variable is valid.</p>
+<p>This function returns a bool, true if variable passes, false otherwise.</p>
+<p>This function requires the following arguments;</p>
+<ul>
+<li><code>$check[any]</code> - The variable to check.
+This function requires the $check argument and at least one other optional argument.</li>
+</ul>
+<p>This function takes the following optional arguments;</p>
+<ul>
+<li><code>$againstType[string]</code> - The type the check should be.</li>
+<li><code>$min[number]</code> - The minimum length or value the check should be.</li>
+<li><code>$max[number]</code> - The maximum length or value the check should be.</li>
+</ul>
+<p>Example;</p>
+<pre><code class="highlight-scss">// customStyles.scss
+
+// Use CheckVariableConstraints.
+@use &quot;functions&quot; as StageHands_F;
+
+$var_1:&quot;THIS STRING&quot;; // A variable
+
+$result_1: StageHands_F.CheckVariableConstraints($check:$var_1,$againstType:string,$min:1,$max:12);
+
+@debug($result_1); // true.
+
+$result_2: StageHands_F.CheckVariableConstraints($check:$var_1,$againstType:number,$min:1,$max:12);
+
+@debug($result_2); // false.
+
+$result: StageHands_F.CheckVariableConstraints($check:$var_1,$againstType:string,$min:13);
+
+@debug($result_2); // false.
+</code></pre>
+<h3>CreateLogMessage</h3>
+<blockquote>
+<p><strong>NOTE</strong> : This function currently only supports the default &quot;~(tilde)&quot; character when using template strings.</p>
+</blockquote>
+<p>Returns a log message from a list of messages with corresponding codes.</p>
+<p>This function returns a string. If no message was found it will return a string saying &quot;There was no message found&quot;</p>
+<p>This function requires the following arguments;</p>
+<ul>
+<li><code>$code[string|map|list]</code> : The code for the message.</li>
+<li><code>$messageList[list|map]</code> : A list or map containing the log messages and codes.</li>
+</ul>
+<p>This function takes the following optional arguments;</p>
+<ul>
+<li><code>$messageOps[list]</code> : Options for modifying the console message before it is returned.(See <em>Template Messages</em>, and <em>Log Message Data</em>). If the <em>messageOps</em> variable is set then the <em>CreateLogMessage</em> function will assume the message string is a template string.
+<ul>
+<li>The first item in <em>messageOps</em> should be a list of strings that will be inserted into the message.
+<ul>
+<li>If the list does not have enough items to replace all the template markers, the last item in the list will be repeated.</li>
+<li>If there are more items in the list then there are template markers and appendage mode was not set, any remaining elements in the list will be ignored. If appendage mode is set to true and there are more items in the list then template markers, any remaining items will be appended to the end of the string.</li>
+</ul>
+</li>
+<li>The second item in the <em>messageOps</em> should be a bool indicating if the template string should append any remaining items in the list to the end of the string.(<strong>Note</strong> : Currently this function only uses the default template marker of &quot;~(tilde)&quot; when using template strings).</li>
+</ul>
+</li>
+</ul>
+<p>Example;</p>
+<pre><code class="highlight-SCSS">// customStyles.scss
+
+// Import the functions
+@use &quot;functions&quot; as StageHands_F;
+
+// List of messages
+$logMessages_Map:(
+    &quot;RMA&quot;:
+    (
+        &quot;D&quot;:&quot;Function ~(tilde) requires more arguments, ~(tilde) were passed ~(tilde) were expected.&quot;,
+        &quot;S&quot;:&quot;Function ~(tilde) requires more arguments passed.&quot;
+    ),
+    &quot;LE&quot;:
+    (
+        &quot;GT&quot;:&quot;The argument(s) for parameter ~(tilde) of function ~(tilde)  is not allowed to be greater then parameter ~(tilde)&quot;,
+        &quot;LT&quot;:&quot;The argument(s) for parameter ~(tilde) of function ~(tilde) is not allowed to be less then argument ~(tilde)&quot;,
+    ),
+);
+
+// Create the message.
+$message_1: StageHands_F.CreateLogMessage($code:(&quot;RMA&quot;,&quot;S&quot;),$messagesList:$logMessage_Map,$messageOps:((&quot;TESTING&quot;),null));
+
+@debug($message_1); // Expected Output: Function TESTING requires more arguments passed.
+
+// Create the message
+$message_2: StageHands_F.CreateLogMessage($code:(&quot;LE&quot;,&quot;GT&quot;),$messagesList:$logMessage_Map,$messageOps:((&quot;Arg_1&quot;,&quot;TESTING&quot;,&quot;Arg_1&quot;),null));
+
+@debug($message_2); // Expected Output: The argument(s) for parameter Arg_1 of function TESTING is not allowed to be less then argument Arg_2.
+
+// Create the message
+$message_2: StageHands_F.CreateLogMessage($code:(&quot;Na_1&quot;,&quot;Na_2&quot;),$messagesList:$logMessage_Map,$messageOps:((&quot;Arg_1&quot;,&quot;TESTING&quot;,&quot;Arg_1&quot;),null));
+
+@debug($message_2); // Expected Output: There is not error message matching code: Na_1 sub-code: Na_2
+</code></pre>
+<h3>GetStringFromList</h3>
+<p>This function is used to return a string from a list matching a key-&gt;value pair. the key being the code for the message the value being the message itself.</p>
+<p>This function returns a string if the message was found. False if no message was found.</p>
+<p>This function requires the following arguments;</p>
+<ul>
+<li><code>$code[string|map|list]</code> : The codes that are related to the string being looked for. If list/map the first item will be the primary code and the second the sub-code.</li>
+<li><code>$messageList[map|list]</code> : The list or the map containing the error messages.(<strong>Note</strong> : Currently this functions only support messages lists that are properly formatted, see <em><a href="#log-message-data">Log Message Data</a></em>).</li>
+</ul>
+<p>Example;</p>
+<pre><code class="highlight-SCSS">// customStyle.scss
+
+// Import StageHands Functions.
+@use &quot;functions&quot; as StageHands_F;
+
+// List of messages
+$logMessages_Map:(
+    &quot;RMA&quot;:
+    (
+        &quot;D&quot;:&quot;Function ~(tilde) requires more arguments, ~(tilde) were passed ~(tilde) were expected.&quot;,
+        &quot;S&quot;:&quot;Function ~(tilde) requires more arguments passed.&quot;
+    ),
+    &quot;LE&quot;:
+    (
+        &quot;GT&quot;:&quot;The argument(s) for parameter ~(tilde) of function ~(tilde) is not allowed to be greater then parameter ~(tilde)&quot;,
+        &quot;LT&quot;:&quot;The argument(s) for parameter ~(tilde) of function ~(tilde) is not allowed to be less then argument ~&quot;,
+    ),
+);
+
+// Create A Message.
+$message_1: StageHands_F.CreateLogMessage((&quot;LE&quot;,&quot;GT&quot;),$logMessages_Map);
+
+// View message.
+@debug($message_1); // Expected output; &quot;The argument(s) for parameter ~(tilde) of function ~(tilde)  is not allowed to be greater then parameter ~(tilde)&quot;
+
+// Create A Message.
+$message_2: StageHands_F.CreateLogMessage((&quot;Na_1&quot;,&quot;Na_2&quot;),$logMessages_Map);
+
+// View message.
+@debug($message_2); // Expected output; false.
+
+</code></pre>
+<h3>StringReplace</h3>
+<p>This function will replace all instances of word/character in a string.</p>
+<p>This function will return a string.</p>
+<p>This function takes  the following required arguments;</p>
+<ul>
+<li><code>$string[string]</code> : The string that will be modified.</li>
+<li><code>$token['string']</code> : The character/word that will be replaced.</li>
+<li><code>$replacement[string|list]</code> : The set of characters to replace the token.
+<ul>
+<li>If there are more replacements then tokens in the string and appendage is set to false any remaining items in the replacement will be ignored.</li>
+<li>If there are more replacements then tokens in the string and appendage is set to true any remaining items in the replacement will be appended to the end of the list.</li>
+<li>If there are less replacements then there are tokens in the string, the last item in the replacements will be repeated.</li>
+</ul>
+</li>
+</ul>
+<p>This function takes the following optional arguments;</p>
+<ul>
+<li><code>$appendage[bool]</code> : A flag to determine if any replacement items will be appended to the end of the list.</li>
+</ul>
+<p>Example;</p>
+<pre><code class="highlight-SCSS">// customStyles.scss
+
+// Import StageHands Functions.
+@use &quot;functions&quot; as StageHands_F;
+
+$baseString: &quot;The argument(s) for parameter ~(tilde) of function ~(tilde)  is not allowed to be greater then parameter ~(tilde)&quot;;
+
+// Create New String.
+$newString_1: StageHands_F.StringReplace($string:$baseString,$token:&quot;~(tilde)&quot;,$replacement:(&quot;ARG_1&quot;,&quot;TESTING&quot;,&quot;ARG_2&quot;));
+
+// View Message.
+@debug($newString_1); // Expected Output: &quot;The argument(s) for parameter ARG_1 of function TESTING is not allowed to be greater then parameter ARG_2&quot;
+
+</code></pre>
+<h2>Mixins</h2>
+<h3>FontFaceData</h3>
+<p>This mixin returns the following:</p>
+<ul>
+<li><em>@font-face</em> data.</li>
+</ul>
+<p>This mixin requires the following  parameters:</p>
+<ul>
+<li><code>$fontName[string]</code>: The name of the font to be used. This will be placed in the <em>font-name</em> attribute of the <em>@font-face</em> property.</li>
+<li><code>$fontList[map|list]</code>: A list/map of the fonts that are included with the project.(Currently must be formatted properly or will not work, see <em><a href="#font-data">Font Data</a></em>)</li>
+</ul>
+<p>This mixin also takes the following optional parameters;</p>
+<ul>
+<li><code>$isVariable[bool]</code> : If set to true the and the font supports variable font, the variable version of the font will be used.</li>
+</ul>
+<p>Example;</p>
+<pre><code class="highlight-scss">// customStyles.scss.
+
+//Import
+@import &quot;mixins&quot; as ModuleName; //Import The Mixins Library.
+
+// Declared Font Face
+@font-face{
+  @include ModuleName.FontFaceData($fontName:MY_FONT_NAME,$fontList:MAP/LIST_OF_FONTS,$isVariable:false)
+}
+</code></pre>
+<pre><code class="highlight-css">/* customStyles.css */
+
+/* Declared Font Face */
+@font-face{
+  font-family:MY_FONT_NAME;
+  src: 
+    url(&quot;URL_TO_MY_FONT_1&quot;) format(&quot;MY_FONT_1_FORMAT&quot;),
+    url(&quot;URL_TO_MY_FONT_2&quot;) format(&quot;MY_FONT_2_FORMAT&quot;),
+    ...;
+}
+</code></pre>
+<h2>Template Messages</h2>
+<p>Templates are small pieces of code that are reusable as to not repeat the same task over. This logic is applied to the Standard Log Messages bundled with StageHands.</p>
+<p>Some functions often have repeating restrictions when it comes to arguments and variable constraints, for example the <em>CheckVariableConstraints</em> function takes a single required argument; $check, and at least one other optional argument; $min, $max, or $againstType. If the <em>CheckVariableConstraints</em> function does not receive the proper amount of arguments when called it will throw an error with the following message <em>&quot;Function CheckVariableConstraints requires more arguments passed.&quot;</em>. Now we could repeat this message for every function that also has the same situation substituting the <em>CheckVariableConstraints</em> for the current function instead. This can be tedious and can be more cumbersome to have to change later in the project. The solution to this is creating a template message for this type of situation and replacing the template characters for some custom strings.</p>
+<p>For example take the message;
+<em>&quot;Function CheckVariableConstraints requires more arguments passed.&quot;</em></p>
+<p>To make it more of a generic message we can remove the function name and replace it with a template marker;
+<em>&quot;Function ~(tilde) requires more arguments passed.&quot;</em></p>
+<p>Now we just have to replace the ~(tilde) in the log message with a custom string.</p>
+<p>A template marker should be;</p>
+<ul>
+<li>Unique : as to not collide with possible regular text in the message</li>
+<li>Small : as to not bloat the message with unneeded characters.</li>
+</ul>
+<h2>Data Formatting</h2>
+<h3>Log Message Data</h3>
+<p><em>Log Message Data</em> use the following formats;</p>
+<h4>Log Lists</h4>
+<p>Example <em>Log-List</em>;</p>
+<pre><code class="highlight-scss">$messageLog_List:(
+  (
+    &quot;CODE&quot;
+      (
+        (&quot;SUB_CODE&quot; &quot;MESSAGE&quot;),
+        (&quot;SUB_CODE&quot; &quot;MESSAGE&quot;)
+        ...
+      )
+  ),
+  (
+    &quot;CODE&quot;
+    (
+      (&quot;SUB_CODE&quot; &quot;MESSAGE&quot;),
+      (&quot;SUB_CODE&quot; &quot;MESSAGE&quot;)
+      ...
+    )
+  ),
+  ...
+)
+</code></pre>
+<h4>Log Maps</h4>
+<p>Example <em>Log-Map</em>;</p>
+<pre><code class="highlight-scss">$messageLog_Map:(
+  &quot;CODE&quot;:
+  (
+    &quot;SUB_CODE&quot;:&quot;MESSAGE&quot;,
+    &quot;SUB_CODE&quot;:&quot;MESSAGE&quot;
+    ...
+  ),
+  &quot;CODE&quot;:
+  (
+    &quot;SUB_CODE&quot;:&quot;MESSAGE&quot;,
+    &quot;SUB_CODE&quot;:&quot;MESSAGE&quot;
+    ...
+  ),
+  ...
+)
+</code></pre>
+<h3>Font Data</h3>
+<p><em>Font Data</em> use the following formats;</p>
+<h4>Font Lists</h4>
+<p>Example <em>Font-Map</em>;</p>
+<pre><code class="highlight-scss">$fonts_Map:(
+  &quot;FONT_NAME&quot;
+    (
+        &quot;variable&quot;(
+            &quot;sub_FONT_NAME&quot;(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            ...
+        ),
+        &quot;static&quot;(
+            &quot;sub_FONT_NAME&quot;(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            ...
+        )
+    ),
+  &quot;FONT_NAME&quot;
+    (
+        &quot;variable&quot;(
+            &quot;sub_FONT_NAME&quot; (&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot; (&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;)
+            ...
+        ),
+        &quot;static&quot;(
+            &quot;sub_FONT_NAME&quot; (&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot; (&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            ...
+        )
+    ),
+  ...
+);
+</code></pre>
+<h4>Font Maps.</h4>
+<p>Example <em>Font-Map</em>;</p>
+<pre><code class="highlight-scss">$fonts_Map:(
+  &quot;FONT_NAME&quot;:
+    (
+        &quot;variable&quot;:(
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;)
+            ...
+        ),
+        &quot;static&quot;:(
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            ...
+        )
+    ),
+  &quot;FONT_NAME&quot;:
+    (
+        &quot;variable&quot;:(
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;)
+            ...
+        ),
+        &quot;static&quot;:(
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            &quot;sub_FONT_NAME&quot;:(&quot;URL_FOR_FONT&quot;,&quot;FORMAT_FOR_FONT&quot;),
+            ...
+        )
+    ),
+  ...
+);
+</code></pre>
+<h1>Reliances</h1>
+<p>This repo relies on the following other packages/repos/softwares:</p>
+<ul>
+<li><a href="github.com/necolas/normalize.css">Normalize-CSS</a></li>
+</ul>
+</section></main><footer><p>StageHands</p></footer></body></html>

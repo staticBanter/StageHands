@@ -1,4 +1,4 @@
-/*| StageHands : v0.2.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v0.3.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -12,5 +12,53 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Global Variables.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*
+* Uses.
+*/
+/*
+* Min & Max Screen Size.
+*/
+/*
+* Theme Colours.
+*/
+/*
+* Text And Fonts
+*/
+@font-face {
+  font-family: "DancingScript";
+  src: url("../../fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains_Mono";
+  src: url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sansita_Swashed";
+  src: url("../../fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
+}
+/*
+* Bind The Variables To The :root pseudo-element.
+*/
+:root {
+  --screenWidthMin: 240px;
+  --screenWidthMax: 3840px;
+  --screenHeightMin: 320px;
+  --screenHeightMax: 2160px;
+  --danger: red;
+  --success: lime;
+  --white: #f6f6f6;
+  --black: black;
+  --primary: #5c5c5c;
+  --secondary: #8f8f8f;
+  --accent: #494949;
+  --headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+  --bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+  --neutralFontFamily: Inconsolata, "Sans Serif";
+  --displayFontFamily: Sansita_Swashed;
+}
 
 /*# sourceMappingURL=stagehands.css.map */

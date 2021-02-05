@@ -1,0 +1,55 @@
+// Uses
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+// @import "_CheckVarConstraints.func";
+// @use "_StringReplace.func" as SR;
+// @use "_GetStringFromList.func" as GE;
+@use "_CheckVarConstraints.func" as CVC;
+@import "../data/maps/errors.map";
+
+/// CreateLogMessage - Creates warning and error log messages for functions.
+/// @author Jordan Vezina(staticBanter)
+///
+/// @access public
+/// @group functions.helper
+/// @since v0.2.0 - Development
+/// @require {function} CheckVariableConstraints  <./dist/scss/functions/_CheckVarConstraints.func.scss>
+/// @param {list|map} $messageList - The message list containing the log messages.
+/// @param {string|list} $code - The error code related to that message.
+/// If list the first item is the main code and the second item is the sub-code.
+/// @param {list} $messageOps [null] - A list of message options for token-strings.
+/// First item in the list can either be a string or list.
+/// Second item in list must be a string or null. If string this sets the messages to "append-mode",
+/// In order for this to work properly you must now the your error's,code,subCode,token, and if it needs appendages.
+/// WILL eventually update to full string-template system to clear this up at bit.
+/// were any remaining elements in the first list will be appended to the end of the message,
+/// please read the following to learn about StringReplace: @see {function} StringReplace <./dist/scss/functions/_StringReplace.func.scss>
+/// @throws
+/// @param {bool} $debug - Run function with debug output.
+/// @return {string} - The log message
+@function CreateLogMessage($code,$messageList,$messageOps:null,$debug:null){
+
+    // Get the error message.
+    $message: GetStringFromList($code:$code,$messageList:$messageList);
+
+    @if not $message{
+        @return("There is not error message matching code: #{list.nth($code,1)} sub-code: #{list.nth($code,2)}");
+    }
+
+    // If there are message options.
+    @if $messageOps{
+        
+        @if($debug){
+            @debug($messageOps);
+        }
+        // Return the message.
+        @return(StringReplace($string:$message,$token:"~",$replacement:list.nth($messageOps,1),$appendage:list.nth($messageOps,2)));
+
+    }
+
+    // Return the message
+    @return($message);
+    
+}

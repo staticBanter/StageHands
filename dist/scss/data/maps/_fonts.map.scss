@@ -1,0 +1,94 @@
+$baseFontPath:"../../fonts/";
+
+$fontMap:(
+    "DancingScript":
+    (
+        "variable":(
+            "regular":($baseFontPath+"Dancing_Script/DancingScript-VariableFont_wght.ttf","truetype")
+        ),
+        "static":(
+            //Classic
+            "bold":("#{$baseFontPath}Dancing_Script/static/DancingScript-Bold.ttf","truetype"),
+            "medium":("#{$baseFontPath}Dancing_Script/static/DancingScript-Medium.ttf","truetype"),
+            "regular":("#{$baseFontPath}Dancing_Script/static/DancingScript-Regular.ttf","truetype"),
+            "semi-bold":("#{$baseFontPath}Dancing_Script/static/DancingScript-SemiBold.ttf","truetype") 
+        )
+    ),
+    "Inconsolata":
+    (
+        "variable":(
+            "regular":("#{baseFontPath}Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf","truetype")
+        ),
+        "static":(
+
+            //Condensed
+            "condensed_bold":("#{$baseFontPath}Inconsolata/static/Inconsolata_Condensed-Bold.ttf","truetype"),
+            "condensed_medium":("#{$baseFontPath}Inconsolata/static/Inconsolata_Condensed-Medium.ttf","truetype"),
+            "condensed_regular":("#{$baseFontPath}Inconsolata/static/Inconsolata_Condensed-Regular.ttf","truetype"),
+            "condensed_semi-bold":("#{$baseFontPath}Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf","truetype"),
+            
+            //Expanded
+            "expanded_bold":("#{$baseFontPath}Inconsolata/static/Inconsolata_Expanded-Bold.ttf","truetype"),
+            "expanded_medium":("#{$baseFontPath}Inconsolata/static/Inconsolata_Expanded-Medium.ttf","truetype"),
+            "expanded_regular":("#{$baseFontPath}Inconsolata/static/Inconsolata_Expanded-Regular.ttf","truetype"),
+            "expanded_semi-bold":("#{$baseFontPath}Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf","truetype"),
+            
+            //Classic
+            "bold":("#{$baseFontPath}Inconsolata/static/Inconsolata-Bold.ttf","truetype"),
+            "medium":("#{$baseFontPath}Inconsolata/static/Inconsolata-Medium.ttf","truetype"),
+            "regular":("#{$baseFontPath}Inconsolata/static/Inconsolata-Regular.ttf","truetype"),
+            "semi-bold":("#{$baseFontPath}Inconsolata/static/Inconsolata-SemiBold.ttf","truetype") 
+        )
+    ),
+    "JetBrains_Mono":(
+        "variable":(
+            "italic":("#{$baseFontPath}JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf","truetype"),
+            "regular":("#{$baseFontPath}JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf","truetype")
+        ),
+        "static":(
+
+            //Extra
+            "extra_bold":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf","truetype"),
+            "extra_bold_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf","truetype"),
+            "extra_light":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf","truetype"),
+            "extra_light_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf","truetype"),
+
+
+            //Italic
+            "italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Italic.ttf","truetype"),
+            "thin_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf","truetype"),
+            "light_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf","truetype"),
+            "bold_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf","truetype"),
+            "medium_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf","truetype"),
+            "semi-bold_italic":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf","truetype"),
+
+            //Classic
+            "bold":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Bold.ttf","truetype"),
+            "thin":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Thin.ttf","truetype"),
+            "light":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Light.ttf","truetype"),
+            "medium":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Medium.ttf","truetype"),
+            "regular":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-Regular.ttf","truetype"),
+            "semi-bold":("#{$baseFontPath}JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf","truetype")
+        )
+    ),
+    "Sansita_Swashed":
+    (
+        "variable":(
+            "regular":("#{$baseFontPath}Sansita_Swashed/SansitaSwashed-VariableFont_wght.ttf","truetype")
+        ),
+        "static":
+        (
+
+            //Extra
+            "extra_bold":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf","truetype"),
+
+            //Classic
+            "black":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-black.ttf","truetype"),
+            "bold":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-Bold.ttf","truetype"),
+            "light":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-Light.ttf","truetype"),
+            "medium":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-Medium.ttf","truetype"),
+            "regular":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-Regular.ttf","truetype"),
+            "semi-bold":("#{$baseFontPath}Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf","truetype")
+        )
+    )
+);

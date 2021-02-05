@@ -93,3 +93,9 @@ config/testing.*
 # Porject Specific Files And Dirs.
 /templates
 /tests/layout.html
+_TODO.md
+/term
+/stubs
+*._test.*
+package-lock.json
+package.json

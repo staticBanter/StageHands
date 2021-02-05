@@ -97,3 +97,5 @@ _TODO.md
 /term
 /stubs
 *._test.*
+package-lock.json
+package.json

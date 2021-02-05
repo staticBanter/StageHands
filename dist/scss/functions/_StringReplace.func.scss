@@ -1,0 +1,295 @@
+@use"sass:meta";
+@use"sass:list";
+@use"sass:map";
+@use"sass:string";
+
+//TODO - INSERT ERROR CODES.
+/// StringReplace - Replaces a single character or word in a sentence. 
+/// @author Jordan Vezina(staticBanter)
+/// 
+/// @access public
+/// @group functions.helper
+/// @since v0.2.0 - Development
+/// @require {function} CheckVariableConstraints  <./dist/scss/functions/_CheckVarConstraints.func.scss>
+/// @param {string} $string - The string to check.
+/// @param {variable:string} $token - The character or word to look for in the string.
+/// @param {string|list} $replacement - The replacement character/word for the token.
+/// @param {string} $appendage [null] - If set AND replacement list has more items then there are tokens
+/// the string. Any remaining items in replacement will be appended to the end of the string separated by
+/// the character passed to $appendage.
+/// @param {bool} $debug - Run function with debug output.
+/// If the list does not contain enough items to replace all the tokens in the string, 
+/// the last item in the list will be repeated to replace the remaining tokens.
+/// If $replacement is a list it will go through each token and replace it with a character.
+/// in the list at the same index.
+/// @example - Insert as string.
+///    $string: The ~ fox ~ over the ~ dog.
+///    $token: ~.
+///    $replacement: "quick"
+///    returns: The quick fox quick over the quick dog.
+/// @example - Insert as list.
+///    $string: The ~ fox ~ over the ~ dog.
+///    $token: ~.
+///    $replacement: ("quick","jumps","sleeping")
+///    returns: The quick fox jumps over the sleeping dog.
+/// @example - Insert as list, not enough items.
+///    $string: The ~ fox ~ over the ~ dog.
+///    $token: ~.
+///    $replacement: ("quick","jumps")
+///    returns: The quick fox jumps over the jumps dog.
+/// @example - Insert as list, more items then tokens, $appendage:null.
+///     $string: The ~ fox ~ over the ~ dog.
+///     $token: ~.
+///     $replacement("quick","jumps","sleeping","again.")
+///     returns: The quick fox jumps overt the sleeping dog.
+/// @example - Insert as list, more items then tokens, $appendage:" ".
+///     $string: The ~ fox ~ over the ~ dog
+///     $token: ~.
+///     $replacement("quick","jumps","sleeping","again.")
+///     returns: The quick fox jumps overt the sleeping dog again.
+/// @throws
+/// @return {string} - A new string with the tokens replaced
+@function StringReplace($string,$token,$replacement,$appendage:null,$debug:null){
+
+    // @debug("REPLACEMENT",$replacement,"APPENDAGE",$appendage);
+    @if($debug){
+        @debug("String replace was called with the following; string:",$string,"token:"$token,"replacement:",$replacement);
+    }
+
+    //Boring stuff....
+
+    // If the $string does not meet constraints;
+    // throw error.
+    @if not CheckVariableConstraints($check:$string,$againstType:string,$min:1){
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("string","StringReplace"),null)));
+    }
+
+    // If the $token does not meet constraints.
+    // throw error.
+    @if not CheckVariableConstraints($check:$token,$againstType:string,$min:1){
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("token","StringReplace"),null)));
+    }
+
+    // If Appendage was set
+    @if($appendage){
+        // If appendage does not meet constraints,
+        // throw error.
+        @if not CheckVariableConstraints($check:$appendage,$againstType:string,$min:1){
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("appendage","StringReplace"),null)));
+        }
+    }
+
+    $replacementType: meta.type-of($replacement);
+
+    // If the type of $replacement does not meet one of the following
+    // throw error.
+    @if $replacementType == string{
+
+        // If the $replacement does not meet constraints.
+        // throw error.
+        @if not CheckVariableConstraints($check:$replacement,$againstType:string,$min:1){
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+            // @error("~E:SR~ Var replacement did not meet constraints");
+        }
+
+    }@else if $replacementType == list{
+
+        // If the $replacement does not meet constraints.
+        // throw error.
+        @if not CheckVariableConstraints($check:$replacement,$againstType:list,$min:1,$fullList:true){
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+            // @error("~E:SR-2~ Var replacement did not meet constraints");
+        }
+
+    }@else{
+
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+        // @error("~E:SR~ Var replacement was not a valid type did not meet constraints");
+
+    }
+
+    // If the original string does not contain the token,
+    // throw error.
+    @if not string.index($string,$token){
+        @error(CreateLogMessage($code:("SR","MT"),$messageList:$errorMap,$messageOps:null));
+        // @error("~E:SR_MT~ the token was not in the string");
+    }
+
+    @if($debug){
+        @debug("~String-Replace~ All arguments passed constraints.");
+    }
+
+    // The reason this is two separate statements is
+    // because we don't want to check if $replacementType is
+    // a list ever iteration.
+    // Bigger code for little performance gain maybe tough :/
+    @if $replacementType == "list"{
+
+        @if($debug){
+            @debug("~String-Replace~ Replacement was list");
+        }
+
+        // Set a list index 1
+        $listIndex: 1;
+
+        @while(string.index($string,$token)){
+
+            
+            // Get the index of the first token.
+            $currentIndex: string.index($string,$token);
+            
+            
+            // Get the current length of the string.
+            // Since this changes ever iteration we need
+            // a new one each time.
+            $currentStringLength: string.length($string);
+
+            @if($debug){
+                @debug("~String-Replace~ String still contained a token at index:",$currentIndex);
+            }
+
+            // This should never happen, but ohhhh boy.
+            // If the current index is <= 0,
+            // throw error.
+            @if($currentIndex <= 0){
+                @error(CreateLogMessage($code:("SR","IOB"),$messageList:$errorMap,$messageOps:(null,null)));
+            }
+
+            // This might happen though...
+            // I guess if the string is length one this might mess up
+            // if this does we combine it into an else-if with the above^
+            @if($currentIndex > $currentStringLength){
+                @debug("Our index was bigger then the string length, did this cause problems?");
+            }
+
+            // Slice the string into two pieces.
+            // One before the current index and,
+            // one after the current index.
+            $preString: string.slice($string,0,($currentIndex - 1));
+            $postString: string.slice($string,($currentIndex + 1),$currentStringLength);
+
+            // If the list index ever becomes greater then the list length.
+            // Set the list index to the length of the list.(the last element).
+            @if($listIndex >= list.length($replacement)){
+
+                @if($debug){
+                    @debug("~String-Replace~ The current index of:"$currentIndex,"Was >= the replacement list length of:",list.length($replacement),". Setting listIndex to list length.");
+                }
+
+                $listIndex: list.length($replacement);
+            }
+
+
+            // Glue all the stuff together
+            // Final result should be a string with the tokens
+            // being replaced one iteration at a time.
+            $string: $preString + list.nth($replacement,$listIndex) + $postString;
+
+            // Increment the list index.
+            $listIndex: $listIndex + 1;
+
+        }
+        
+        // If appendage was set
+        // Really we should be separating each loop block if it contains debugs.
+        // will speed up production code but make files slightly bigger.
+        // lets hope we don't need string pre-pendage.
+        @if($appendage){
+
+            @if($debug){
+                
+                @debug("~StringReplace~ Called with appendage with separator: `#{$appendage}`");
+
+                @for $i from $listIndex through list.length($replacement){
+
+                    @debug("~StringReplace~ Appending: #{list.nth($replacement,$i)}");
+                    
+                    $string:$string+$appendage+list.nth($replacement,$i);
+                }
+
+            }@else{
+
+                // For every item in replacement list starting at the list index
+                // add the remaining items to the string separated by the
+                // appendage
+                @for $i from $listIndex through list.length($replacement){
+                    $string:$string+$appendage+list.nth($replacement,$i);
+                }
+    
+            }
+        
+        }
+
+    } @else {
+
+        @if($debug){
+            @debug("~String-Replace~ Replacement was string");
+        }
+
+        // If the replacement type was a string but appendage was set,
+        // throw error.
+        // Doesn't seem to really make sense with a single value atm.
+        // maybe at some point we could allow a single appendage of the
+        // replacement to the end of string at this point.
+        @if($appendage){
+            @error(CreateLogMessage($code:("SR","RSAT"),$messageList:$errorMap,$messageOps:(null,null)));
+        }
+
+        // While the string contains the token character.
+        // Iterate through the string and replace the token with 
+        // the replacement string.
+        // While loops can be dangerous in the wrong hands.
+        // string.index will also return the value of the first
+        // instance of the token; prefect.
+        @while(string.index($string,$token)){
+            
+            // Get the index of the first token.
+            $currentIndex: string.index($string,$token);
+            
+            // Get the current length of the string.
+            // Since this changes ever iteration we need
+            // a new one each time.
+            $currentStringLength: string.length($string);
+
+            @if($debug){
+                @debug("~String-Replace~ String still contained a token at index:",$currentIndex);
+            }
+
+            // This should never happen, but ohhhh boy.
+            // If the current index is <= 0,
+            // throw error.
+            @if($currentIndex <= 0){
+                @error(CreateLogMessage($code:("SR","IOB"),$messageList:$errorMap,$messageOps:(null,null)));
+            }
+
+            // This might happen though...
+            // I guess if the string is length one this might mess up
+            // if this does we combine it into an else-if with the above^
+            @if($currentIndex > $currentStringLength){
+                @debug("Our index was bigger then the string length, did this cause problems?");
+            }
+
+            
+            // Slice the string into two pieces.
+            // One before the current index and,
+            // one after the current index.
+            $preString: string.slice($string,0,($currentIndex - 1));
+            $postString: string.slice($string,($currentIndex + 1),$currentStringLength);
+
+            // Glue all the stuff together
+            // Final result should be a string with the tokens
+            // being replaced one iteration at a time.
+            $string: $preString + $replacement + $postString;
+        }
+
+    }
+
+
+    @if($debug){
+        @debug("~String Replace~ String replace is returning",$string);
+    }
+
+    // Return the new string.
+    @return $string;
+
+}

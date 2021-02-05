@@ -6,11 +6,14 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
 - [StageHands Change-Log](#stagehands-change-log)
 - [Index](#index)
 - [January-2021](#january-2021)
-  - [Jan-22-2021](#jan-22-2021)
+  - [Jan-22-2021(v:0.1.0-Development -> v0.2.0-Development)](#jan-22-2021v010-development---v020-development)
+  - [Jan-24-2021(v:0.2.0-Development)](#jan-24-2021v020-development)
+- [February-2021](#february-2021)
+  - [February-31-2021(v:0.3.0-Development)](#february-31-2021v030-development)
   
 # January-2021
 
-## Jan-22-2021
+## Jan-22-2021(v:0.1.0-Development -> v0.2.0-Development)
 - Created The project.
 - Created CONTRIBUTING.md.
 - Created CHANGELOG.md.
@@ -30,3 +33,53 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
 - Added Credits & Extra-Credits to CONTRIBUTING.md
 - Added Reliance's to README.md
 - Created the index test page.
+
+## Jan-24-2021(v:0.2.0-Development)
+- Versioning is now added to change-logs dates.
+- Added variables for setting;
+  - Min & Max screen Widths & screen Heights.
+  - Colour theming.(*primary*, *secondary*, and *accent*). *Danger* and *Success* are default Red and Green respectively.
+  - Header Fonts, Body Fonts, Neutral Fonts.
+- Added some more fonts.
+- Updated .gitignore;
+  - ignore: _TODO.md
+
+# February-2021
+
+## February-31-2021(v:0.3.0-Development)
+- README.md
+  - Updated the documentation
+- .gitignore
+  - Added more ignores
+- Tests
+  - Added a docs.html, this file is created from the README.
+- Fonts
+  - Added;
+    - Inconsolata
+    - JetBrains_Mono
+    - Sansita_Swashed
+    - Dancing_Script
+- SCSS
+  - g_variables.scss
+    - Added the following global variables;
+      - Screen Sizes;
+        - screenWidthMin
+        - screenWidthMax
+        - screenHeightMin
+        - screenHeightMax
+      - Theme colours
+        - danger
+        - success
+        - white
+        - black
+        - primary
+        - secondary
+        - accent
+      - Fonts
+        - variableFonts.
+        - default @font-faces, one for each of the included fonts.
+        - headerFontFamily
+        - bodyFontFamily
+        - neutralFontFamily
+        - displayFontFamily
+  - Bound all the g_variables to root-pseudo element.

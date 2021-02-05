@@ -1,0 +1,126 @@
+// Uses
+@use "sass:string";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+// @use "../functions/CreateLogMessage.func" as CLM;
+// @use "../functions/CheckVarConstraints.func" as CVC;
+@use "../functions" as StageHands_F;
+@use "../data" as StageHands_D;
+
+// If $isVariable is set to true then the list must contain a
+// path for the variable file as well.[["statics",[["path/to/static","file-format"]]],["variable",[["path/to/variable","file-format"]]]]
+/// FontFaceData - Returns data to fill in and @font-face property.
+/// @author Jordan Vezina(staticBanter)
+/// 
+/// @access public
+/// @group mixin.data
+/// @since v0.2.0 - Development
+/// @requires {function} CreateLogMessage <./dist/scss/functions/_CreateLogMessage.func.scss>
+/// @requires {function} CheckVariableConstraints <./dist/scss/functions/_CheckVariableConstraints.func.scss>
+/// @param {string} $fontName - Name that the font will use for font-family.
+/// @param {boolean} $isVariable [false] - Set true if the font is variable supported.
+/// @param {list|map} $fontList - A list or map of the font.
+/// @example TODO: INCLUDE EXAMPLE OF FONT LIST/MAP
+/// @throws - TODO: INSERT ERROR CODES.
+/// @returns - @font-face data.
+@mixin FontFaceData($fontName,$fontList,$isVariable:false,$debug:null){
+
+    @if($debug){
+        @debug("~StageHands:FontFaceDataMixin~ was called with the following, fontName:",$fontName,"fontList:",$fontList,"isVariable:",$isVariable);
+    }
+
+    // If the font name does not meet constraints,
+    // throw error.
+    @if not StageHands_F.CheckVariableConstraints($check:$fontName,$againstType:string,$min:1){
+        @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("fontName","FontFaceData-Mixin"),null)));
+    }
+
+    // If the font list/map does not meet constraints,
+    // throw error.
+    @if not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:map,$min:1,$fullList:true) and not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:list,$min:1,$fullList:true) {
+        @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("fontList","FontFaceData-Mixin"),null)));
+    }
+
+    // If the is variable flag does not meet constraints,
+    // throw error.
+    @if not StageHands_F.CheckVariableConstraints($check:$isVariable,$againstType:bool){
+        @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("isVariable","FontFaceData-Mixin"),null)));
+    }
+
+    $srcList:null;
+
+    // If the font list is a list,
+    // use foreach methods to get fonts;
+    // Else the font list must be a map,
+    // use map methods to get fonts.
+    // I really don't like how this looks -.-
+    @if meta.type-of($fontList) == "list"{
+
+        @each $fontNames, $fontTypes in $fontList{
+
+            @if($fontNames == $fontName){
+                @if($isVariable){
+
+                    @each $fontType, $urlList in $fontTypes{
+                        @if($fontType == "static"){
+                            @each $name, $urlGroup in $urlList{
+                                $fontUrl: list.nth($urlGroup,1);
+                                $fontFormat: list.nth($urlGroup,2);
+                                $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
+                            }
+                        }
+                    }
+
+                }@else{
+
+                    @each $fontType, $urlList in $fontTypes{
+                        @if($fontType == "static"){
+                            @each $name, $urlGroup in $urlList{
+                                $fontUrl: list.nth($urlGroup,1);
+                                $fontFormat: list.nth($urlGroup,2);
+                                $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
+                            }
+                        }
+                    } 
+
+                }
+            }
+
+        }
+
+    }@else{
+
+        
+        $m_fontLists:map.get($fontList,$fontName);
+        $urlList:null;
+        
+        @if($isVariable){
+            $urlList:map.get($m_fontLists,"variable");
+        }@else{
+            $urlList:map.get($m_fontLists,"static"); 
+        }
+        // If url list is still null
+        @if not $urlList{
+            @error("~FontFaceData-Mixin~ The Font List did not contain either a static or a variable url list");
+        }
+
+        @each $type, $fontGroup in $urlList{
+            $fontUrl: url(list.nth($fontGroup,1));
+            $fontFormat: format(list.nth($fontGroup,2));
+            $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
+        }
+
+    }
+
+    @if not StageHands_F.CheckVariableConstraints($check:$srcList,$againstType:list,$min:1) {
+        @error("~FontFaceData~ The source list did not contain any font data. There might not have been a list for given font name, or list is not formatted properly...");
+    }
+    
+
+    // The font name.
+    font-family: $fontName;
+    // The Font Source
+    src:$srcList;
+
+}

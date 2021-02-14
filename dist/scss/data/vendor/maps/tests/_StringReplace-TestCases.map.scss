@@ -1,0 +1,61 @@
+$functionName:"StringReplace";
+$stringReplaceTestCases_Map:(
+    "Test #{$functionName}() Valid Arguments Expect Pass":(
+        "functionOptions":(
+            "Function ~ requires more arguments passed.",
+            "~",
+            "TEST"
+        ),
+        "expectedValue":"Function TEST requires more arguments passed."
+    ),
+    "Test #{$functionName}() String Missing Token Expect Fail":(
+        "functionOptions":(
+            "This string does not contain a token",
+            "~",
+            "TEST"
+        ),
+        "expectedValue":"The template string was missing the token",
+    ),
+    "Test #{$functionName}() Token Mismatch Expect Fail":(
+        "functionOptions":(
+            "Function ~ requires more arguments passed.",
+            "-",
+            "TEST"
+        ),
+        "expectedValue":"Function TEST requires more arguments passed.",
+        "noPass":true
+    ),
+    "Test #{$functionName}() Incorrect Return Value Expect Fail":(
+        "functionOptions":(
+            "Function ~ requires more arguments passed.",
+            "~",
+            "TEST"
+        ),
+        "expectedValue":"Function ~ requires more arguments passed.",
+        "noPass":true
+    ),
+    "Test #{$functionName}() Replacement-List[Full] Valid Arguments Expect Pass":(
+        "functionOptions":(
+            "The argument(s) for parameter ~ of function ~ were not the valid type; ~ expected ~ was passed.",
+            "~",
+            ("TEST_1","TEST_2","TEST_3","TEST_4")
+        ),
+        "expectedValue":"The argument(s) for parameter TEST_1 of function TEST_2 were not the valid type; TEST_3 expected TEST_4 was passed."
+    ),
+    "Test #{$functionName}() Replacement-List[Less] Valid Arguments Expect Pass":(
+        "functionOptions":(
+            "The argument(s) for parameter ~ of function ~ were not the valid type; ~ expected ~ was passed.",
+            "~",
+            ("TEST_1","TEST_2")
+        ),
+        "expectedValue":"The argument(s) for parameter TEST_1 of function TEST_2 were not the valid type; TEST_2 expected TEST_2 was passed."
+    ),
+    "Test #{$functionName}() Replacement-List[More] Valid Arguments Expect Pass":(
+        "functionOptions":(
+            "Function ~ requires more arguments passed.",
+            "~",
+            ("TEST_1","TEST_2","TEST_3","TEST_4","TEST_5","TEST_6")
+        ),
+        "expectedValue":"Function TEST_1 requires more arguments passed."
+    ),
+);

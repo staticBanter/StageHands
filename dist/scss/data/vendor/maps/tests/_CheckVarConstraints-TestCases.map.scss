@@ -1,0 +1,119 @@
+$functionName:"CheckVariableConstraints";
+$checkVarConstraintsTestCases_Map:(
+    "Test #{$functionName} Check String Valid Constraints Expect Pass":(
+        "functionOptions":(
+            "ThisIsAString",
+            string,
+            1,
+            50
+        ),
+        "expectedValue":true
+    ),
+    "Test #{$functionName} Check String Invalid Min Constraint Expect Fail":(
+        "functionOptions":(
+            "ThisIsAString",
+            string,
+            30
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check String Invalid Max Constraint Expect Fail":(
+        "functionOptions":(
+            "ThisIsAString",
+            string,
+            1,
+            5
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check String Invalid Type Constraint Expect Fail":(
+        "functionOptions":(
+            15,
+            string,
+            1,
+            30
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check Number Valid Constraints Expect Pass":(
+        "functionOptions":(
+            5,
+            number,
+            1,
+            50
+        ),
+        "expectedValue":true
+    ),
+    "Test #{$functionName} Check Number Invalid Min Constraint Expect Fail":(
+        "functionOptions":(
+            5,
+            number,
+            10,
+            50
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check Number Invalid Max Constraint Expect Fail":(
+        "functionOptions":(
+            5,
+            number,
+            1,
+            2
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check Number Invalid Type Constraint Expect Fail":(
+        "functionOptions":(
+            5,
+            string,
+            1,
+            50
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check List Valid Expect Pass":(
+        "functionOptions":(
+            ("This" "Is" "A" "List"),
+            list,
+            1,
+            50
+        ),
+        "expectedValue":true,
+    ),
+    "Test #{$functionName} Check List Invalid Type Constraint Expect Fail":(
+        "functionOptions":(
+            ("This" "Is" "A" "List"),
+            string,
+            1,
+            50
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check List Invalid Min Constraint Expect Fail":(
+        "functionOptions":(
+            ("This" "Is" "A" "List"),
+            string,
+            10,
+            50
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+    "Test #{$functionName} Check List Invalid Max Constraint Expect Fail":(
+        "functionOptions":(
+            ("This" "Is" "A" "List"),
+            string,
+            1,
+            3
+        ),
+        "expectedValue":true,
+        "noPass":true
+    ),
+)

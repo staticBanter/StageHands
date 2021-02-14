@@ -1,10 +1,9 @@
 $projectName:"StageHands";
 $errPreMessage:"The argument(s) for parameter ~";
 $errPostMessage:"of function ~ ";
-$srPreMessage: "~#{$projectName}:StringReplace()~";
-$gePreMessage: "~#{$projectName}:GetError()~";
 
-$errorMap:(
+
+$general_Errors_Map:(
     "RMA":
     (
         "D":"Function ~ requires more arguments, ~ were passed ~ were expected.",
@@ -25,16 +24,9 @@ $errorMap:(
         "GT":"#{$errPreMessage} #{$errPostMessage} is not allowed to be greater then parameter ~",
         "LT":"#{$errPreMessage} #{$errPostMessage} is not allowed to be less then argument ~",
     ),
-    "GE":
-    (
-        "LDPC":"#{$gePreMessage}The list being used for GetError did not pass constraints.",
-        "IvLT":"#{$gePreMessage}The list being used for GetError is not of type list or map."
-    ),
-    "SR":
-    (
-        "MT" : "#{$srPreMessage}The template string was missing the token",
-        "IOB" : "#{$srPreMessage}The string index was less then or equal to zero?(This shouldn't happen)",
-        "RSAT" : "#{$srPreMessage}The replacement value was a string, and appendages was set to true. This is currently not allowed."
-    ),
-    "TEST_S": "This is an error code that has a single message"
+    "TEST_S": "This is an error code that has a single message",
+    "TEST_D":(
+        "A":"This is a nested message. A",
+        "B":"This is a nested message. B"
+    )
 );

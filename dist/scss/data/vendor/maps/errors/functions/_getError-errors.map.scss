@@ -1,0 +1,9 @@
+$gePreMessage: "~#{$projectName}:GetError()~";
+
+$getErrors_Errors_Map:(
+    "GE":
+    (
+        "LDPC":"#{$gePreMessage}The list being used for GetError did not pass constraints.",
+        "IvLT":"#{$gePreMessage}The list being used for GetError is not of type list or map."
+    ),
+);

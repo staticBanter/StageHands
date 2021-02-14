@@ -1,0 +1,50 @@
+$functionName:"CreateLogMessage";
+$createLogMessagesTestCases_Map:(
+    "Test #{$functionName}() Mono-Code Valid Expect Pass":(
+        "functionOptions":(
+            "TEST_S",
+            $general_Errors_Map,
+        ),
+        "expectedValue":"This is an error code that has a single message",
+    ),
+    "Test #{$functionName}() Mono-Code Invalid Expect Fail":(
+        "functionOptions":(
+            "NA",
+            $general_Errors_Map,
+        ),
+        "expectedValue":"This is an error code that has a single message",
+        "noPass":true
+    ),
+    "Test #{$functionName}() Duo-Code Valid Expect Pass":(
+        "functionOptions":(
+            ("TEST_D","A"),
+            $general_Errors_Map,
+        ),
+        "expectedValue":"This is a nested message. A",
+    ),
+    "Test #{$functionName}() Duo-Code Invalid Expect Pass":(
+        "functionOptions":(
+            ("NA","NA"),
+            $general_Errors_Map,
+        ),
+        "expectedValue":"This is a nested message. A",
+        "noPass":true
+    ),
+    "Test #{$functionName}() Duo-Code Valid With Template String Expect Pass":(
+        "functionOptions":(
+            ("RMA","S"),
+            $general_Errors_Map,
+            (("TESTING"),null)
+        ),
+        "expectedValue":"Function TESTING requires more arguments passed.",
+    ),
+    "Test #{$functionName}() Duo-Code Valid With Template String Mismatch Expect Fail":(
+        "functionOptions":(
+            ("RMA","S"),
+            $general_Errors_Map,
+            (("TESTING"),null)
+        ),
+        "expectedValue":"Function FAIL requires more arguments passed.",
+        "noPass":true
+    ),
+);

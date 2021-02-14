@@ -1,0 +1,7 @@
+$testErrors_Map:(
+    "TEST_S":"This is a mono non template string message",
+    "TEST_D":(
+        "A": "This is a nested non template string message; A",
+        "B": "This is a nested non template string message; B"
+    )
+)

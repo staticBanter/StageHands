@@ -5,9 +5,6 @@
 // @use "_CreateLogMessage.func.scss" as CLM;
 
 // TODO: Add equals to option
-// TODO: Add checks to make sure
-// ! Does not handle nested list/maps very well at the momment :/. 
-// ! I guess there is no way to know how big a list will be and how deep,,, this could lead to checks taking vary long.
 /// CheckVariable Constraints - Checks if a variable meets the following constraints.
 /// Though, $type, $min, and $max arguments are optional, if none are passed an error will be thrown.
 /// @author Jordan Vezina(staticBanter)

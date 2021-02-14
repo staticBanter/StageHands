@@ -24,9 +24,5 @@ $general_Errors_Map:(
         "GT":"#{$errPreMessage} #{$errPostMessage} is not allowed to be greater then parameter ~",
         "LT":"#{$errPreMessage} #{$errPostMessage} is not allowed to be less then argument ~",
     ),
-    "TEST_S": "This is an error code that has a single message",
-    "TEST_D":(
-        "A":"This is a nested message. A",
-        "B":"This is a nested message. B"
-    )
+    "C":"#{errPreMessage} #{errPostMessage} did not meet constraints for that parameter."
 );

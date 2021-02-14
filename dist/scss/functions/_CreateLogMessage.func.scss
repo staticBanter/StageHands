@@ -3,11 +3,7 @@
 @use "sass:meta";
 @use "sass:map";
 @use "sass:string";
-// @import "_CheckVarConstraints.func";
-// @use "_StringReplace.func" as SR;
-// @use "_GetStringFromList.func" as GE;
-@use "_CheckVarConstraints.func" as CVC;
-@import "../data/maps/errors.map";
+@use "../data" as StageHands_D;
 
 /// CreateLogMessage - Creates warning and error log messages for functions.
 /// @author Jordan Vezina(staticBanter)
@@ -15,7 +11,6 @@
 /// @access public
 /// @group functions.helper
 /// @since v0.2.0 - Development
-/// @require {function} CheckVariableConstraints  <./dist/scss/functions/_CheckVarConstraints.func.scss>
 /// @param {list|map} $messageList - The message list containing the log messages.
 /// @param {string|list} $code - The error code related to that message.
 /// If list the first item is the main code and the second item is the sub-code.
@@ -31,16 +26,42 @@
 /// @return {string} - The log message
 @function CreateLogMessage($code,$messageList,$messageOps:null,$debug:null){
 
+    // If code does not pass any constraint;
+    // throw error.
+    @if not CheckVariableConstraints($check:$code,$againstType:string,$min:1) and not CheckVariableConstraints($check:$code,$againstType:list,$min:2) {
+        @error("The argument(s) for parameter code of function CreateLogMessage did not meet constraints for that parameter.");
+        // @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("code","CreateLogMessage"),null)));
+    }
+
+
+    // If message list does not pass any constraint;
+    // throw error.
+    @if not CheckVariableConstraints($check:$messageList,$againstType:map,$min:1) and not CheckVariableConstraints($check:$messageList,$againstType:list,$min:1){
+        @error("The argument(s) for parameter messageList of function CreateLogMessage did not meet constraints for that parameter.");
+        // @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("messageList","CreateLogMessage"),null)));
+    }
+
     // Get the error message.
-    $message: GetStringFromList($code:$code,$messageList:$messageList);
+    // $message: GetStringFromList($code:$code,$messageList:$messageList);
+    // $message: GetValueFromMap($map:$messageList,$value:$code);
+    $message: map.get($messageList,$code...);
 
     @if not $message{
-        @return("There is not error message matching code: #{list.nth($code,1)} sub-code: #{list.nth($code,2)}");
+
+        $codeType: meta.type-of($code);
+
+        @if $codeType == string or $codeType == number{
+            @return("There was no message for the error-code: #{$code}.");
+        }@else if $codeType == list or $codeType == map{
+            @return("Could not find error message related to error codes.");
+        }
+        
     }
 
     // If there are message options.
     @if $messageOps{
         
+        // debug
         @if($debug){
             @debug($messageOps);
         }

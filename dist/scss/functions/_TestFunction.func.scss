@@ -1,0 +1,121 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _TestFunction.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+// Uses
+// @use "sass:color";
+@use "sass:map";
+// @use "sass:math";
+@use "sass:meta";
+@use "sass:list";
+// @use "sass:selector";
+// @use "sass:string";
+@use "../data" as StageHands_D;
+
+/// TestFunction - This function is used to test if a function is still return a correct value. 
+/// @author Jordan Vezina(staticBanter)
+/// 
+/// @access public
+/// @group functions.helper
+/// @since 0.3.0-Development
+/// @param {string} $function - The name of the function to test.
+/// @param {mix} $expectedValue - The expected value the function should return.
+/// @param {bool} $passable [true] - A flag to set if the function should pass the test. If false then the function should fail the test.
+/// @param {list} $functionOptions - A list of arguments that should be passed to the function. The arguments MUST be passed in the proper
+/// order that the testing function requires them.
+/// @example
+/// @throws
+/// @return
+@function CallFunctionCheckValue($function,$expectedValue,$passable:true,$functionOptions){
+
+
+    // If the function variable does not meet constraints,
+    // throw error.
+    @if not CheckVariableConstraints($check:$function,$againstType:string,$min:1){
+        @error(CreateLogMessage($code:("IvA","IvT"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("function","TestFunction","string",meta.type-of($function)),null)));
+    }
+
+    // If the function does not exist,
+    // throw error
+    @if not meta.function-exists($function){
+        @error(CreateLogMessage($code:"MF",$messageList:StageHands_D.$testFunction_Errors_Map,$messageOps:(("#{$function}"),null)));
+    }
+
+    // The return value of the tested function.
+    $functionValue: meta.call(meta.get-function($function),$functionOptions...);
+
+    // If the function is supposed to pass,
+    // and the expected value is equal to the functions returned value,
+    // return true.
+    @if $passable and $expectedValue == $functionValue{
+
+        @return true;
+
+    }
+
+    // If not passable and the expected value did not equal functions returned value,
+    // return true.
+    @if not $passable and $expectedValue != $functionValue{
+        
+        @return true;
+
+    }
+
+
+    // Return false by default.
+    @return false;
+
+}
+
+@function TestFunction($functionName,$testCases){
+
+
+    $testCasesType: meta.type-of($testCases);
+
+    $checkList:();
+
+    // If the type of test case is a map,
+    @if $testCasesType == map{
+
+        @each $test, $options in $testCases{
+
+            $passing:true;
+
+            @if not map.has-key($options,"functionOptions"){
+                @error("There was no function options for test: #{$test}");
+            }
+
+            @if not map.has-key($options,"expectedValue"){
+                @error("There was no expected values for test: #{$test}");
+            }
+
+            @if map.has-key($options,"noPass"){
+                $passing:false;
+            }
+
+            $valueCheck: CallFunctionCheckValue($function:$functionName,$expectedValue:map.get($options,"expectedValue"),$passable:$passing,$functionOptions:map.get($options,"functionOptions"));
+            
+            @if $valueCheck{
+                @debug("#{$functionName}, PASSED #{$test}");
+                
+            }@else{
+                @debug("#{$functionName}, FAILED #{$test}");
+            }
+
+            $checkList:list.append($checkList,$valueCheck,"comma");
+        }
+
+    // TODO
+    }@else if $testCasesType == list{
+
+    }@else{
+
+
+    }
+
+    @if $checkList and list.length($checkList) > 0 and not list.index($checkList,false){
+        @return "#{$functionName} PASSED all tests.";
+    }
+
+    @return "#{$functionName} did NOT pass all tests.";
+
+}

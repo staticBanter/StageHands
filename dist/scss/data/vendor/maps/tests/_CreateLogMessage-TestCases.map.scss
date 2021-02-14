@@ -3,14 +3,14 @@ $createLogMessagesTestCases_Map:(
     "Test #{$functionName}() Mono-Code Valid Expect Pass":(
         "functionOptions":(
             "TEST_S",
-            $general_Errors_Map,
+            $testErrors_Map,
         ),
-        "expectedValue":"This is an error code that has a single message",
+        "expectedValue":"This is a mono non template string message",
     ),
     "Test #{$functionName}() Mono-Code Invalid Expect Fail":(
         "functionOptions":(
             "NA",
-            $general_Errors_Map,
+            $testErrors_Map,
         ),
         "expectedValue":"This is an error code that has a single message",
         "noPass":true
@@ -18,14 +18,14 @@ $createLogMessagesTestCases_Map:(
     "Test #{$functionName}() Duo-Code Valid Expect Pass":(
         "functionOptions":(
             ("TEST_D","A"),
-            $general_Errors_Map,
+            $testErrors_Map,
         ),
-        "expectedValue":"This is a nested message. A",
+        "expectedValue":"This is a nested non template string message; A",
     ),
     "Test #{$functionName}() Duo-Code Invalid Expect Pass":(
         "functionOptions":(
             ("NA","NA"),
-            $general_Errors_Map,
+            $testErrors_Map,
         ),
         "expectedValue":"This is a nested message. A",
         "noPass":true

@@ -93,6 +93,7 @@ config/testing.*
 # Porject Specific Files And Dirs.
 /templates
 /tests/layout.html
+/tests/components/
 _TODO.md
 /term
 /stubs

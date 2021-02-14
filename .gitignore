@@ -95,7 +95,6 @@ config/testing.*
 /tests/layout.html
 /tests/components/
 _TODO.md
-/term
 /stubs
 *._test.*
 package-lock.json

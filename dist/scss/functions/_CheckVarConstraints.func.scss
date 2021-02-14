@@ -20,14 +20,15 @@
 /// @param {string} $againstType [null] - The type the variable should be.
 /// @param {number} $min [null] - The min length/value of the variable.
 /// @param {number} $max [null] - The max length/value of the variable.
-/// @param {bool} $fullList [null] - If true and the $check is type list. Every item in the list must NOT be falsy.
 /// @throws - TODO : INSERT ERROR CODES.
 /// @returns {boolean} - Returns true If the variable passes the checks, returns false if variable fails or
 /// was none existent.
-@function CheckVariableConstraints($check,$againstType:null,$min:null,$max:null,$debug:null,$fullList:null){
+@function CheckVariableConstraints($check,$againstType:null,$min:null,$max:null,$debug:null){
 
     // Initialize the valid list to empty.
     $validList:();
+
+    //Store the type of our check so we don't have to call meta every time.
     $checkType: meta.type-of($check);
  
     // List of allowed scss types.
@@ -43,6 +44,7 @@
         // "arglist"
     );
     
+    // debug
     @if($debug){
         
         // ? This should work but throws `Error: () isn't a valid CSS value.`
@@ -52,51 +54,43 @@
         // @debug('| CheckVariableConstraint_Debug | | validList:' + $validList + '| | checkType : ' + $checkType + '|' );
     }
 
-    // If not $check;
-    // return false.
-    // @if not $check{
-
-    //     @if($debug){
-    //         @debug("| CheckVariableConstraint_Debug | | Check was not set, returning false |" );
-    //     }
-        
-    //     @return false;
-    // }
-
-    // If not; $type, or $min, or $max;
+    // If no other optional arguments were passed to
+    // this function;
     // throw error. 
     @if not $againstType and not $min and not $max and not $fullList{
         @error(CreateLogMessage($code:("RMA","S"),$messageList:$errorMap,$messageOps:(("CheckVariableConstraints"),null)));
         // @error("~E:CVC-MA-1~ A constraint must be past.");
     }
 
-    // If the check type was set.
+    // If the against type flag was set.
     @if($againstType){
 
+        // debug
         @if($debug){
             @debug("| CheckVariableConstraint_Debug | | againstType : #{$againstType}| | checkType : #{$checkType} |" );
         }
-        // If $againstType not string;
+
+        // If against type is not string;
         // throw error.
-        @if meta.type-of($againstType) != string{
-            // @debug(meta.type-of($againstType));
-            @error(CreateLogMessage($code:("IVA","IvT"),$messageList:$errorMap,$messageOps:("againstType","CheckVariableConstraints","string",meta.type-of($againstType))));
-            // @error("~E:CVC-IVA-IT-1~ `againstType` must be a string");
+        @if meta.type-of($againstType) != string{ 
+            @error(CreateLogMessage($code:("IVA","IvT"),$messageList:$errorMap,$messageOps:("againstType","CheckVariableConstraints","string",meta.type-of($againstType)))); 
         }
 
-        // If $againstType not in $allowedTypes
+        // If against type not in allowed types
         // throw error.
         @if not list.index($allowedTypes,$againstType){
             @error(CreateLogMessage($code:("IVA","IvT"),$messageList:$errorMap,$messageOps:("againstType","CheckVariableConstraints","string",meta.type-of($againstType))));
-            // @error("~E:CVC-IVA-IT-1~ `checkType` must be of a valid type #{$allowedTypes}");
         }
 
-        // If the $checkType is not equal to $againstType;
-        // add false to $validList.
+        // If the check type is not equal to $againstType;
+        // add false to valid list,
+        // Else;
+        // add true to valid list.
         @if $checkType != $againstType{
 
             $validList: list.append($validList,false);
 
+            // debug
             @if($debug){
                 @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass againstType: #{$againstType}! | | validList : #{validList} |" );
             }
@@ -105,6 +99,7 @@
 
             $validList: list.append($validList,true);
 
+            // debug
             @if($debug){
                 @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED againstType: #{$againstType}! | | validList : #{validList} |" );
             }
@@ -113,43 +108,70 @@
 
     }  
 
-    // If both $min and $max are set.
+    // If both min and max are both set.
+    // We need to check for some extra logic.
     @if $min and $max{
 
-        // If both $max is less the $min throw error.
-        // Thats just logic.
-        @if($max < $min){
+        // If min is not type-of number;
+        // throw error.
+        @if meta.type-of($min) != "number"{
+            @error(CreateLogMessage($code:("IvA","IvT"),$messageList:$errorMap,$messageOps:(("min","CheckVariableConstraints","number",meta.type-of($min)),null)));
+        }
+
+        // If max is not type-of number;
+        // throw error.
+        @if meta.type-of($max) != "number"{
+            @error(CreateLogMessage($code:("IvA","IvT"),$messageList:$errorMap,$messageOps:(("max","CheckVariableConstraints","number",meta.type-of($min)),null)));
+        }
+
+        // If max is less then,
+        // Or equal to min;
+        // throw error,
+        
+        @if $max <= $min{
             @error(CreateLogMessage($code:("LE","LT"),$messageList:$errorMap,$messageOps:(("max","CheckVariableConstraint","min"),null)));
-            // @error("~E:CVC-LE-1~ Max can not be less then min.");
+        }
+
+        // If min is greater then,
+        // Or equal to max;
+        // throw error.
+        @if $min >= $max{
+            @error(CreateLogMessage($code:("LE","GT"),$messageList:$errorMap,$messageOps:(("min","CheckVariableConstraint","max"),null)));
         }
 
     }
 
 
-    // If $min was set
+    // If min was set
     @if $min{
 
+        // debug
         @if($debug){
             @debug("| CheckVariableConstraint_Debug | | Checking min: #{$min}, of check: #{check} | | validList : #{validList} |" );
         }
 
-        // If $min is not type-of number;
+        // If min is not type-of number;
         // throw error.
         @if meta.type-of($min) != "number"{
-            //@debug($min);
             @error(CreateLogMessage($code:("IvA","IvT"),$messageList:$errorMap,$messageOps:(("min","CheckVariableConstraints","number",meta.type-of($min)),null)));
-            // @error("~E:CVC-IVA-IT-2~ `min` must be a number");
         }
 
-        // If $check was a string, check if  string length is greater then;
-        // Else check if $checks value is greater then min value.
-        //NUMBER
+    
+        // If the check type was number,
+        // Else If the check type was string,
+        // Else If the check type was list
+        // Or the check type was map.
+        // -NUMBER-
         @if($checkType == number){
 
+            // If check is less then min;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if($check < $min){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass min: #{$min}. Min type `number`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -158,19 +180,25 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED min: #{$min}. Min type `number`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
 
             }
 
-        //STRING
+        // -STRING-
         } @else if $checkType == string{
 
+            // If the length of the check string is
+            // less then min;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if(string.length($check) < $min){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass min: #{$min}. Min type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -179,19 +207,25 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED min: #{$min}. Min type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
 
             }
 
-        //LIST or MAP
+        // -LIST or MAP-
         }@else if $checkType == "list" or $checkType == "map"{
 
+            // If the length of the check map/list
+            // is less then min;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if(list.length($check) < $min){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass min: #{$min}. Min type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -200,6 +234,7 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED min: #{$min}. Min type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -211,29 +246,35 @@
     }
 
 
-    // If $max was set
+    // If max was set
     @if $max{
 
+        // debug
         @if($debug){
             @debug("| CheckVariableConstraint_Debug | | Checking max: #{$max}, of check: #{check} | | validList : #{validList} |" );
         }
 
-        // If $max is not type-of number;
+        // If max is not type-of number;
         // throw error.
         @if meta.type-of($max) != number{
             @error(CreateLogMessage($code:("IvA","IvT"),$messageList:$errorMap,$messageOps:(("max","CheckVariableConstraints","number",meta.type-of($max)),null)));
-            // @error("~E:CVC-IVA-IT-3~ `max` must be a number");
         }
 
-        // If $check was a string, check if  string length is greater then;
-        // Else check if $checks value is greater then max value.
-        //NUMBER
+        // If the check type was number,
+        // Else If the check type was string,
+        // Else If the check type was list
+        // Or the check type was map.
+        // -NUMBER-
         @if($checkType == number){
 
+            // If check is greater then max;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if($check > $max){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass max: #{$max}. Max type `number`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -242,19 +283,25 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED max: #{$max}. max type `number`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
 
             }
 
-        //STRING
+        // -STRING-
         } @else if $checkType == string{
 
+            // If the length of the check string is
+            // greater then max;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if(string.length($check) > $max){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass max: #{$max}. Max type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -263,19 +310,25 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED max: #{$max}. Max type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
 
             }
 
-        //LIST or MAP
+        // -LIST or MAP-
         }@else if $checkType == "list" or $checkType == "map"{
 
+            // If the length of the check map/list
+            // is less then min;
+            // add false to valid list,
+            // Else; add true to valid list.
             @if(list.length($check) > $max){
 
                 $validList: list.append($validList,false);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass max: #{$max}. Max type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -284,6 +337,7 @@
 
                 $validList: list.append($validList,true);
 
+                // debug
                 @if($debug){
                     @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED max: #{$max}. Max type `string`, checkType: #{checkType}! | | validList : #{validList} |" );
                 }
@@ -294,75 +348,16 @@
 
     }
 
-    // If $fullList is set and the $checkType is list or map
-    @if($fullList and ($checkType == "list" or $checkType == "map")){
 
-        @if($debug){
-            @debug("| CheckVariableConstraint_Debug | | $fullList set for $checkType, #{$checkType} | | Checking, #{$check} | | validList : #{validList} |" );
-        }
-
-        $tempList:();
-
-        // Foreach item in the check.
-        // If an item is falsy.
-        // We will store all of these into a temp list.
-        @each $item in $check{
-            @if not ($item){
-                $tempList:list.append($tempList,false);
-            }
-
-        } 
-
-        @if($debug){
-            @debug("| CheckVariableConstraint_Debug | | $fullList set for $checkType, #{$checkType} | | Checking, #{$check} | | Finished iterating through list current tempList is: |" );
-            @debug("TEMPLIST:",$tempList);
-        }
-
-        // If the temp list contains false,
-        // Add false to the $validList;
-        // Else if the temp list is empty,
-        // Or if the temp list does not contain false,
-        // add true to the valid list.
-        @if(list.index($tempList,false)){
-
-            $validList: list.append($validList,false);
-
-            @if($debug){
-                @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass fullList. | | validList : #{validList} |" );
-                @debug("TEMPLIST:",$tempList);
-            }
-
-        }@else if(list.length($tempList) <= 0) or not list.index($tempList,false){
-
-            $validList: list.append($validList,true);
-
-            @if($debug){
-                @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED fullList. | | validList : #{validList} |" );
-                @debug("TEMPLIST:",$tempList);
-            }
-
-        }
-
-    }
-
-    // If $validList contains a false then return false,
-    // else return true.
-    @if(list.index($validList,false)){
-        
-        @if($debug){
-            @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, DID NOT pass constraints, returning false |" );
-        }
-
-        @return false;
-        
-    }@else{
-
-        @if($debug){
-            @debug("| CheckVariableConstraint_Debug | | Check: #{$check}, PASSED constraints, returning true |" );
-        }
+    // If the valid list does not contain false;
+    // return true.
+    @if not list.index($validList,false){
 
         @return true;
 
     }
+
+    // Return false by default.
+    @return false;
 
 }

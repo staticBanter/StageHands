@@ -1,4 +1,8 @@
-@import "_CheckVarConstraints.func";
-@import "_CreateLogMessage.func";
-@import "_GetStringFromList.func";
-@import "_StringReplace.func";
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/functions
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@import 
+"CheckVarConstraints.func",
+"CreateLogMessage.func", 
+"StringReplace.func", 
+"TestFunction.func";

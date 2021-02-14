@@ -21,6 +21,7 @@ $screenHeightMax: 2160px !default;
 /*
 * Theme Colours.
 */
+// Element Colours.
 $danger: rgba(255,0,0,1) !default;
 $success: rgba(0,255,0,1) !default;
 $white: rgba(246,246,246,1) !default;
@@ -28,6 +29,12 @@ $black: rgba(0,0,0,1) !default;
 $primary: rgb(92,92,92,1) !default;
 $secondary: rgb(143,143,143,1) !default;
 $accent: rgb(73,73,73,1) !default;
+
+//Text Colours.
+$bodyTextColour: rgba(0,0,0,1) !default;
+$headerTextColour: rgba(0,0,0,1) !default;
+$neutralTextColour: rgba(0,0,0,1) !default;
+$displayTextColour: rgba(0,0,0,1) !default;
 
 
 /*
@@ -72,6 +79,9 @@ $displayFontFamily: Sansita_Swashed;
     --primary: #{$primary};
     --secondary: #{$secondary};
     --accent: #{$accent};
+    --bodyTextColour: #{$bodyTextColour};
+    --headerTextColour: #{$headerTextColour};
+    
 
     --headerFontFamily: #{meta.inspect($headerFontFamily)};
     --bodyFontFamily: #{meta.inspect($bodyFontFamily)};

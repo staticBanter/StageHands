@@ -1,3 +1,6 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _FontFaceData.mixin.scss | Mixin
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 // Uses
 @use "sass:string";
 @use "sass:list";
@@ -38,7 +41,7 @@
 
     // If the font list/map does not meet constraints,
     // throw error.
-    @if not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:map,$min:1,$fullList:true) and not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:list,$min:1,$fullList:true) {
+    @if not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:map,$min:1) and not StageHands_F.CheckVariableConstraints($check:$fontList,$againstType:list,$min:1) {
         @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("fontList","FontFaceData-Mixin"),null)));
     }
 

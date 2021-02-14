@@ -1,7 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _StringReplace.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+// Uses
 @use"sass:meta";
 @use"sass:list";
 @use"sass:map";
 @use"sass:string";
+@use "../data" as StageHands_D;
 
 //TODO - INSERT ERROR CODES.
 /// StringReplace - Replaces a single character or word in a sentence. 
@@ -61,13 +66,13 @@
     // If the $string does not meet constraints;
     // throw error.
     @if not CheckVariableConstraints($check:$string,$againstType:string,$min:1){
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("string","StringReplace"),null)));
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("string","StringReplace"),null)));
     }
 
     // If the $token does not meet constraints.
     // throw error.
     @if not CheckVariableConstraints($check:$token,$againstType:string,$min:1){
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("token","StringReplace"),null)));
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("token","StringReplace"),null)));
     }
 
     // If Appendage was set
@@ -75,7 +80,7 @@
         // If appendage does not meet constraints,
         // throw error.
         @if not CheckVariableConstraints($check:$appendage,$againstType:string,$min:1){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("appendage","StringReplace"),null)));
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("appendage","StringReplace"),null)));
         }
     }
 
@@ -88,7 +93,7 @@
         // If the $replacement does not meet constraints.
         // throw error.
         @if not CheckVariableConstraints($check:$replacement,$againstType:string,$min:1){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
             // @error("~E:SR~ Var replacement did not meet constraints");
         }
 
@@ -96,14 +101,14 @@
 
         // If the $replacement does not meet constraints.
         // throw error.
-        @if not CheckVariableConstraints($check:$replacement,$againstType:list,$min:1,$fullList:true){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+        @if not CheckVariableConstraints($check:$replacement,$againstType:list,$min:1){
+            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
             // @error("~E:SR-2~ Var replacement did not meet constraints");
         }
 
     }@else{
 
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:$errorMap,$messageOps:(("replacement","StringReplace"),null)));
+        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
         // @error("~E:SR~ Var replacement was not a valid type did not meet constraints");
 
     }
@@ -111,12 +116,12 @@
     // If the original string does not contain the token,
     // throw error.
     @if not string.index($string,$token){
-        @error(CreateLogMessage($code:("SR","MT"),$messageList:$errorMap,$messageOps:null));
+        @return(CreateLogMessage($code:("SR","MT"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:null));
         // @error("~E:SR_MT~ the token was not in the string");
     }
 
     @if($debug){
-        @debug("~String-Replace~ All arguments passed constraints.");
+        @debug(" String-Replace All arguments passed constraints.");
     }
 
     // The reason this is two separate statements is
@@ -126,7 +131,7 @@
     @if $replacementType == "list"{
 
         @if($debug){
-            @debug("~String-Replace~ Replacement was list");
+            @debug("String-Replace Replacement was list");
         }
 
         // Set a list index 1
@@ -145,14 +150,14 @@
             $currentStringLength: string.length($string);
 
             @if($debug){
-                @debug("~String-Replace~ String still contained a token at index:",$currentIndex);
+                @debug("String-Replace String still contained a token at index:",$currentIndex);
             }
 
             // This should never happen, but ohhhh boy.
             // If the current index is <= 0,
             // throw error.
             @if($currentIndex <= 0){
-                @error(CreateLogMessage($code:("SR","IOB"),$messageList:$errorMap,$messageOps:(null,null)));
+                @error(CreateLogMessage($code:("SR","IOB"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
             }
 
             // This might happen though...
@@ -173,7 +178,7 @@
             @if($listIndex >= list.length($replacement)){
 
                 @if($debug){
-                    @debug("~String-Replace~ The current index of:"$currentIndex,"Was >= the replacement list length of:",list.length($replacement),". Setting listIndex to list length.");
+                    @debug("String-Replace The current index of:"$currentIndex,"Was >= the replacement list length of:",list.length($replacement),". Setting listIndex to list length.");
                 }
 
                 $listIndex: list.length($replacement);
@@ -198,11 +203,11 @@
 
             @if($debug){
                 
-                @debug("~StringReplace~ Called with appendage with separator: `#{$appendage}`");
+                @debug("StringReplace Called with appendage with separator: `#{$appendage}`");
 
                 @for $i from $listIndex through list.length($replacement){
 
-                    @debug("~StringReplace~ Appending: #{list.nth($replacement,$i)}");
+                    @debug("StringReplace Appending: #{list.nth($replacement,$i)}");
                     
                     $string:$string+$appendage+list.nth($replacement,$i);
                 }
@@ -223,7 +228,7 @@
     } @else {
 
         @if($debug){
-            @debug("~String-Replace~ Replacement was string");
+            @debug("String-Replace Replacement was string");
         }
 
         // If the replacement type was a string but appendage was set,
@@ -232,7 +237,7 @@
         // maybe at some point we could allow a single appendage of the
         // replacement to the end of string at this point.
         @if($appendage){
-            @error(CreateLogMessage($code:("SR","RSAT"),$messageList:$errorMap,$messageOps:(null,null)));
+            @error(CreateLogMessage($code:("SR","RSAT"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
         }
 
         // While the string contains the token character.
@@ -252,14 +257,14 @@
             $currentStringLength: string.length($string);
 
             @if($debug){
-                @debug("~String-Replace~ String still contained a token at index:",$currentIndex);
+                @debug("String-Replace String still contained a token at index:",$currentIndex);
             }
 
             // This should never happen, but ohhhh boy.
             // If the current index is <= 0,
             // throw error.
             @if($currentIndex <= 0){
-                @error(CreateLogMessage($code:("SR","IOB"),$messageList:$errorMap,$messageOps:(null,null)));
+                @error(CreateLogMessage($code:("SR","IOB"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
             }
 
             // This might happen though...
@@ -286,7 +291,7 @@
 
 
     @if($debug){
-        @debug("~String Replace~ String replace is returning",$string);
+        @debug("String Replace String replace is returning",$string);
     }
 
     // Return the new string.

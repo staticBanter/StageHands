@@ -2,7 +2,7 @@ StageHands
 =
 A Typescript &amp; SCSS Framework
 
-> Version: 0.3.0 - Development
+> Version: 0.4.0 - Development
 > Last Update: Jan 22, 2021.
 > Readme Last Updated: Jan 22, 2021.
 
@@ -21,7 +21,7 @@ A Typescript &amp; SCSS Framework
   - [Functions](#functions)
     - [CheckVariableConstraints](#checkvariableconstraints)
     - [CreateLogMessage](#createlogmessage)
-    - [GetStringFromList](#getstringfromlist)
+    - [TestFunction](#testfunction)
     - [StringReplace](#stringreplace)
   - [Mixins](#mixins)
     - [FontFaceData](#fontfacedata)
@@ -192,49 +192,64 @@ $message_2: StageHands_F.CreateLogMessage($code:("Na_1","Na_2"),$messagesList:$l
 @debug($message_2); // Expected Output: There is not error message matching code: Na_1 sub-code: Na_2
 ```
 
-### GetStringFromList
-This function is used to return a string from a list matching a key->value pair. the key being the code for the message the value being the message itself.
+### TestFunction
+This function will check if a function is returning the proper results in a variety of tests.
 
-This function returns a string if the message was found. False if no message was found.
+This function returns a string, displaying if the function passed or failed the tests.
 
-This function requires the following arguments;
-- ```$code[string|map|list]``` : The codes that are related to the string being looked for. If list/map the first item will be the primary code and the second the sub-code.
-- ```$messageList[map|list]``` : The list or the map containing the error messages.(**Note** : Currently this functions only support messages lists that are properly formatted, see *[Log Message Data](#log-message-data)*).
-
+This function takes the following required arguments.
+- ```$functionName[string]``` : The name of the function to test.
+- ```$testCases[map]``` : The tests and expected values the function should run and return.
+  - The testCases map must include the following key->values;
+    - *functionOptions* : The options that will be passed to the function being tested. These options MUST be in the same order that they are required by the function being tested.
+    - *expectedValue* : The expected value the function being tested should return.
+  - The testCases map also takes the following optional key->value pairs;
+    - *noPass* : This is a bool if set to true, then it is expected that the function being tested should fail the test.
+  
 Example;
 ```SCSS
-// customStyle.scss
-
-// Import StageHands Functions.
+// functionTestFile.scss
 @use "functions" as StageHands_F;
 
-// List of messages
-$logMessages_Map:(
-    "RMA":
-    (
-        "D":"Function ~(tilde) requires more arguments, ~(tilde) were passed ~(tilde) were expected.",
-        "S":"Function ~(tilde) requires more arguments passed."
-    ),
-    "LE":
-    (
-        "GT":"The argument(s) for parameter ~(tilde) of function ~(tilde) is not allowed to be greater then parameter ~(tilde)",
-        "LT":"The argument(s) for parameter ~(tilde) of function ~(tilde) is not allowed to be less then argument ~",
+// Function Test Case.
+$stringReplaceTestCases_Map:(
+  "Test StringReplace() Valid Arguments Expect Pass":(
+      "functionOptions":(
+          "Function ~ requires more arguments passed.",
+          "~",
+          "TEST"
+      ),
+      "expectedValue":"Function TEST requires more arguments passed."
+  ),
+  "Test StringReplace() String Missing Token Expect Fail":(
+      "functionOptions":(
+          "This string does not contain a token",
+          "~",
+          "TEST"
+      ),
+      "expectedValue":"The template string was missing the token",
+  )
+  "Test String() Incorrect Return Value Expect Fail":(
+        "functionOptions":(
+            "Function ~ requires more arguments passed.",
+            "~",
+            "TEST"
+        ),
+        "expectedValue":"Function ~ requires more arguments passed.",
+        "noPass":true
     ),
 );
 
-// Create A Message.
-$message_1: StageHands_F.CreateLogMessage(("LE","GT"),$logMessages_Map);
+// Run The Tests
+@debug(StageHands_F.TestFunction($functionName:"CreateLogMessage",$testCases:$stringReplaceTestCases_Map));
 
-// View message.
-@debug($message_1); // Expected output; "The argument(s) for parameter ~(tilde) of function ~(tilde)  is not allowed to be greater then parameter ~(tilde)"
-
-// Create A Message.
-$message_2: StageHands_F.CreateLogMessage(("Na_1","Na_2"),$logMessages_Map);
-
-// View message.
-@debug($message_2); // Expected output; false.
-
+// Expected Output
+**Debug: StringReplace, PASSED Test StringReplace() Valid Arguments Expect Pass**
+**Debug: StringReplace, PASSED Test StringReplace() String Missing Token Expect Fail**
+**Debug: StringReplace, PASSED Test StringReplace() Incorrect Return Value Expect Fail**
+**Debug: StringReplace PASSED all tests.**
 ```
+
 
 ### StringReplace
 This function will replace all instances of word/character in a string.

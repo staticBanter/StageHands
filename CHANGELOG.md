@@ -10,6 +10,7 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
   - [Jan-24-2021(v:0.2.0-Development)](#jan-24-2021v020-development)
 - [February-2021](#february-2021)
   - [February-31-2021(v:0.3.0-Development)](#february-31-2021v030-development)
+  - [February-31-2021(v:0.4.0-Development)](#february-31-2021v040-development)
   
 # January-2021
 
@@ -83,3 +84,21 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
         - neutralFontFamily
         - displayFontFamily
   - Bound all the g_variables to root-pseudo element.
+
+## February-31-2021(v:0.4.0-Development)
+- README.md
+  - Updated documentation
+- .gitignore
+  - Added;
+    - pug-obj.json
+- Data
+  - Put all default data in the dist/scss/data/vendor folder. From there all data is organized based on data type and category. **This was a drastic restructure to this part of the project**
+- Functions
+  - CheckVarConstraints
+    - Removed the check for if a list or map is full.
+    - Updated the code comments
+  - CreateLogMessage
+    - Change log now uses sass's ```map.get()``` method to retrieve the string message from a map. This is much more robust. Because of this the *GetStringFromMap* function was removed.
+  - Testing
+    - Added the TestFunction, this function can be used to test if anther function is returning the correct results for various test cases. See README.md for full details.
+- Cleaned up some code.

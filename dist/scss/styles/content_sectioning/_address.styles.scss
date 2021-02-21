@@ -1,0 +1,40 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _address.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+address{
+    display: inline-block;
+    width: max-content;
+    padding: $padding;
+    box-sizing: border-box;
+    font-family: $bodyFontFamily;
+}
+
+address + address{
+    margin: auto $margin;
+}
+
+address > *{
+    margin: 0;
+    padding: 0;
+}
+
+address > * + *{
+    margin-top: $margin;
+}
+
+
+address ul:first-of-type,
+address ol:first-of-type{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+address ul:first-of-type,
+address ol:first-of-type{
+
+    > li + li{
+        margin-top: $margin;
+    }
+
+}

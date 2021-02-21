@@ -1,0 +1,15 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _header.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+// First Header of the Body.
+body header:first-of-type,
+body *[role=banner]:first-of-type{
+    background-color: $primary;
+    color: $white;
+    min-height: 10%;
+    height: 10%;
+    max-height: max-content;
+    overflow: hidden;
+    margin-bottom: $margin;
+}

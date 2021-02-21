@@ -1,0 +1,17 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _main.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+body main,
+body *[role=main]:first-of-type{
+    overflow: auto;
+    min-height: 80%;
+    max-height: max-content;
+    padding: $padding;
+    box-sizing: border-box;
+}
+
+aside ~ main {
+    float: right;
+    width: 80%;
+}
+

@@ -1,0 +1,10 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _footer.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+footer{
+    min-height: 10%;
+    max-height: max-content;
+    background-color: $secondary;
+    clear: both;
+    margin-top: $margin;
+}

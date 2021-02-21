@@ -1,0 +1,52 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _example.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../g_variables.scss" as SGV;
+section{
+    width: 94%;
+    margin: 0 auto;
+    
+}
+
+section + section {
+    margin-top: SGV.$margin-xLarge;
+    padding: SGV.$padding 0;
+}
+
+.subSection > h2{
+    border-bottom: 3px groove black;
+}
+.subSection > div:not(.example) > h3{
+    border-bottom: 3px groove black;
+}
+.subSection > div:not(.example) > hgroup{
+    border-bottom: 3px groove black;
+}
+
+
+section > .subSection + .subSection{
+    margin-top: SGV.$margin-large;
+}
+
+.subSection > div + div{
+    margin-top: SGV.$margin-large;
+}
+
+.subSection > div + div > hgroup{
+    margin-top: SGV.$margin;   
+}
+
+.example{
+    margin-top: SGV.$margin-large;
+    border-radius: 10px;
+    box-shadow: SGV.$boxShadow;
+    padding: SGV.$padding;
+}
+
+code.styleCodeBlock{
+    border-radius: SGV.$border-rounded;
+    padding: SGV.$padding;
+    background-color: rgba(211, 211, 211, 1);
+    display: inline-block;
+    margin: 0 SGV.$margin;
+}

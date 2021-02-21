@@ -11,7 +11,7 @@
 @use "mixins" as StageHands_M;
 
 /*
-* Min & Max Screen Size.
+* Screen Sizes
 */
 $screenWidthMin: 240px !default;
 $screenWidthMax: 3840px !default;
@@ -35,11 +35,55 @@ $bodyTextColour: rgba(0,0,0,1) !default;
 $headerTextColour: rgba(0,0,0,1) !default;
 $neutralTextColour: rgba(0,0,0,1) !default;
 $displayTextColour: rgba(0,0,0,1) !default;
+$activeTextColour: rgba(255,255,255,1) !default;
 
 
 /*
-* Text And Fonts
+* Borders
 */
+$border-colour: $accent !default;
+$border-rounded: 10px !default;
+$border-thickness: 3px !default;
+
+$border: $border-thickness solid $border-colour !default;
+$border-grooved: $border-thickness grooved $border-colour !default;
+
+
+/*
+* Box Shadow
+*/
+$boxShadow-right: 0px !default;
+$boxShadow-bottom: 0px !default;
+$boxShadow-radius: 20px !default;
+$boxShadow-blur: -($boxShadow-radius / 2) !default;
+$boxShadow-colour: rgba(0,0,0,1) !default;
+$boxShadow: $boxShadow-right $boxShadow-bottom $boxShadow-radius $boxShadow-blur $boxShadow-colour !default;
+
+
+/*
+* Margin & Padding.
+*/
+$padding: 0.5rem !default;
+$padding-large: ($padding * 2) !default;
+$padding-xLarge: ($padding * 3) !default;
+$padding-small: ($padding / 2) !default;
+
+$margin: 0.5rem !default;
+$margin-large: ($margin * 2) !default;
+$margin-xLarge: ($margin * 3) !default;
+$margin-small: ($margin / 2) !default;
+
+
+/*
+* Font and Line Heights.
+*/
+$bodyTextHeight: 1rem;
+$bodyTextLine: 1.2rem;
+$headerTextHeight: 2rem;
+$headerTextLine: 2.6rem;
+$neutralTextHeight: 1.4rem;
+$neutralTextLine: 1.6rem;
+
 $variableFonts: false; // If true fonts will use variable versions. WARNING! Ensure all fonts are variable supported before enabling this.
 
 @each $fontName, $urlGroup in StageHands_D.$fontMap{
@@ -67,11 +111,18 @@ $displayFontFamily: Sansita_Swashed;
 */
 :root{
     
+    /*
+    * Screen Sizes
+    */
     --screenWidthMin: #{$screenWidthMin};
     --screenWidthMax: #{$screenWidthMax};
     --screenHeightMin: #{$screenHeightMin};
     --screenHeightMax: #{$screenHeightMax};
 
+    /*
+    * Theme Colours.
+    */
+    // Element Colours.
     --danger: #{$danger};
     --success: #{$success};
     --white: #{$white};
@@ -79,9 +130,57 @@ $displayFontFamily: Sansita_Swashed;
     --primary: #{$primary};
     --secondary: #{$secondary};
     --accent: #{$accent};
+
+    //Text Colours.
     --bodyTextColour: #{$bodyTextColour};
     --headerTextColour: #{$headerTextColour};
+    --neutralTextColour: #{$neutralTextColour};
+    --displayTextColour: #{$displayTextColour};
+    --activeTextColour: #{$activeTextColour};
+
+    /*
+    * Borders
+    */
+    --border-colour: #{$border-colour};
+    --border-rounded: #{$border-rounded};
+    --border-thickness:#{$border-thickness};
+
+    --border: #{$border};
+    --border-grooved: #{$border-grooved};
+
+    /*
+    * Box Shadow
+    */
+    --boxShadow-right: #{$boxShadow-right};
+    --boxShadow-bottom: #{$boxShadow-bottom};
+    --boxShadow-radius: #{$boxShadow-radius};
+    --boxShadow-blur: #{$boxShadow-blur};
+    --boxShadow-colour: #{$boxShadow-colour};
+    --boxShadow: #{$boxShadow};
+
+
+    /*
+    * Margin & Padding.
+    */
+    --padding: #{$padding};
+    --padding-large: #{$padding-large};
+    --padding-xLarge: #{$padding-xLarge};
+    --padding-small: #{$padding-small};
+
+    --margin: #{$margin};
+    --margin-large: #{$margin-large};
+    --margin-xLarge: #{$margin-xLarge};
+    --margin-small: #{$margin-small};
     
+    /*
+    * Font and Line Heights.
+    */
+    --bodyTextHeight: #{$bodyTextHeight};
+    --bodyTextLine: #{$bodyTextLine};
+    --headerTextHeight: #{$headerTextHeight};
+    --headerTextLine: #{$headerTextLine};
+    --neutralTextHeight: #{$neutralTextHeight};
+    --neutralTextLine: #{$neutralTextLine};
 
     --headerFontFamily: #{meta.inspect($headerFontFamily)};
     --bodyFontFamily: #{meta.inspect($bodyFontFamily)};

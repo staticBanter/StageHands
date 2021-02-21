@@ -1,0 +1,30 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _anchors.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/nav.placeholders";
+
+// Global Anchor Styles
+a{
+    font-family: $neutralFontFamily;
+}
+
+a:link,
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:active{}
+
+
+
+// Navigation Links
+nav a{
+    @extend %nav-control;
+    display: block;
+
+}
+

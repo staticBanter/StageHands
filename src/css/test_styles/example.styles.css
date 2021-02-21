@@ -175,4 +175,56 @@ StageHands | _FontFaceData.mixin.scss | Mixin
   --displayFontFamily: Sansita_Swashed;
 }
 
-/*# sourceMappingURL=g_variables.css.map */
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _example.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+section {
+  width: 94%;
+  margin: 0 auto;
+}
+
+section + section {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.subSection > h2 {
+  border-bottom: 3px groove black;
+}
+
+.subSection > div:not(.example) > h3 {
+  border-bottom: 3px groove black;
+}
+
+.subSection > div:not(.example) > hgroup {
+  border-bottom: 3px groove black;
+}
+
+section > .subSection + .subSection {
+  margin-top: 1rem;
+}
+
+.subSection > div + div {
+  margin-top: 1rem;
+}
+
+.subSection > div + div > hgroup {
+  margin-top: 0.5rem;
+}
+
+.example {
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px -10px black;
+  padding: 0.5rem;
+}
+
+code.styleCodeBlock {
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: lightgray;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+/*# sourceMappingURL=example.styles.css.map */

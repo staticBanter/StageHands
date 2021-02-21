@@ -1,4 +1,4 @@
-/*! | StageHands : v0.3.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v0.5.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -133,23 +133,35 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 * Theme Colours.
 */
 /*
+* Borders
+*/
+/*
+* Box Shadow
+*/
+/*
+* Margin & Padding.
+*/
+/*
 * Text And Fonts
+*/
+/*
+* Font and Line Heights.
 */
 @font-face {
   font-family: "DancingScript";
-  src: url("../../fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype"), url("../../fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inconsolata";
-  src: url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype"), url("../../fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "JetBrains_Mono";
-  src: url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype"), url("../../fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
+  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Sansita_Swashed";
-  src: url("../../fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"), url("../../fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
 }
 /*
 * Bind The Variables To The :root pseudo-element.
@@ -172,6 +184,673 @@ StageHands | _FontFaceData.mixin.scss | Mixin
   --bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
   --neutralFontFamily: Inconsolata, "Sans Serif";
   --displayFontFamily: Sansita_Swashed;
+}
+
+/*
+* Element Styles.
+*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/styles/text
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/styles/text/inline_text
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _nav.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/mixins
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/functions
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _CheckVarConstraints.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _CreateLogMessage.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _StringReplace.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _TestFunction.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _FontFaceData.mixin.scss | Mixin
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+* Global Variables.
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*
+* Uses.
+*/
+/*
+* Min & Max Screen Size.
+*/
+/*
+* Theme Colours.
+*/
+/*
+* Borders
+*/
+/*
+* Box Shadow
+*/
+/*
+* Margin & Padding.
+*/
+/*
+* Text And Fonts
+*/
+/*
+* Font and Line Heights.
+*/
+@font-face {
+  font-family: "DancingScript";
+  src: url("/fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains_Mono";
+  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sansita_Swashed";
+  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
+}
+/*
+* Bind The Variables To The :root pseudo-element.
+*/
+:root {
+  --screenWidthMin: 240px;
+  --screenWidthMax: 3840px;
+  --screenHeightMin: 320px;
+  --screenHeightMax: 2160px;
+  --danger: red;
+  --success: lime;
+  --white: #f6f6f6;
+  --black: black;
+  --primary: #5c5c5c;
+  --secondary: #8f8f8f;
+  --accent: #494949;
+  --bodyTextColour: black;
+  --headerTextColour: black;
+  --headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+  --bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+  --neutralFontFamily: Inconsolata, "Sans Serif";
+  --displayFontFamily: Sansita_Swashed;
+}
+
+nav button,
+nav button:focus, nav a {
+  color: black;
+  font-size: 20px;
+  padding: 0;
+  padding: 0.5rem;
+  display: block;
+  width: max-content;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav button:hover, nav a:hover {
+  color: white;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _anchors.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+a {
+  font-family: Inconsolata, "Sans Serif";
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav a {
+  display: block;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/styles/text/text_content
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*! StageHands | Paragraphs
+This file contains the styles for paragraph elements.
+*/
+p {
+  font-family: JetBrains_Mono, "Times New Roman", "Times";
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/roots
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _body.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+body {
+  background-color: #f6f6f6;
+  height: 100%;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _html.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+html {
+  min-width: 240px;
+  max-width: 3840px;
+  min-height: 320px;
+  max-height: 2160px;
+  height: 100%;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/content_sectioning
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _header.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+body header:first-of-type,
+body *[role=banner]:first-of-type {
+  background-color: #5c5c5c;
+  color: #f6f6f6;
+  min-height: 10%;
+  height: 10%;
+  max-height: max-content;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _header.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+nav {
+  width: min-content;
+}
+
+body header:first-of-type nav:first-of-type {
+  background-color: #8f8f8f;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+/*! StageHands | Headings
+This file contains the styles for heading elements.
+*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _main.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+body main,
+body *[role=main]:first-of-type {
+  overflow: auto;
+  min-height: 80%;
+  max-height: max-content;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+aside ~ main {
+  float: right;
+  width: 80%;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _aside.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+body aside:first-of-type,
+body *[role=complementary] {
+  width: 20%;
+  display: inline-block;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: #8f8f8f;
+  border-radius: 0 10px 10px 0;
+}
+
+body aside:first-of-type > *,
+body *[role=complementary] > * {
+  color: #f6f6f6;
+  padding: 0.5rem;
+}
+body aside:first-of-type > * + *,
+body *[role=complementary] > * + * {
+  margin-top: 0.25rem;
+}
+
+main ~ aside {
+  float: right;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _address.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+address {
+  display: inline-block;
+  width: max-content;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-family: JetBrains_Mono, "Times New Roman", "Times";
+}
+
+address + address {
+  margin: auto 0.5rem;
+}
+
+address > * {
+  margin: 0;
+  padding: 0;
+}
+
+address > * + * {
+  margin-top: 0.5rem;
+}
+
+address ul:first-of-type,
+address ol:first-of-type {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+address ul:first-of-type > li + li,
+address ol:first-of-type > li + li {
+  margin-top: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _article.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _footer.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+footer {
+  min-height: 10%;
+  max-height: max-content;
+  background-color: #8f8f8f;
+  clear: both;
+  margin-top: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/forms
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _nav.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/mixins
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/functions
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _CheckVarConstraints.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _CreateLogMessage.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _StringReplace.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _TestFunction.func.scss | Function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/data
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _FontFaceData.mixin.scss | Mixin
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+* Global Variables.
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*
+* Uses.
+*/
+/*
+* Min & Max Screen Size.
+*/
+/*
+* Theme Colours.
+*/
+/*
+* Borders
+*/
+/*
+* Box Shadow
+*/
+/*
+* Margin & Padding.
+*/
+/*
+* Text And Fonts
+*/
+/*
+* Font and Line Heights.
+*/
+@font-face {
+  font-family: "DancingScript";
+  src: url("/fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype"), url("/fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype"), url("/fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains_Mono";
+  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype"), url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sansita_Swashed";
+  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"), url("/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
+}
+/*
+* Bind The Variables To The :root pseudo-element.
+*/
+:root {
+  --screenWidthMin: 240px;
+  --screenWidthMax: 3840px;
+  --screenHeightMin: 320px;
+  --screenHeightMax: 2160px;
+  --danger: red;
+  --success: lime;
+  --white: #f6f6f6;
+  --black: black;
+  --primary: #5c5c5c;
+  --secondary: #8f8f8f;
+  --accent: #494949;
+  --bodyTextColour: black;
+  --headerTextColour: black;
+  --headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+  --bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+  --neutralFontFamily: Inconsolata, "Sans Serif";
+  --displayFontFamily: Sansita_Swashed;
+}
+
+nav a, nav button,
+nav button:focus {
+  color: black;
+  font-size: 20px;
+  padding: 0;
+  padding: 0.5rem;
+  display: block;
+  width: max-content;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav a:hover, nav button:hover {
+  color: white;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _button.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+nav button,
+nav button:focus {
+  background-color: transparent;
+  border: none;
+  font-family: Inconsolata, "Sans Serif";
+  outline: none;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _textarea.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+textarea {
+  resize: none;
+  display: block;
+  height: max-content;
+  text-overflow: unset;
+  word-break: unset;
+  word-spacing: unset;
+  overflow: hidden;
+}
+
+/*
+* Components
+*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/components/
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _nav.components.scss | Component
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+.navControls-inline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+}
+
+.navControls-inline .dropDownMenu {
+  background-color: inherit;
+}
+
+.navControls-inline > .dropDownMenu > div > *:nth-of-type(odd) {
+  background-color: #494949;
+}
+
+.navControls-inline > .dropDownMenu > div:first-of-type {
+  position: absolute;
+  background-color: inherit;
+}
+
+.dropDownMenu > div {
+  display: none;
+}
+
+.dropDownMenu:hover > div {
+  display: block;
+}
+
+.dropDownMenu:hover > div > .dropDownMenu:hover {
+  display: flex;
+}
+
+.dropDownMenu:hover > div > .dropDownMenu:hover > div {
+  position: absolute;
+  left: 100%;
+  background-color: inherit;
 }
 
 /*# sourceMappingURL=stagehands.css.map */

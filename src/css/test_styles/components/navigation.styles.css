@@ -175,4 +175,11 @@ StageHands | _FontFaceData.mixin.scss | Mixin
   --displayFontFamily: Sansita_Swashed;
 }
 
-/*# sourceMappingURL=g_variables.css.map */
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _example.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+.example > nav {
+  background-color: #8f8f8f;
+}
+
+/*# sourceMappingURL=navigation.styles.css.map */

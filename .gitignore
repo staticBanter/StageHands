@@ -91,12 +91,6 @@ tsconfig.json
 config/testing.*
 
 # Porject Specific Files And Dirs.
-/templates
-/tests/layout.html
-/tests/components/
-_TODO.md
-/stubs
-*._test.*
+__*
 package-lock.json
 package.json
-pug-obj.json

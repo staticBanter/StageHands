@@ -1,0 +1,11 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _html.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+html{
+    min-width: $screenWidthMin;
+    max-width: $screenWidthMax;
+    min-height: $screenHeightMin;
+    max-height: $screenHeightMax;
+    height: 100%;
+}

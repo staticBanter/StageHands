@@ -1,0 +1,10 @@
+/*! StageHands | Paragraphs
+This file contains the styles for paragraph elements.
+*/
+
+// Global
+p{
+    font-family: $bodyFontFamily;
+    margin: 0 $margin;
+    padding: $padding 0;
+}

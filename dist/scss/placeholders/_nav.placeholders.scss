@@ -1,0 +1,19 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _nav.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@import "../g_variables.scss";
+
+%nav-control{
+    color: $neutralTextColour;
+    font-size: 20px;
+    padding: 0;
+    padding: 0.5rem;
+    display: block;
+    width: max-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+%nav-control:hover{
+    color: $activeTextColour;
+}

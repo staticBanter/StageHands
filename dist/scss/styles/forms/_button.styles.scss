@@ -1,0 +1,15 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _button.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../placeholders/nav.placeholders";
+
+// Buttons inside of navigations
+// Display them like normal text.scss
+nav button,
+nav button:focus{
+    @extend %nav-control;
+    background-color: transparent;
+    border:none;
+    font-family: $neutralFontFamily;
+    outline: none;
+}

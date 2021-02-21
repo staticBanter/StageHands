@@ -1,0 +1,13 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _textarea.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+textarea{
+    resize: none;
+    display: block;
+    height: max-content;
+    text-overflow: unset;
+    word-break: unset;
+    word-spacing: unset;
+    overflow: hidden;
+
+}

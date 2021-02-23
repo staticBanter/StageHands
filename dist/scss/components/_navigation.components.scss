@@ -8,36 +8,50 @@ StageHands | _nav.components.scss | Component
     display: flex;
     align-items: center;
     background-color: inherit;
-}
-
-.navControls-flex .dropDownMenu{
-    background-color: inherit;
-}
-
-.navControls-flex > .dropDownMenu > div > *:nth-of-type(odd){
-    background-color: $accent;
+    list-style-type: none;
+    padding-left: $padding;
 }
 
 
-.navControls-flex > .dropDownMenu > div:first-of-type{
-    position: absolute;
-    background-color: inherit;
+.navControls-flex{
+
+    .dropDownBreak {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .dropDownMenu{
+        background-color: inherit;
+    }
+
+    > .dropDownMenu > .dropDownBreak > *:nth-of-type(odd){
+        background-color: $accent;
+    }
+
+
+    > .dropDownMenu > .dropDownBreak:first-of-type{
+        position: absolute;
+        background-color: inherit;
+    }
+
 }
 
-.dropDownMenu > div{
+
+
+.dropDownMenu > .dropDownBreak{
     display: none;
 }
 
-.dropDownMenu:hover > div{
+.dropDownMenu:hover > .dropDownBreak{
     display: block;
 }
 
-.dropDownMenu:hover > div > .dropDownMenu:hover{
+.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover{
     display: flex;
 }
 
-.dropDownMenu:hover > div > .dropDownMenu:hover > div{
+.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover > .dropDownBreak{
     position: absolute;
     left: 100%;
-    background-color: inherit;
+    background-color: $accent;
 }

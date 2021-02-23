@@ -3,23 +3,23 @@ StageHands | _nav.components.scss | Component
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 // Navigation Controls Inline
-.navControls-inline{
+.navControls-flex{
     width: 100%;
     display: flex;
     align-items: center;
     background-color: inherit;
 }
 
-.navControls-inline .dropDownMenu{
+.navControls-flex .dropDownMenu{
     background-color: inherit;
 }
 
-.navControls-inline > .dropDownMenu > div > *:nth-of-type(odd){
+.navControls-flex > .dropDownMenu > div > *:nth-of-type(odd){
     background-color: $accent;
 }
 
 
-.navControls-inline > .dropDownMenu > div:first-of-type{
+.navControls-flex > .dropDownMenu > div:first-of-type{
     position: absolute;
     background-color: inherit;
 }

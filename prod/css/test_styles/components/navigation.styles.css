@@ -116,7 +116,7 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 * Uses.
 */
 /*
-* Min & Max Screen Size.
+* Screen Sizes
 */
 /*
 * Theme Colours.
@@ -129,9 +129,6 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 */
 /*
 * Margin & Padding.
-*/
-/*
-* Text And Fonts
 */
 /*
 * Font and Line Heights.
@@ -156,10 +153,16 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 * Bind The Variables To The :root pseudo-element.
 */
 :root {
+  /*
+  * Screen Sizes
+  */
   --screenWidthMin: 240px;
   --screenWidthMax: 3840px;
   --screenHeightMin: 320px;
   --screenHeightMax: 2160px;
+  /*
+  * Theme Colours.
+  */
   --danger: red;
   --success: lime;
   --white: #f6f6f6;
@@ -169,10 +172,57 @@ StageHands | _FontFaceData.mixin.scss | Mixin
   --accent: #494949;
   --bodyTextColour: black;
   --headerTextColour: black;
+  --neutralTextColour: black;
+  --displayTextColour: black;
+  --activeTextColour: white;
+  /*
+  * Borders
+  */
+  --border-colour: #494949;
+  --border-rounded: 10px;
+  --border-thickness:3px;
+  --border: 3px solid #494949;
+  --border-grooved: 3px grooved #494949;
+  /*
+  * Box Shadow
+  */
+  --boxShadow-right: 0px;
+  --boxShadow-bottom: 0px;
+  --boxShadow-radius: 20px;
+  --boxShadow-blur: -10px;
+  --boxShadow-colour: black;
+  --boxShadow: 0px 0px 20px -10px black;
+  /*
+  * Margin & Padding.
+  */
+  --padding: 0.5rem;
+  --padding-large: 1rem;
+  --padding-xLarge: 1.5rem;
+  --padding-small: 0.25rem;
+  --margin: 0.5rem;
+  --margin-large: 1rem;
+  --margin-xLarge: 1.5rem;
+  --margin-small: 0.25rem;
+  /*
+  * Font and Line Heights.
+  */
+  --bodyTextHeight: 1rem;
+  --bodyTextLine: 1.2rem;
+  --headerTextHeight: 2rem;
+  --headerTextLine: 2.6rem;
+  --neutralTextHeight: 1.4rem;
+  --neutralTextLine: 1.6rem;
   --headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
   --bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
   --neutralFontFamily: Inconsolata, "Sans Serif";
   --displayFontFamily: Sansita_Swashed;
 }
 
-/*# sourceMappingURL=g_variables.css.map */
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _example.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+.example > nav {
+  background-color: #8f8f8f;
+}
+
+/*# sourceMappingURL=navigation.styles.css.map */

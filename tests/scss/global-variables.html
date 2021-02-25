@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>StageHands</title><!--Fonts--><!--Styles--><link rel="stylesheet" href="/prod/css/stagehands.css" type="text/css"/><!--Scripts--></head><body><header role="banner"><nav role="navigation"> <h1>StageHands</h1><div class="navControls-flex"><a href="/">Home</a><a href="/general-info.html">General Information</a><a href="/readme.html">The README</a><div class="dropDownMenu"><button>SCSS</button><div class="dropDownBreak"><div class="dropDownMenu"><button>Root Elements</button><div class="dropDownBreak"><a href="/scss/styles/root-elements.html">HTML</a><a href="/scss/styles/root-elements.html">Body</a></div></div><div class="dropDownMenu"><button>Content Sectioning</button><div class="dropDownBreak"><a href="/scss/styles/content_sectioning/addresses.html">Addresses</a><a href="/scss/styles/content_sectioning/articles.html">Articles</a><a href="/scss/styles/content_sectioning/asides.html">Aside</a><a href="/scss/styles/content_sectioning/footers.html">Footer</a><a href="/scss/styles/content_sectioning/headers.html">Header</a><a href="/scss/styles/content_sectioning/headings.html">Headings</a><a href="/scss/styles/content_sectioning/hgroups.html">HGroups</a><a href="/scss/styles/content_sectioning/main.html">Main</a><a href="/scss/styles/content_sectioning/navigation.html">Navigation</a><a href="/scss/styles/content_sectioning/sections.html">Sections</a></div></div><div class="dropDownMenu"><button>Text Content</button><div class="dropDownBreak"><a href="#">Paragraphs</a></div></div><div class="dropDownMenu"><button>Inline Text</button><div class="dropDownBreak"><a href="#">Anchors</a></div></div><a href="/scss/global-variables.html">Global Variables</a><a href="/scss/functions.html">Functions</a><a href="/scss/data-formatting.html">Data Formatting</a><a href="/scss/template-strings.html">Template Strings</a></div></div><div class="dropDownMenu"><button>Components</button><div class="dropDownBreak"><a href="/scss/components/navigation.html">Navigation</a></div></div><div class="dropDownMenu"><button>TEST MAIN</button><div class="dropDownBreak"><div class="dropDownMenu"><button>TEST 1</button><div class="dropDownBreak"><a href="#">TEST 1_1</a><a href="#">TEST 1_2</a><div class="dropDownMenu"><button>TEST 1_3_</button><div class="dropDownBreak"><a href="#">TEST 1_3_1</a><a href="#">TEST 1_3_2</a><a href="#">TEST 1_3_3</a></div></div></div></div><a href="#">TEST 2</a></div></div></div></nav></header><main role="main"><section> <h1>Global Variables </h1><p>These are variables that can be accessed by any stylesheet and are used on every page.</p></section><section><h2>Screen Sizes.</h2><p>StageHands will set a global minimum and maximum values for the screens height and width, these values are called; </p><pre><code>$screenWidthMin: 240px !default;
+$screenWidthMax: 3840px !default;
+$screenHeightMin: 320px !default;
+$screenHeightMax: 2160px !default;</code></pre><p>They will restrict the minium and maximum sizes of the browser window.</p></section><section><h2>Colour Theming.</h2><p>Currently StageHands Supports TriColour-Theming(Three Colours), plus green(success), red(danger), a _not so white_ white, and black. The three main theme colours are;</p><pre><code>$primary: rgba(92,92,92,1) !default;
+$secondary: rgba(143,143,143,1) !default;
+$accent: rgba(73,73,73,1) !default;
+$activeTextColour: rgba(255,255,255,1) !default;</code></pre><p>These colours are gray-scale on purpose, though boring, this is to encourage the creation of a custom colour theme.</p></section><section> <h2>Borders </h2><pre> <code>$border-colour: $accent !default;
+$border-rounded: 10px !default;
+$border-thickness: 3px !default;
+
+$border: $border-thickness solid $border-colour !default;
+$border-grooved: $border-thickness grooved $border-colour !default;</code></pre></section><section><h2>Box Shadows </h2><pre> <code>$boxShadow-right: 0px !default;
+$boxShadow-bottom: 0px !default;
+$boxShadow-radius: 20px !default;
+$boxShadow-blur: -($boxShadow-radius / 2) !default;
+$boxShadow-colour: rgba(0,0,0,1) !default;
+$boxShadow: $boxShadow-right $boxShadow-bottom $boxShadow-radius $boxShadow-blur $boxShadow-colour !default;</code></pre></section><section> <h2>Margin &amp; Padding.</h2><pre> <code>$padding: 0.5rem !default;
+$padding-large: ($padding * 2) !default;
+$padding-xLarge: ($padding * 3) !default;
+$padding-small: ($padding / 2) !default;
+
+$margin: 0.5rem !default;
+$margin-large: ($margin * 2) !default;
+$margin-xLarge: ($margin * 3) !default;
+$margin-small: ($margin / 2) !default;</code></pre></section><section> <h2>Font and Line Heights.</h2><pre> <code>$bodyTextHeight: 1rem;
+$bodyTextLine: 1.2rem;
+$headerTextHeight: 2rem;
+$headerTextLine: 2.6rem;
+$neutralTextHeight: 1.4rem;
+$neutralTextLine: 1.6rem;</code></pre></section><section><h2>Font Families</h2><p>StageHands breaks fonts into four different categories;</p><ul> <li>Header-Fonts : Uses a Script/Serif typeface,</li><li>Body-Fonts : Uses a Sans Serif typeface,</li><li>Neutral-Fonts : Uses a Sans Serif typeface,</li><li>Display-Fonts : Uses a Script typeface.</li></ul><pre><code>// Header And Title Fonts
+$headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+
+// Body Text Fonts(TODO).
+$bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+
+// Neutral Text Fonts(TODO).
+$neutralFontFamily: Inconsolata, "Sans Serif";
+
+// Display Font Text.
+$displayFontFamily: Sansita_Swashed;</code></pre><p>StageHands is also preparing to support *Variable Fonts*. This option is enabled by the ```$variableFonts``` global variable. Though this feature isn't fully supported/tested.</p></section><section><h2>Overriding Variables</h2><p>You may override any global variable by using its name and providing a new value</p><p>Example;</p><pre> <code>//customStyles.scss
+
+//Importing StageHands.
+@use "StageHands";
+
+$screenWidthMin: 480px; // Override for customStyles.scss.</code></pre></section></main><footer><p>StageHands</p></footer></body></html>

@@ -1,0 +1,18 @@
+ extends ../__layout<section><h1>Mixins</h1><p>StageHands provides a variety of <em>SCSS</em> mixins to help make development easier.</p></section><section><h2>FontFaceData</h2><p>This mixin returns the following <em>@font-face data</em>.</p><p>This mixin requires the following  parameters:</p><ul><li> <code>$fontName[string]</code>: The name of the font to be used. This will be placed in the *font-name* attribute of the *@font-face* property.</li><li> <code>$fontList[map|list]</code>: A list/map of the fonts that are included with the project.(Currently must be formatted properly or will not work, see *[Font Data](#font-data)*)</li></ul><p>This mixin also takes the following optional parameters;</p><ul><li><code>$isVariable[bool]</code> : If set to true the and the font supports variable font, the variable version of the font will be used.</li></ul><p>Example;</p><pre><code>// customStyles.scss.
+
+//Import
+@import "mixins" as ModuleName; //Import The Mixins Library.
+
+// Declared Font Face
+@font-face{
+  @include ModuleName.FontFaceData($fontName:MY_FONT_NAME,$fontList:MAP/LIST_OF_FONTS,$isVariable:false)
+}</code></pre><pre> <code>/* customStyles.css */
+
+/* Declared Font Face */
+@font-face{
+  font-family:MY_FONT_NAME;
+  src: 
+    url("URL_TO_MY_FONT_1") format("MY_FONT_1_FORMAT"),
+    url("URL_TO_MY_FONT_2") format("MY_FONT_2_FORMAT"),
+    ...;
+}</code></pre></section>

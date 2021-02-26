@@ -471,9 +471,10 @@ nav button:focus, nav a {
   padding: 0;
   padding: 0.5rem;
   display: block;
-  width: max-content;
+  width: auto;
   text-align: center;
   cursor: pointer;
+  text-align: center;
 }
 
 nav button:hover, nav a:hover {
@@ -494,10 +495,6 @@ a:visited {
 
 a:hover {
   text-decoration: underline;
-}
-
-nav a {
-  display: block;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -909,9 +906,10 @@ nav button:focus {
   padding: 0;
   padding: 0.5rem;
   display: block;
-  width: max-content;
+  width: auto;
   text-align: center;
   cursor: pointer;
+  text-align: center;
 }
 
 nav a:hover, nav button:hover {
@@ -927,6 +925,7 @@ nav button:focus {
   border: none;
   font-family: Inconsolata, "Sans Serif";
   outline: none;
+  width: 100%;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*

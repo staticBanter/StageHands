@@ -9,9 +9,10 @@ StageHands | _nav.placeholders.scss | Placeholder
     padding: 0;
     padding: 0.5rem;
     display: block;
-    width: max-content;
+    width: auto;
     text-align: center;
     cursor: pointer;
+    text-align: center;
 }
 
 %nav-control:hover{

@@ -204,3 +204,5 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
     - Cleaned up the readme removed a lot of unneeded documentation and moved them to their own files.
   - Created new documentation files
   - Updated documentation files.
+- Fixed
+  - Nav controls text not filling their entire container.

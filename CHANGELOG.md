@@ -12,8 +12,10 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
   - [February-5-2021(v:0.3.0-Development)](#february-5-2021v030-development)
   - [February-14-2021(v:0.4.0-Development)](#february-14-2021v040-development)
   - [February-21-2021(v:0.5.0-Development)](#february-21-2021v050-development)
-  - [February-22-2021(v:0.5.0-Development)](#february-22-2021v050-development)
-  - [February-25-2021(v:0.5.0-Development)](#february-25-2021v050-development)
+  - [February-22-2021(v:0.5.1-Development)](#february-22-2021v051-development)
+  - [February-25-2021(v:0.5.2-Development)](#february-25-2021v052-development)
+- [March-2021](#march-2021)
+  - [March-2-2021(v:1.0.0-Development)](#march-2-2021v100-development)
   
 # January-2021
 
@@ -188,21 +190,138 @@ This file outlines changes made to [StageHands](https://github.com/staticBanter/
   - Imported all components.
 - CSS was updated from SCSS compiled output.
 
-## February-22-2021(v:0.5.0-Development)
+## February-22-2021(v:0.5.1-Development)
 - Components
   - Modified;
     - Changed the name of navControls-inline to navControls-flex, to be more accurate to what the style is actually doing.
 - Cleaned up some code.
 
-## February-25-2021(v:0.5.0-Development)
-- Directory structure
+## February-25-2021(v:0.5.2-Development)
+- Directory structure;
   - Renamed the two main directories of the project
     - Renamed 'dist' to 'src', the name distribution did not make sense anymore since it contains pre-compiled source code, not distributable production code.
     - Renamed 'src' to 'prod', the name source was inaccurate as the directory contained production ready code.
-- Documentation
-  - README;
+- Documentation;
+  - README:
     - Cleaned up the readme removed a lot of unneeded documentation and moved them to their own files.
   - Created new documentation files
   - Updated documentation files.
-- Fixed
+- Fixed;
   - Nav controls text not filling their entire container.
+
+# March-2021
+
+## March-2-2021(v:1.0.0-Development)
+- Updated Bundling Method: This version contains a major change to how the package handles bundling files. Previously this package used the older *@import* SCSS syntax for bundling files through out the package, this causes repeated code and increased package size. So we have now updated to the proper *@use* and *@forward* syntax that SCSS recommends. 
+  - ALL SCSS files have been updated to this format.
+- Global Variables;
+  - Added:
+    - hoverTextColour
+    - visitedTextColour
+    - linkedTextColour
+    - displayTextHeight
+    - displayTextLine
+    - headerFontFamily-bold
+    - bodyFontFamily-bold
+    - bodyFontFamily-italic
+    - neutralFontFamily-bold
+    - displayFontFamily-bold
+  - Removed;
+    - bodyTextColour
+    - headerTextColour
+    - displayTextColour
+- Data;
+  - Removed:
+    - _stringReplace-errors.map.scss.
+- Mixins;
+  - FontFaceData:
+    - Removed parameter *isVariable* replaced with *fontGroup*
+    - Added parameter *fontGroup* a string that will define what group the font belongs to, defaults to "static".
+    - Add parameter *fontType* a string that will define what type the font is, defaults to regular.
+    - Modified how the mixin returns data. Now returns a single src, format pair per font-name.
+- Functions;
+  - TestFunction:
+    - Function can now only test other functions that are accessable to the *stagehands/src/scss/functions/_index.scss* file.
+  - TestFunction was removed from the functions index file.
+- Placeholders;
+  - Added:
+    - list-section
+    - list-section-nested
+  - Modified:
+    - nav-control;
+      - updated color
+      - updated font-size
+      - added line-height
+      - added text-decoration
+    - nav-control:hover;
+      - updated color
+- Styles;
+  - Address:
+    - Added color.
+    - Added line-height
+    - Added font-size
+  - Article:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Footer:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Header:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Headings:
+    - Added line-height
+    - Added font-size 
+  - Main:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Nav:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Button:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Textarea:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Body:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Anchor:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size 
+    - Removed text-decoration on visited links
+    - Added color to visited links
+    - Added color to hover links
+    - Added color to active links
+  - Created the following new SCSS style files:
+    - blockquote
+    - description-definition
+    - description-term
+    - figcaption
+    - list-item
+    - ordered-list
+    - paragraph
+    - unordered-list
+- Change-Log
+  - Fixed versioning issue with prior update.
+- Readme
+  - Fixed date issue for when readme was last updated.(no that does not count as an update.)

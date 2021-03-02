@@ -1,0 +1,13 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _list-sections.placeholder.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../g_variables.scss" as globals;
+
+%list-section{
+    margin:globals.$margin;
+    padding:globals.$padding;
+}
+
+
+%list-section-nested{margin: globals.$margin auto;}

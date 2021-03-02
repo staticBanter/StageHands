@@ -22,15 +22,16 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 /// @requires {function} CreateLogMessage <./dist/scss/functions/_CreateLogMessage.func.scss>
 /// @requires {function} CheckVariableConstraints <./dist/scss/functions/_CheckVariableConstraints.func.scss>
 /// @param {string} $fontName - Name that the font will use for font-family.
-/// @param {boolean} $isVariable [false] - Set true if the font is variable supported.
 /// @param {list|map} $fontList - A list or map of the font.
+/// @param {string} $fontGroup [static] - The group the font belongs to.(variable/static)
+/// @param {string} $fontType [regular] - Set true if the font is variable supported.
 /// @example TODO: INCLUDE EXAMPLE OF FONT LIST/MAP
 /// @throws - TODO: INSERT ERROR CODES.
 /// @returns - @font-face data.
-@mixin FontFaceData($fontName,$fontList,$isVariable:false,$debug:null){
+@mixin FontFaceData($fontName,$fontList,$fontGroup:"static",$fontType:"regular",$debug:null){
 
     @if($debug){
-        @debug("~StageHands:FontFaceDataMixin~ was called with the following, fontName:",$fontName,"fontList:",$fontList,"isVariable:",$isVariable);
+        @debug("~StageHands:FontFaceDataMixin~ was called with the following, fontName:",$fontName,"fontList:",$fontList,"fontGroup:",$fontGroup);
     }
 
     // If the font name does not meet constraints,
@@ -47,11 +48,12 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 
     // If the is variable flag does not meet constraints,
     // throw error.
-    @if not StageHands_F.CheckVariableConstraints($check:$isVariable,$againstType:bool){
-        @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("isVariable","FontFaceData-Mixin"),null)));
+    @if not StageHands_F.CheckVariableConstraints($check:$fontGroup,$againstType:string,$min:1){
+        @error(StageHands_F.CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$errorMap,$messageOps:(("fontGroup","FontFaceData-Mixin"),null)));
     }
 
-    $srcList:null;
+    $srcList: ();
+
 
     // If the font list is a list,
     // use foreach methods to get fonts;
@@ -60,59 +62,35 @@ StageHands | _FontFaceData.mixin.scss | Mixin
     // I really don't like how this looks -.-
     @if meta.type-of($fontList) == "list"{
 
-        @each $fontNames, $fontTypes in $fontList{
+        $currentGroup:null;
+        @each $fName, $valueGroup in $fontList{
+            @if($fName == $fontName){
+                $currentGroup:$valueGroup;
+            }
+        }
+        @if not $currentGroup{@error("We lost the current group...");}
 
-            @if($fontNames == $fontName){
-                @if($isVariable){
+        $values:null;
+        @each $groupName, $groups in $currentGroup{
+            @if($groupName == $fontGroup){$values:$groups;}
+        }
+        @if not $values{@error("We lost our values...");}
 
-                    @each $fontType, $urlList in $fontTypes{
-                        @if($fontType == "static"){
-                            @each $name, $urlGroup in $urlList{
-                                $fontUrl: list.nth($urlGroup,1);
-                                $fontFormat: list.nth($urlGroup,2);
-                                $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
-                            }
-                        }
-                    }
+        @each $valueName, $urlGroup in $values{
 
-                }@else{
-
-                    @each $fontType, $urlList in $fontTypes{
-                        @if($fontType == "static"){
-                            @each $name, $urlGroup in $urlList{
-                                $fontUrl: list.nth($urlGroup,1);
-                                $fontFormat: list.nth($urlGroup,2);
-                                $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
-                            }
-                        }
-                    } 
-
-                }
+            @if($valueName == $fontType){
+                $srcList:list.append($srcList,(url(list.nth($urlGroup,1)) format(list.nth($urlGroup,2))));
             }
 
         }
 
     }@else{
 
-        
-        $m_fontLists:map.get($fontList,$fontName);
-        $urlList:null;
-        
-        @if($isVariable){
-            $urlList:map.get($m_fontLists,"variable");
-        }@else{
-            $urlList:map.get($m_fontLists,"static"); 
-        }
-        // If url list is still null
-        @if not $urlList{
-            @error("~FontFaceData-Mixin~ The Font List did not contain either a static or a variable url list");
-        }
-
-        @each $type, $fontGroup in $urlList{
-            $fontUrl: url(list.nth($fontGroup,1));
-            $fontFormat: format(list.nth($fontGroup,2));
-            $srcList:list.append($srcList,($fontUrl $fontFormat),"comma");
-        }
+        // $font: map.get($fontList,$fontName);
+        // $fontGroup: map.get($font,"static");
+        // $fontUrl: map.get($fontGroup,"regular");
+        $fontValues: map.get($fontList,$fontName,$fontGroup,$fontType);
+        $srcList:list.append($srcList,(url(list.nth($fontValues,1)) format(list.nth($fontValues,2))));
 
     }
 
@@ -122,7 +100,7 @@ StageHands | _FontFaceData.mixin.scss | Mixin
     
 
     // The font name.
-    font-family: $fontName;
+    font-family: $fontName+"-"+$fontType;
     // The Font Source
     src:$srcList;
 

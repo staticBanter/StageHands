@@ -1,8 +1,6 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/functions
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@import 
-"CheckVarConstraints.func",
-"CreateLogMessage.func", 
-"StringReplace.func", 
-"TestFunction.func";
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/ 
+@forward "CheckVarConstraints.func";
+@forward "CreateLogMessage.func";
+@forward "StringReplace.func";

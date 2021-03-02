@@ -10,38 +10,21 @@ StageHands | _TestFunction.func.scss | Function
 // @use "sass:selector";
 // @use "sass:string";
 @use "../data" as StageHands_D;
+@use "./index" as StageHands_F;
 
-/// TestFunction - This function is used to test if a function is still return a correct value. 
-/// @author Jordan Vezina(staticBanter)
-/// 
-/// @access public
-/// @group functions.helper
-/// @since 0.3.0-Development
-/// @param {string} $function - The name of the function to test.
-/// @param {mix} $expectedValue - The expected value the function should return.
-/// @param {bool} $passable [true] - A flag to set if the function should pass the test. If false then the function should fail the test.
-/// @param {list} $functionOptions - A list of arguments that should be passed to the function. The arguments MUST be passed in the proper
-/// order that the testing function requires them.
-/// @example
-/// @throws
-/// @return
+
 @function CallFunctionCheckValue($function,$expectedValue,$passable:true,$functionOptions){
 
 
     // If the function variable does not meet constraints,
     // throw error.
-    @if not CheckVariableConstraints($check:$function,$againstType:string,$min:1){
-        @error(CreateLogMessage($code:("IvA","IvT"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("function","TestFunction","string",meta.type-of($function)),null)));
+    @if not StageHands_F.CheckVariableConstraints($check:$function,$againstType:string,$min:1){
+        @error(StageHands_F.CreateLogMessage($code:("IvA","IvT"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("function","TestFunction","string",meta.type-of($function)),null)));
     }
-
-    // If the function does not exist,
-    // throw error
-    @if not meta.function-exists($function){
-        @error(CreateLogMessage($code:"MF",$messageList:StageHands_D.$testFunction_Errors_Map,$messageOps:(("#{$function}"),null)));
-    }
+    
 
     // The return value of the tested function.
-    $functionValue: meta.call(meta.get-function($function),$functionOptions...);
+    $functionValue: meta.call(meta.get-function($name:$function,$module:StageHands_F),$functionOptions...);
 
     // If the function is supposed to pass,
     // and the expected value is equal to the functions returned value,
@@ -66,6 +49,22 @@ StageHands | _TestFunction.func.scss | Function
 
 }
 
+/// TestFunction - This function is used to test if a function is still return a correct value. 
+/// Note the functions must be accessible to the stagehands/src/scss/functions/_index.scss module space,
+/// or the TestFunction will not be able to locate the function to test.
+/// @author Jordan Vezina(staticBanter)
+/// 
+/// @access public
+/// @group functions.helper
+/// @since 0.3.0-Development
+/// @param {string} $function - The name of the function to test.
+/// @param {mix} $expectedValue - The expected value the function should return.
+/// @param {bool} $passable [true] - A flag to set if the function should pass the test. If false then the function should fail the test.
+/// @param {list} $functionOptions - A list of arguments that should be passed to the function. The arguments MUST be passed in the proper
+/// order that the testing function requires them.
+/// @example
+/// @throws
+/// @return
 @function TestFunction($functionName,$testCases){
 
 

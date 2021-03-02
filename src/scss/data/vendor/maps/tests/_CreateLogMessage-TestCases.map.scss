@@ -1,47 +1,48 @@
-$functionName:"CreateLogMessage";
+@use "../errors/index" as functionErrors;
+
 $createLogMessagesTestCases_Map:(
-    "Test #{$functionName}() Mono-Code Valid Expect Pass":(
+    "Test CreateLogMessage() Mono-Code Valid Expect Pass":(
         "functionOptions":(
             "TEST_S",
-            $testErrors_Map,
+            functionErrors.$testErrors_Map,
         ),
         "expectedValue":"This is a mono non template string message",
     ),
-    "Test #{$functionName}() Mono-Code Invalid Expect Fail":(
+    "Test CreateLogMessage() Mono-Code Invalid Expect Fail":(
         "functionOptions":(
             "NA",
-            $testErrors_Map,
+            functionErrors.$testErrors_Map,
         ),
         "expectedValue":"This is an error code that has a single message",
         "noPass":true
     ),
-    "Test #{$functionName}() Duo-Code Valid Expect Pass":(
+    "Test CreateLogMessage() Duo-Code Valid Expect Pass":(
         "functionOptions":(
             ("TEST_D","A"),
-            $testErrors_Map,
+            functionErrors.$testErrors_Map,
         ),
         "expectedValue":"This is a nested non template string message; A",
     ),
-    "Test #{$functionName}() Duo-Code Invalid Expect Pass":(
+    "Test CreateLogMessage() Duo-Code Invalid Expect Pass":(
         "functionOptions":(
             ("NA","NA"),
-            $testErrors_Map,
+            functionErrors.$testErrors_Map,
         ),
         "expectedValue":"This is a nested message. A",
         "noPass":true
     ),
-    "Test #{$functionName}() Duo-Code Valid With Template String Expect Pass":(
+    "Test CreateLogMessage() Duo-Code Valid With Template String Expect Pass":(
         "functionOptions":(
             ("RMA","S"),
-            $general_Errors_Map,
+            functionErrors.$general_Errors_Map,
             (("TESTING"),null)
         ),
         "expectedValue":"Function TESTING requires more arguments passed.",
     ),
-    "Test #{$functionName}() Duo-Code Valid With Template String Mismatch Expect Fail":(
+    "Test CreateLogMessage() Duo-Code Valid With Template String Mismatch Expect Fail":(
         "functionOptions":(
             ("RMA","S"),
-            $general_Errors_Map,
+            functionErrors.$general_Errors_Map,
             (("TESTING"),null)
         ),
         "expectedValue":"Function FAIL requires more arguments passed.",

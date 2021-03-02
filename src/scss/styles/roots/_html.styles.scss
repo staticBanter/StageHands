@@ -2,10 +2,12 @@
 StageHands | _html.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
+@use "../../g_variables.scss" as globals;
+
 html{
-    min-width: $screenWidthMin;
-    max-width: $screenWidthMax;
-    min-height: $screenHeightMin;
-    max-height: $screenHeightMax;
+    min-width: globals.$screenWidthMin;
+    max-width: globals.$screenWidthMax;
+    min-height: globals.$screenHeightMin;
+    max-height: globals.$screenHeightMax;
     height: 100%;
 }

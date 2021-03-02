@@ -1,8 +1,10 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _example.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../../g_variables.scss" as SGV;
+
+
+@use "../../g_variables.scss" as globals;
 
 .example > nav{
-    background-color: SGV.$secondary;
+    background-color: globals.$secondary;
 }

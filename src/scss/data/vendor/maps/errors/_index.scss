@@ -1,6 +1,6 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@import "general-errors.map",
-"test-errors.map",
-"functions";
+@forward "general-errors.map";
+@forward "test-errors.map";
+@forward "functions";

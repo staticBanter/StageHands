@@ -1,5 +1,4 @@
-/*! | StageHands : v0.5.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
-
+/*! | StageHands : v1.0.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -7,21 +6,21 @@
 /*
 * Import Normalize-CSS
 */
-@import "normalize/normalize.css";
+@forward "normalize/normalize.css";
 
 /*
 * Global Variables
 */
-@import "g_variables.scss";
+@forward "g_variables.scss";
 
 
 /*
 * Element Styles.
 */
-@import "styles";
+@forward "styles";
 
 
 /*
 * Components
 */
-@import "components";
+@forward "components";

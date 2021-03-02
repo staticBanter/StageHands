@@ -7,6 +7,8 @@ StageHands | _StringReplace.func.scss | Function
 @use"sass:map";
 @use"sass:string";
 @use "../data" as StageHands_D;
+@use "./CheckVarConstraints.func" as StageHands_CVC;
+
 
 //TODO - INSERT ERROR CODES.
 /// StringReplace - Replaces a single character or word in a sentence. 
@@ -54,6 +56,7 @@ StageHands | _StringReplace.func.scss | Function
 ///     returns: The quick fox jumps overt the sleeping dog again.
 /// @throws
 /// @return {string} - A new string with the tokens replaced
+/// "The argument(s) for parameter ~ of function StringReplace, did not meet variable constraints."
 @function StringReplace($string,$token,$replacement,$appendage:null,$debug:null){
 
     // @debug("REPLACEMENT",$replacement,"APPENDAGE",$appendage);
@@ -65,22 +68,22 @@ StageHands | _StringReplace.func.scss | Function
 
     // If the $string does not meet constraints;
     // throw error.
-    @if not CheckVariableConstraints($check:$string,$againstType:string,$min:1){
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("string","StringReplace"),null)));
+    @if not StageHands_CVC.CheckVariableConstraints($check:$string,$againstType:string,$min:1){
+        @error("The argument(s) for parameter string of function StringReplace, did not meet variable constraints.");
     }
 
     // If the $token does not meet constraints.
     // throw error.
-    @if not CheckVariableConstraints($check:$token,$againstType:string,$min:1){
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("token","StringReplace"),null)));
+    @if not StageHands_CVC.CheckVariableConstraints($check:$token,$againstType:string,$min:1){
+        @error("The argument(s) for parameter token of function StringReplace, did not meet variable constraints.");
     }
 
     // If Appendage was set
     @if($appendage){
         // If appendage does not meet constraints,
         // throw error.
-        @if not CheckVariableConstraints($check:$appendage,$againstType:string,$min:1){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("appendage","StringReplace"),null)));
+        @if not StageHands_CVC.CheckVariableConstraints($check:$appendage,$againstType:string,$min:1){
+            @error("The argument(s) for parameter appendage of function StringReplace, did not meet variable constraints.");
         }
     }
 
@@ -92,8 +95,8 @@ StageHands | _StringReplace.func.scss | Function
 
         // If the $replacement does not meet constraints.
         // throw error.
-        @if not CheckVariableConstraints($check:$replacement,$againstType:string,$min:1){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
+        @if not StageHands_CVC.CheckVariableConstraints($check:$replacement,$againstType:string,$min:1){
+            @error("The argument(s) for parameter replacement of function StringReplace, did not meet variable constraints.");
             // @error("~E:SR~ Var replacement did not meet constraints");
         }
 
@@ -101,14 +104,14 @@ StageHands | _StringReplace.func.scss | Function
 
         // If the $replacement does not meet constraints.
         // throw error.
-        @if not CheckVariableConstraints($check:$replacement,$againstType:list,$min:1){
-            @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
+        @if not StageHands_CVC.CheckVariableConstraints($check:$replacement,$againstType:list,$min:1){
+            @error("The argument(s) for parameter replacement of function StringReplace, did not meet variable constraints.");
             // @error("~E:SR-2~ Var replacement did not meet constraints");
         }
 
     }@else{
 
-        @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("replacement","StringReplace"),null)));
+        @error("The argument(s) for parameter replacement of function StringReplace, did not meet variable constraints.");
         // @error("~E:SR~ Var replacement was not a valid type did not meet constraints");
 
     }
@@ -116,7 +119,7 @@ StageHands | _StringReplace.func.scss | Function
     // If the original string does not contain the token,
     // throw error.
     @if not string.index($string,$token){
-        @return(CreateLogMessage($code:("SR","MT"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:null));
+        @return("The template string was missing the token");
         // @error("~E:SR_MT~ the token was not in the string");
     }
 
@@ -157,7 +160,7 @@ StageHands | _StringReplace.func.scss | Function
             // If the current index is <= 0,
             // throw error.
             @if($currentIndex <= 0){
-                @error(CreateLogMessage($code:("SR","IOB"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
+                @error("The string index was less then or equal to zero?(This shouldn't happen)");
             }
 
             // This might happen though...
@@ -237,7 +240,7 @@ StageHands | _StringReplace.func.scss | Function
         // maybe at some point we could allow a single appendage of the
         // replacement to the end of string at this point.
         @if($appendage){
-            @error(CreateLogMessage($code:("SR","RSAT"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
+            @error("The replacement value was a string, and appendages was set to true. This is currently not allowed.");
         }
 
         // While the string contains the token character.
@@ -264,7 +267,7 @@ StageHands | _StringReplace.func.scss | Function
             // If the current index is <= 0,
             // throw error.
             @if($currentIndex <= 0){
-                @error(CreateLogMessage($code:("SR","IOB"),$messageList:StageHands_D.$stringReplace_Errors_Map,$messageOps:(null,null)));
+                @error("The string index was less then or equal to zero?(This shouldn't happen)");
             }
 
             // This might happen though...

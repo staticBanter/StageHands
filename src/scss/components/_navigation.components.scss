@@ -2,6 +2,8 @@
 StageHands | _nav.components.scss | Component
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
+@use "../g_variables.scss" as globals;
+
 // Navigation Controls Inline
 .navControls-flex{
     width: 100%;
@@ -9,7 +11,7 @@ StageHands | _nav.components.scss | Component
     align-items: center;
     background-color: inherit;
     list-style-type: none;
-    padding-left: $padding;
+    padding-left: globals.$padding;
 }
 
 
@@ -25,7 +27,7 @@ StageHands | _nav.components.scss | Component
     }
 
     > .dropDownMenu > .dropDownBreak > *:nth-of-type(odd){
-        background-color: $accent;
+        background-color: globals.$accent;
     }
 
 
@@ -53,5 +55,5 @@ StageHands | _nav.components.scss | Component
 .dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover > .dropDownBreak{
     position: absolute;
     left: 100%;
-    background-color: $accent;
+    background-color: globals.$accent;
 }

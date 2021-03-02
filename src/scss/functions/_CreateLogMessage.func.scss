@@ -7,6 +7,8 @@ StageHands | _CreateLogMessage.func.scss | Function
 @use "sass:map";
 @use "sass:string";
 @use "../data" as StageHands_D;
+@use "./CheckVarConstraints.func" as StageHands_CVC;
+@use "./StringReplace.func" as StageHands_SR;
 
 /// CreateLogMessage - Creates warning and error log messages for functions.
 /// @author Jordan Vezina(staticBanter)
@@ -31,7 +33,7 @@ StageHands | _CreateLogMessage.func.scss | Function
 
     // If code does not pass any constraint;
     // throw error.
-    @if not CheckVariableConstraints($check:$code,$againstType:string,$min:1) and not CheckVariableConstraints($check:$code,$againstType:list,$min:2) {
+    @if not StageHands_CVC.CheckVariableConstraints($check:$code,$againstType:string,$min:1) and not StageHands_CVC.CheckVariableConstraints($check:$code,$againstType:list,$min:2) {
         @error("The argument(s) for parameter code of function CreateLogMessage did not meet constraints for that parameter.");
         // @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("code","CreateLogMessage"),null)));
     }
@@ -39,7 +41,7 @@ StageHands | _CreateLogMessage.func.scss | Function
 
     // If message list does not pass any constraint;
     // throw error.
-    @if not CheckVariableConstraints($check:$messageList,$againstType:map,$min:1) and not CheckVariableConstraints($check:$messageList,$againstType:list,$min:1){
+    @if not StageHands_CVC.CheckVariableConstraints($check:$messageList,$againstType:map,$min:1) and not StageHands_CVC.CheckVariableConstraints($check:$messageList,$againstType:list,$min:1){
         @error("The argument(s) for parameter messageList of function CreateLogMessage did not meet constraints for that parameter.");
         // @error(CreateLogMessage($code:("IvA","C"),$messageList:StageHands_D.$general_Errors_Map,$messageOps:(("messageList","CreateLogMessage"),null)));
     }
@@ -69,7 +71,7 @@ StageHands | _CreateLogMessage.func.scss | Function
             @debug($messageOps);
         }
         // Return the message.
-        @return(StringReplace($string:$message,$token:"~",$replacement:list.nth($messageOps,1),$appendage:list.nth($messageOps,2)));
+        @return(StageHands_SR.StringReplace($string:$message,$token:"~",$replacement:list.nth($messageOps,1),$appendage:list.nth($messageOps,2)));
 
     }
 

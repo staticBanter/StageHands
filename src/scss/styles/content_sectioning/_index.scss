@@ -1,12 +1,11 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/styles/content_sectioning
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@import 
-"header.styles",
-"nav.styles",
-"headings.styles",
-"main.styles",
-"aside.styles",
-"address.styles",
-"article.styles",
-"footer.styles";
+@use "header.styles";
+@use "nav.styles";
+@use "headings.styles";
+@use "main.styles";
+@use "aside.styles";
+@use "address.styles";
+@use "article.styles";
+@use "footer.styles";

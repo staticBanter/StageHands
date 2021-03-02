@@ -1,7 +1,6 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@import 
-"CreateLogMessage-TestCases.map",
-"CheckVarConstraints-TestCases.map",
-"StringReplace-TestCases.map";
+@forward "CreateLogMessage-TestCases.map";
+@forward "CheckVarConstraints-TestCases.map";
+@forward "StringReplace-TestCases.map";

@@ -2,15 +2,15 @@
 StageHands | Main Test File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @use "../functions" as StageHands_F;
+@use "../functions/TestFunction.func" as Tester;
 @use "../mixins" as StageHands_M;
 @use "../data" as StageHands_D;
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
 
-
 // Function Tests
 
-// @debug(StageHands_F.TestFunction($functionName:"StringReplace",$testCases:StageHands_D.$stringReplaceTestCases_Map));
-// @debug(StageHands_F.TestFunction($functionName:"CreateLogMessage",$testCases:StageHands_D.$createLogMessagesTestCases_Map));
-//  @debug(StageHands_F.TestFunction($functionName:"CheckVariableConstraints",$testCases:StageHands_D.$checkVarConstraintsTestCases_Map));
+// @debug(Tester.TestFunction($functionName:"StringReplace",$testCases:StageHands_D.$stringReplaceTestCases_Map));
+// @debug(Tester.TestFunction($functionName:"CreateLogMessage",$testCases:StageHands_D.$createLogMessagesTestCases_Map));
+// @debug(Tester.TestFunction($functionName:"CheckVariableConstraints",$testCases:StageHands_D.$checkVarConstraintsTestCases_Map));

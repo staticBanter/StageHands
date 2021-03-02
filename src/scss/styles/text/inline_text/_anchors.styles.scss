@@ -1,23 +1,29 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _anchors.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "sass:color";
 @use "../../../placeholders/nav.placeholders";
+@use "../../../g_variables.scss" as globals;
 
 // Global Anchor Styles
 a{
-    font-family: $neutralFontFamily;
+    font-family: globals.$neutralFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$neutralTextLine;
+    font-size: globals.$neutralTextHeight;
 }
 
-a:link,
 a:visited{
-    text-decoration: none;
+    color: globals.$visitedTextColour
 }
 
 a:hover{
-    text-decoration: underline;
+    color: globals.$hoverTextColour;
 }
 
-a:active{}
+a:active{
+    color: globals.$activeTextColour;
+}
 
 
 

@@ -1,11 +1,12 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _nav.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@import "../g_variables.scss";
+@use  "../g_variables.scss" as globals;
 
 %nav-control{
-    color: $neutralTextColour;
-    font-size: 20px;
+    color: globals.$neutralTextColour;
+    font-size: globals.$neutralTextHeight;
+    line-height: globals.$neutralTextLine;
     padding: 0;
     padding: 0.5rem;
     display: block;
@@ -13,8 +14,9 @@ StageHands | _nav.placeholders.scss | Placeholder
     text-align: center;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
 }
 
 %nav-control:hover{
-    color: $activeTextColour;
+    color: white;
 }

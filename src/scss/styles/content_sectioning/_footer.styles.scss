@@ -1,10 +1,17 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _footer.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
 footer{
     min-height: 10%;
     max-height: max-content;
-    background-color: $secondary;
+    background-color: globals.$secondary;
     clear: both;
-    margin-top: $margin;
+    margin-top: globals.$margin;
+    font-family: globals.$bodyFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
 }

@@ -1,7 +1,15 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _example.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../g_variables.scss" as SGV;
+/*
+* NOTE : Because of how the docs are structured the stagehands library
+* gets loaded before the example styles do, this does resualt in some 
+* over-lap. IDK why it loads the entire globals when we just need some
+* vars but eh.
+*/ 
+
+@use "../g_variables.scss" as globals;
+
 section{
     width: 94%;
     margin: 0 auto;
@@ -9,8 +17,8 @@ section{
 }
 
 section + section {
-    margin-top: SGV.$margin-xLarge;
-    padding: SGV.$padding 0;
+    margin-top: globals.$margin-xLarge;
+    padding: globals.$padding 0;
 }
 
 .subSection > h2{
@@ -25,28 +33,33 @@ section + section {
 
 
 section > .subSection + .subSection{
-    margin-top: SGV.$margin-large;
+    margin-top: globals.$margin-large;
 }
 
 .subSection > div + div{
-    margin-top: SGV.$margin-large;
+    margin-top: globals.$margin-large;
 }
 
 .subSection > div + div > hgroup{
-    margin-top: SGV.$margin;   
+    margin-top: globals.$margin;   
 }
 
 .example{
-    margin-top: SGV.$margin-large;
+    margin-top: globals.$margin-large;
     border-radius: 10px;
-    box-shadow: SGV.$boxShadow;
-    padding: SGV.$padding;
+    box-shadow: globals.$boxShadow;
+    padding: globals.$padding;
 }
 
 code.styleCodeBlock{
-    border-radius: SGV.$border-rounded;
-    padding: SGV.$padding;
+    border-radius: globals.$border-rounded;
+    padding: globals.$padding;
     background-color: rgba(211, 211, 211, 1);
     display: inline-block;
-    margin: 0 SGV.$margin;
+    margin: 0 globals.$margin;
+}
+
+pre + pre {
+    border-top: globals.$border-grooved;
+    padding-top: globals.$padding;
 }

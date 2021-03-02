@@ -1,16 +1,22 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _address.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
 address{
     display: inline-block;
     width: max-content;
-    padding: $padding;
+    padding: globals.$padding;
     box-sizing: border-box;
-    font-family: $bodyFontFamily;
+    font-family: globals.$bodyFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
 }
 
 address + address{
-    margin: auto $margin;
+    margin: auto globals.$margin;
 }
 
 address > *{
@@ -19,7 +25,7 @@ address > *{
 }
 
 address > * + *{
-    margin-top: $margin;
+    margin-top: globals.$margin;
 }
 
 
@@ -34,7 +40,7 @@ address ul:first-of-type,
 address ol:first-of-type{
 
     > li + li{
-        margin-top: $margin;
+        margin-top: globals.$margin;
     }
 
 }

@@ -1,7 +1,14 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
 body{
-    background-color: $white;
+    font-family: globals.$bodyFontFamily;
+    background-color: globals.$white;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
+    color: globals.$neutralTextColour;
     height: 100%;
 }

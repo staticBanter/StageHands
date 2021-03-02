@@ -1,13 +1,20 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _main.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
 body main,
 body *[role=main]:first-of-type{
     overflow: auto;
     min-height: 80%;
     max-height: max-content;
-    padding: $padding;
+    padding: globals.$padding;
     box-sizing: border-box;
+    font-family: globals.$bodyFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
 }
 
 aside ~ main {

@@ -2,14 +2,20 @@
 StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
+@use "../../g_variables.scss" as globals;
+
 // First Header of the Body.
 body header:first-of-type,
 body *[role=banner]:first-of-type{
-    background-color: $primary;
-    color: $white;
+    background-color: globals.$primary;
+    color: globals.$white;
     min-height: 10%;
     height: 10%;
     max-height: max-content;
     overflow: hidden;
-    margin-bottom: $margin;
+    margin-bottom: globals.$margin;
+    font-family: globals.$bodyFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
 }

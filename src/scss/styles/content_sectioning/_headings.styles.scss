@@ -2,9 +2,13 @@
 This file contains the styles for heading elements.
 */
 
+@use "../../g_variables.scss" as globals;
+
 // Global Heading Element Styles.
 h1,h2,h3,h4,h5,h6{
     margin: 0;
-    padding: $padding;
-    font-family: $headerFontFamily;
+    padding: globals.$padding;
+    font-family: globals.$headerFontFamily;
+    line-height: globals.$headerTextLine;
+    font-size: globals.$headerTextHeight;
 }

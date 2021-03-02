@@ -1,14 +1,21 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
 nav{
     width: min-content;
+    font-family: globals.$neutralFontFamily;
+    color: globals.$neutralTextColour;
+    font-size: globals.$neutralTextHeight;
+    line-height: globals.$neutralTextLine;
 }
 
 
 // The first(main) navigation on the page.
 body header:first-of-type nav:first-of-type{
-    background-color: $secondary;
+    background-color: globals.$secondary;
     display: flex;
     width: 100%;
     height: 100%;

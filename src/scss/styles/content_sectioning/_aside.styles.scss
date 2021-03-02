@@ -2,25 +2,35 @@
 StageHands | _aside.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
+@use "../../g_variables.scss" as globals;
+
+
+aside{
+    font-family: globals.$bodyFontFamily;
+    color: globals.$neutralTextColour;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
+}
+
 body aside:first-of-type,
 body *[role=complementary] {
     width: 20%;
     display: inline-block;
-    padding: $padding;
+    padding: globals.$padding;
     box-sizing: border-box;
-    background-color: $secondary;
+    background-color: globals.$secondary;
     border-radius: 0 10px 10px 0;
 }
 
 body aside:first-of-type,
 body *[role=complementary]{
     > * {
-        color: $white;
-        padding: $padding;
+        color: globals.$white;
+        padding: globals.$padding;
     }
 
     > * + *{
-        margin-top: $margin_small;
+        margin-top: globals.$margin_small;
     }
 }
 

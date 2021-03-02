@@ -1,9 +1,0 @@
-$srPreMessage: "StringReplace";
-$stringReplace_Errors_Map:(
-    "SR":
-    (
-        "MT" : "The template string was missing the token",
-        "IOB" : "The string index was less then or equal to zero?(This shouldn't happen)",
-        "RSAT" : "The replacement value was a string, and appendages was set to true. This is currently not allowed."
-    ),
-)

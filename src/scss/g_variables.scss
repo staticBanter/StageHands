@@ -5,6 +5,7 @@
 * Uses.
 */
 @use "sass:string";
+@use "sass:color";
 @use "sass:list";
 @use "sass:meta";
 @use "data" as StageHands_D;
@@ -27,15 +28,15 @@ $success: rgba(0,255,0,1) !default;
 $white: rgba(246,246,246,1) !default;
 $black: rgba(0,0,0,1) !default;
 $primary: rgb(92,92,92,1) !default;
-$secondary: rgb(143,143,143,1) !default;
-$accent: rgb(73,73,73,1) !default;
+$secondary: color.complement($primary) !default;
+$accent: color.invert($secondary) !default;
 
 //Text Colours.
-$bodyTextColour: rgba(0,0,0,1) !default;
-$headerTextColour: rgba(0,0,0,1) !default;
 $neutralTextColour: rgba(0,0,0,1) !default;
-$displayTextColour: rgba(0,0,0,1) !default;
-$activeTextColour: rgba(255,255,255,1) !default;
+$activeTextColour: $accent !default;
+$hoverTextColour: $secondary !default;
+$visitedTextColour: $accent !default;
+$linkedTextColour: $neutralTextColour !default;
 
 
 /*
@@ -46,7 +47,7 @@ $border-rounded: 10px !default;
 $border-thickness: 3px !default;
 
 $border: $border-thickness solid $border-colour !default;
-$border-grooved: $border-thickness grooved $border-colour !default;
+$border-grooved: $border-thickness groove $border-colour !default;
 
 
 /*
@@ -77,33 +78,49 @@ $margin-small: ($margin / 2) !default;
 /*
 * Font and Line Heights.
 */
-$bodyTextHeight: 1rem;
-$bodyTextLine: 1.2rem;
-$headerTextHeight: 2rem;
-$headerTextLine: 2.6rem;
-$neutralTextHeight: 1.4rem;
-$neutralTextLine: 1.6rem;
+$bodyTextHeight: 1rem !default;
+$bodyTextLine: 1.2rem !default;
+$headerTextHeight: 2rem !default;
+$headerTextLine: 2.6rem !default;
+$neutralTextHeight: 1rem !default;
+$neutralTextLine: 1.2rem !default;
+$displayTextHeight: 2rem !default;
+$displayTextLine: 2.6rem !default;
 
 $variableFonts: false; // If true fonts will use variable versions. WARNING! Ensure all fonts are variable supported before enabling this.
 
 @each $fontName, $urlGroup in StageHands_D.$fontMap{
-    // @debug($urlGroup);
-    @font-face{
-        @include StageHands_M.FontFaceData($fontName:$fontName,$fontList:StageHands_D.$fontMap);
+    
+    @each $groupName, $valuesList in $urlGroup{
+        
+        @each $valueName, $valueGroup in $valuesList {
+
+            @font-face{
+                @include StageHands_M.FontFaceData($fontName:$fontName,$fontList:StageHands_D.$fontMap,$fontType:$valueName);
+            }
+
+        }
+
     }
 }
 
 // Header And Title Fonts
-$headerFontFamily: Dancing_Script, "Lucida Handwriting", "Times New Roman", Times;
+$headerFontFamily: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
+$headerFontFamily-bold: "DancingScript-bold";
 
 // Body Text Fonts(TODO).
-$bodyFontFamily: JetBrains_Mono, "Times New Roman", "Times";
+$bodyFontFamily: "JetBrains_Mono-regular", "Times New Roman", "Times";
+$bodyFontFamily-bold: "JetBrains_Mono-bold";
+$bodyFontFamily-italic: "JetBrains_Mono-italic";
+
 
 // Neutral Text Fonts(TODO).
-$neutralFontFamily: Inconsolata, "Sans Serif";
+$neutralFontFamily: "Inconsolata-regular", "Sans Serif";
+$neutralFontFamily-bold: "Inconsolata-bold";
 
 // Display Font Text.
-$displayFontFamily: Sansita_Swashed;
+$displayFontFamily: "Sansita_Swashed-regular";
+$displayFontFamily-bold: "Sansita_Swashed-bold";
 
 
 /*
@@ -132,11 +149,11 @@ $displayFontFamily: Sansita_Swashed;
     --accent: #{$accent};
 
     //Text Colours.
-    --bodyTextColour: #{$bodyTextColour};
-    --headerTextColour: #{$headerTextColour};
     --neutralTextColour: #{$neutralTextColour};
-    --displayTextColour: #{$displayTextColour};
     --activeTextColour: #{$activeTextColour};
+    --hoverTextColour: #{$hoverTextColour};
+    --visitedTextColour: #{$visitedTextColour};
+    --linkedTextColour: #{$linkedTextColour};
 
     /*
     * Borders
@@ -181,9 +198,19 @@ $displayFontFamily: Sansita_Swashed;
     --headerTextLine: #{$headerTextLine};
     --neutralTextHeight: #{$neutralTextHeight};
     --neutralTextLine: #{$neutralTextLine};
+    --displayTextHeight: #{$displayTextHeight};
+    --displayTextLine: #{$displayTextLine};
 
     --headerFontFamily: #{meta.inspect($headerFontFamily)};
+    --headerFontFamily-bold : #{meta.inspect($headerFontFamily-bold)};
+
     --bodyFontFamily: #{meta.inspect($bodyFontFamily)};
+    --bodyFontFamily-bold: #{meta.inspect($bodyFontFamily-bold)};
+    --bodyFontFamily-italic: #{meta.inspect($bodyFontFamily-italic)};
+
     --neutralFontFamily: #{meta.inspect($neutralFontFamily)};
+    --neutralFontFamily-bold: #{meta.inspect($neutralFontFamily-bold)};
+
     --displayFontFamily: #{meta.inspect($displayFontFamily)};
+    --displayFontFamily-bold: #{meta.inspect($displayFontFamily-bold)};
 }

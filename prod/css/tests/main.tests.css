@@ -1,182 +1,41 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/functions
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _CheckVarConstraints.func.scss | Function
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
+StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _CreateLogMessage.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/vendor/maps
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
+StageHands | _index.scss | Indexes: dist/scss/vendor
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+StageHands | _index.scss | Indexes: dist/scss/data
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _StringReplace.func.scss | Function
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _TestFunction.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/mixins
+StageHands | _CreateLogMessage.func.scss | Function
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/functions
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _CheckVarConstraints.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _CreateLogMessage.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _StringReplace.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _TestFunction.func.scss | Function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _FontFaceData.mixin.scss | Mixin
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/data
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/errors/function
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _index.scss | Indexes: dist/scss/vendor/maps/tests
+StageHands | _index.scss | Indexes: dist/scss/mixins
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | Main Test File.

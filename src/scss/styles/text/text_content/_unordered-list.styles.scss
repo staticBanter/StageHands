@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _unordered-list.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/list-sections.placeholder";
+
+ul{
+    @extend %list-section;
+}
+
+li > ul{
+    @extend %list-section-nested;
+}

@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _blockquote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../g_variables.scss" as globals;
+
+
+blockquote,
+blockquote *{
+    font-family: globals.$bodyFontFamily-italic;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
+}

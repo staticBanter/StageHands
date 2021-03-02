@@ -1,0 +1,15 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _description-term.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../g_variables.scss" as globals;
+
+dt{
+    font-family: globals.$bodyFontFamily-bold;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
+}
+
+dd + dt {
+    margin-top: globals.$margin;
+}

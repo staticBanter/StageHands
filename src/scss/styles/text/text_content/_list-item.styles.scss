@@ -1,0 +1,16 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _list-item.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../g_variables.scss" as globals;
+
+li{
+    font-family: globals.$neutralFontFamily;
+    line-height: globals.$neutralTextLine;
+    font-size: globals.$neutralTextHeight;
+}
+
+li+li,
+ol+li,
+ul+li{
+    margin: globals.$margin 0;
+}

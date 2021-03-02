@@ -1,0 +1,14 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _paragraph.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../g_variables.scss" as globals;
+
+// Global
+p{
+    font-family: globals.$bodyFontFamily;
+    line-height: globals.$bodyTextLine;
+    font-size: globals.$bodyTextHeight;
+    margin: 0 globals.$margin;
+    padding: globals.$padding 0;
+}

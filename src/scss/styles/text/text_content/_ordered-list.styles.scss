@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _ordered-list.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/list-sections.placeholder";
+
+ol{
+    @extend %list-section;
+}
+
+li > ol{
+    @extend %list-section-nested;
+}

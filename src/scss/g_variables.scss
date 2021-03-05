@@ -44,6 +44,7 @@ $linkedTextColour: $neutralTextColour !default;
 */
 $border-colour: $accent !default;
 $border-rounded: 10px !default;
+$border-rounded-small: ($border-rounded / 2) !default;
 $border-thickness: 3px !default;
 
 $border: $border-thickness solid $border-colour !default;
@@ -78,12 +79,16 @@ $margin-small: ($margin / 2) !default;
 /*
 * Font and Line Heights.
 */
+//Body
 $bodyTextHeight: 1rem !default;
 $bodyTextLine: 1.2rem !default;
+//Header
 $headerTextHeight: 2rem !default;
 $headerTextLine: 2.6rem !default;
+//Neutral
 $neutralTextHeight: 1rem !default;
 $neutralTextLine: 1.2rem !default;
+// Display
 $displayTextHeight: 2rem !default;
 $displayTextLine: 2.6rem !default;
 

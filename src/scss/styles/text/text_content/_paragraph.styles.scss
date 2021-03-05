@@ -3,12 +3,11 @@ StageHands | _paragraph.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../../g_variables.scss" as globals;
+@use "../../../placeholders/text/text-type.placeholders";
 
 // Global
 p{
-    font-family: globals.$bodyFontFamily;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
+    @extend %bodyText;
     margin: 0 globals.$margin;
-    padding: globals.$padding 0;
+    padding: globals.$padding-small 0;
 }

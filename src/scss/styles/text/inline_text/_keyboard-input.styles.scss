@@ -1,0 +1,20 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _keyboard-input.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/text/text-type.placeholders";
+@use "../../../g_variables.scss" as globals;
+
+kbd{
+    @extend %neutralText;
+    background: radial-gradient(ellipse at bottom,white,gray);
+    border-radius: globals.$border-rounded-small;
+    padding: globals.$padding-small;
+    margin: auto globals.$margin-small;
+    border: globals.$border;
+}
+
+samp kbd {
+    @extend %neutralText-bold;
+    background: none;
+    border:none;
+}

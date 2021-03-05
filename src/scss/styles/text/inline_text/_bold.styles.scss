@@ -1,0 +1,8 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _bold.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/text/text-type.placeholders";
+
+b{
+    @extend %bodyText-bold;
+}

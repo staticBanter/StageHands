@@ -1,0 +1,9 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _variable.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../placeholders/text/text-type.placeholders";
+
+var{
+    @extend %neutralText;
+}

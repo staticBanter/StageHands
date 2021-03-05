@@ -1,0 +1,13 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _abbreviation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../placeholders/text/text-type.placeholders";
+
+abbr{
+
+    @extend %bodyText-italic;
+    text-decoration: dotted;
+    cursor: help;
+
+}

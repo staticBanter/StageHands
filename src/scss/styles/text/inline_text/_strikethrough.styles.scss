@@ -1,0 +1,27 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+/*
+**This accessability setup was provided curtesy of Mozilla Developer : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s#accessibility_concerns
+*/
+s::before,
+s::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+s::before {
+    content: " [start of stricken text] ";
+  }
+  
+s::after {
+content: " [end of stricken text] ";
+}
+/**/

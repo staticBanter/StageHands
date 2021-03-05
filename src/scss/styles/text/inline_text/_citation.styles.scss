@@ -1,0 +1,8 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/text/text-type.placeholders";
+
+cite{
+    @extend %neutralText;
+}

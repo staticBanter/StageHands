@@ -1,0 +1,7 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _italic.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/text/text-type.placeholders";
+i{
+    @extend %bodyText-italic;
+}

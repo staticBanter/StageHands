@@ -1,0 +1,10 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../placeholders/text/text-type.placeholders";
+
+rt{
+    @extend %bodyText;
+    font-size: 0.5rem;
+}

@@ -1,0 +1,9 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../placeholders/text/text-type.placeholders";
+
+samp{
+    @extend %neutralText;
+}

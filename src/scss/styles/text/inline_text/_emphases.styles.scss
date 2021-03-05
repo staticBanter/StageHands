@@ -1,0 +1,9 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _abbreviation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../../placeholders/text/text-type.placeholders";
+
+em{
+    @extend %bodyText-italic;
+}

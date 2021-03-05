@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../../placeholders/text/text-type.placeholders";
+@use "../../../g_variables.scss" as globals;
+
+code{
+    @extend %neutralText;
+    background-color: lightgray;
+    padding: globals.$padding-small;
+    border-radius: globals.$border-rounded-small;
+}

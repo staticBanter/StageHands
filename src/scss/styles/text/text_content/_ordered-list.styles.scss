@@ -1,7 +1,7 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _ordered-list.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../../../placeholders/list-sections.placeholder";
+@use "../../../placeholders/list-section.placeholders";
 
 ol{
     @extend %list-section;

@@ -16,7 +16,7 @@ Currently, this project is not taking any other contributors at the moment, as i
 
 # Issues & Bug-Reporting
 
-Currently, if any issues are found with this project please open an issue report on githubs' issue tracker. We will get to it as soon as we can :smile:
+Currently, if any issues are found with this project please open an issue report on Githubs issue tracker. We will get to it as soon as we can :smile:
 
 # Credits
 StageHands was built with the help of these wonderful people:
@@ -26,12 +26,12 @@ StageHands was built with the help of these wonderful people:
   - Lead Developer
 
 # Extra Credits
-StageHands was built with the help of these wonderful technologies:
+StageHands was built with the help of these wonderful technologies, organizations, foundations or individuals:
 - HTML
 - CSS
 - Javascript
 - Typescript
-- SASS
+- SASS-Lang
 - Normalize-CSS
 - Github
 - Git-CMS
@@ -39,5 +39,6 @@ StageHands was built with the help of these wonderful technologies:
 - PugJS
 - Browser-Sync IO
 - VSCode
+- Mozilla Developer
 
 And every other developer out there helping to make the world better :smile:

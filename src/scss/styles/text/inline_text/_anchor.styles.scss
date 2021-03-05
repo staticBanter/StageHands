@@ -1,20 +1,19 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _anchors.styles.scss | Styles
+StageHands | _anchor.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @use "sass:color";
 @use "../../../placeholders/nav.placeholders";
+@use "../../../placeholders/text/text-type.placeholders";
 @use "../../../g_variables.scss" as globals;
 
 // Global Anchor Styles
 a{
-    font-family: globals.$neutralFontFamily;
-    color: globals.$neutralTextColour;
-    line-height: globals.$neutralTextLine;
-    font-size: globals.$neutralTextHeight;
+    @extend %neutralText;
 }
 
+
 a:visited{
-    color: globals.$visitedTextColour
+    color: globals.$visitedTextColour;
 }
 
 a:hover{

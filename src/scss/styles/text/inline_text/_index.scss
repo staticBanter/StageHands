@@ -1,4 +1,20 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles/text/inline_text
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@forward "anchors.styles";
+@forward "anchor.styles";
+@forward "abbreviation.styles";
+@forward "bold.styles";
+@forward "citation.styles";
+@forward "code.styles";
+@forward "data.styles";
+@forward "definition.styles";
+@forward "emphases.styles";
+@forward "idiomatic.styles";
+@forward "keyboard-input.styles";
+@forward "quote.styles";
+@forward "sample.styles";
+@forward "strikethrough.styles";
+@forward "ruby-text.styles";
+@forward "time.styles";
+@forward "unarticulated.styles";
+@forward "variable.styles";

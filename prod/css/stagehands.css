@@ -672,15 +672,61 @@ nav button:hover, nav a:hover {
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _anchors.styles.scss | Styles
+StageHands | _text-types.placeholder.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-a {
-  font-family: "Inconsolata-regular", "Sans Serif";
-  color: black;
-  line-height: 1.2rem;
+dt, b, blockquote,
+blockquote *, q, i, em, abbr, textarea, footer, article, address, aside, body main,
+body *[role=main]:first-of-type, body header:first-of-type,
+body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   font-size: 1rem;
+  line-height: 1.2rem;
+  color: black;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: black;
+}
+
+samp kbd, nav button,
+nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: black;
+}
+
+textarea, footer, article, address, aside, body main,
+body *[role=main]:first-of-type, body header:first-of-type,
+body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
+  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
+}
+
+blockquote,
+blockquote *, q, i, em, abbr {
+  font-family: "JetBrains_Mono-italic";
+}
+
+dt, b {
+  font-family: "JetBrains_Mono-bold";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
+}
+
+nav button,
+nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
+  font-family: "Inconsolata-regular", "Sans Serif";
+}
+
+samp kbd {
+  font-family: "Inconsolata-bold";
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _anchor.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 a:visited {
   color: #a3a3a3;
 }
@@ -694,28 +740,122 @@ a:active {
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _abbreviation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+abbr {
+  text-decoration: dotted;
+  cursor: help;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _bold.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+code {
+  background-color: lightgray;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _citation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _abbreviation.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _italic.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _keyboard-input.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+kbd {
+  background: radial-gradient(ellipse at bottom, white, gray);
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: auto 0.25rem;
+  border: 3px solid #a3a3a3;
+}
+
+samp kbd {
+  background: none;
+  border: none;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*
+**This accessability setup was provided curtesy of Mozilla Developer : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s#accessibility_concerns
+*/
+s::before,
+s::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+s::before {
+  content: " [start of stricken text] ";
+}
+
+s::after {
+  content: " [end of stricken text] ";
+}
+
+/**/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _quote.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+rt {
+  font-size: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _time.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _unarticulated.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+u {
+  text-decoration: red wavy underline;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _variable.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles/text/inline_text
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _paragraph.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 p {
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  line-height: 1.2rem;
-  font-size: 1rem;
   margin: 0 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _description-term.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-dt {
-  font-family: "JetBrains_Mono-bold";
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 dd + dt {
   margin-top: 0.5rem;
 }
@@ -723,12 +863,6 @@ dd + dt {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _description-definition.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-dd {
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _pre.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -757,12 +891,6 @@ StageHands | _unordered-list.styles.scss | Styles
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _list-item.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-li {
-  font-family: "Inconsolata-regular", "Sans Serif";
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 li + li,
 ol + li,
 ul + li {
@@ -772,22 +900,9 @@ ul + li {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _blockquote.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-blockquote,
-blockquote * {
-  font-family: "JetBrains_Mono-italic";
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _figcaption.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-figcaption {
-  font-family: "Inconsolata-regular", "Sans Serif";
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles/text/text_content
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -798,11 +913,7 @@ StageHands | _index.scss | Indexes: /dist/scss/styles/text
 StageHands | _body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 body {
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
   background-color: #f6f6f6;
-  line-height: 1.2rem;
-  font-size: 1rem;
-  color: black;
   height: 100%;
 }
 
@@ -832,10 +943,6 @@ body *[role=banner]:first-of-type {
   max-height: max-content;
   overflow: hidden;
   margin-bottom: 0.5rem;
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -843,10 +950,6 @@ StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 nav {
   width: min-content;
-  font-family: "Inconsolata-regular", "Sans Serif";
-  color: black;
-  font-size: 1rem;
-  line-height: 1.2rem;
 }
 
 body header:first-of-type nav:first-of-type {
@@ -863,9 +966,6 @@ This file contains the styles for heading elements.
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0.5rem;
-  font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
-  line-height: 2.6rem;
-  font-size: 2rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -878,10 +978,6 @@ body *[role=main]:first-of-type {
   max-height: max-content;
   padding: 0.5rem;
   box-sizing: border-box;
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
 }
 
 aside ~ main {
@@ -892,13 +988,6 @@ aside ~ main {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _aside.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-aside {
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 body aside:first-of-type,
 body *[role=complementary] {
   width: 20%;
@@ -931,10 +1020,6 @@ address {
   width: max-content;
   padding: 0.5rem;
   box-sizing: border-box;
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
 }
 
 address + address {
@@ -965,13 +1050,6 @@ address ol:first-of-type > li + li {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _article.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-article {
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _footer.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -981,10 +1059,6 @@ footer {
   background-color: #5c5c5c;
   clear: both;
   margin-top: 0.5rem;
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1008,10 +1082,6 @@ nav button,
 nav button:focus {
   background-color: transparent;
   border: none;
-  font-family: "Inconsolata-regular", "Sans Serif";
-  color: black;
-  font-size: 1rem;
-  line-height: 1.2rem;
   outline: none;
   width: 100%;
 }
@@ -1027,10 +1097,6 @@ textarea {
   word-break: unset;
   word-spacing: unset;
   overflow: hidden;
-  font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
-  color: black;
-  line-height: 1.2rem;
-  font-size: 1rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1087,7 +1153,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.0.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.1.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

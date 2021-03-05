@@ -3,11 +3,10 @@ StageHands | _description-term.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../../g_variables.scss" as globals;
+@use "../../../placeholders/text/text-type.placeholders";
 
 dt{
-    font-family: globals.$bodyFontFamily-bold;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
+    @extend %bodyText-bold;
 }
 
 dd + dt {

@@ -3,12 +3,11 @@ This file contains the styles for heading elements.
 */
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 // Global Heading Element Styles.
 h1,h2,h3,h4,h5,h6{
+    @extend %headerText;
     margin: 0;
     padding: globals.$padding;
-    font-family: globals.$headerFontFamily;
-    line-height: globals.$headerTextLine;
-    font-size: globals.$headerTextHeight;
 }

@@ -1,12 +1,10 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _blockquote.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../../../g_variables.scss" as globals;
+@use "../../../placeholders/text/text-type.placeholders";
 
 
 blockquote,
 blockquote *{
-    font-family: globals.$bodyFontFamily-italic;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
+    @extend %bodyText-italic
 }

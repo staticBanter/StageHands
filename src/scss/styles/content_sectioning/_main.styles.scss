@@ -3,18 +3,16 @@ StageHands | _main.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 body main,
 body *[role=main]:first-of-type{
+    @extend %bodyText;
     overflow: auto;
     min-height: 80%;
     max-height: max-content;
     padding: globals.$padding;
     box-sizing: border-box;
-    font-family: globals.$bodyFontFamily;
-    color: globals.$neutralTextColour;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
 }
 
 aside ~ main {

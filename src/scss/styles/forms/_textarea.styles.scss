@@ -3,8 +3,10 @@ StageHands | _textarea.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 textarea{
+    @extend %bodyText;
     resize: none;
     display: block;
     height: max-content;
@@ -12,8 +14,4 @@ textarea{
     word-break: unset;
     word-spacing: unset;
     overflow: hidden;
-    font-family: globals.$bodyFontFamily;
-    color: globals.$neutralTextColour;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
 }

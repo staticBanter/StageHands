@@ -1,8 +1,8 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _button.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../../placeholders/nav.placeholders" as nav-place;
-
+@use "../../placeholders/nav.placeholders";
+@use "../../placeholders/text/text-type.placeholders";
 @use "../../g_variables.scss" as globals;
 
 // Buttons inside of navigations
@@ -10,12 +10,9 @@ StageHands | _button.styles.scss | Styles
 nav button,
 nav button:focus{
     @extend %nav-control;
+    @extend %neutralText;
     background-color: transparent;
     border:none;
-    font-family: globals.$neutralFontFamily;
-    color: globals.$neutralTextColour;
-    font-size: globals.$neutralTextHeight;
-    line-height: globals.$neutralTextLine;
     outline: none;
     width: 100%;
 }

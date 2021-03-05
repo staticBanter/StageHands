@@ -1,10 +1,8 @@
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _figcaption.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-@use "../../../g_variables.scss" as globals;
+@use "../../../placeholders/text/text-type.placeholders";
 
 figcaption{
-    font-family: globals.$neutralFontFamily;
-    line-height: globals.$neutralTextLine;
-    font-size: globals.$neutralTextHeight;
+    @extend %neutralText;
 }

@@ -2,11 +2,8 @@
 StageHands | _article.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
-@use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 article{
-    font-family: globals.$bodyFontFamily;
-    color: globals.$neutralTextColour;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
+    @extend %bodyText;
 }

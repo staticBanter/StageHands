@@ -3,16 +3,14 @@ StageHands | _address.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 address{
+    @extend %bodyText;
     display: inline-block;
     width: max-content;
     padding: globals.$padding;
     box-sizing: border-box;
-    font-family: globals.$bodyFontFamily;
-    color: globals.$neutralTextColour;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
 }
 
 address + address{

@@ -3,13 +3,12 @@ StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
+
 
 nav{
+    @extend %neutralText;
     width: min-content;
-    font-family: globals.$neutralFontFamily;
-    color: globals.$neutralTextColour;
-    font-size: globals.$neutralTextHeight;
-    line-height: globals.$neutralTextLine;
 }
 
 

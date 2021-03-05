@@ -3,12 +3,10 @@ StageHands | _body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
 
 body{
-    font-family: globals.$bodyFontFamily;
+    @extend %bodyText;
     background-color: globals.$white;
-    line-height: globals.$bodyTextLine;
-    font-size: globals.$bodyTextHeight;
-    color: globals.$neutralTextColour;
     height: 100%;
 }

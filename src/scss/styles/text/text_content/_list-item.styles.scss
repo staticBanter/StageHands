@@ -2,11 +2,10 @@
 StageHands | _list-item.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @use "../../../g_variables.scss" as globals;
+@use "../../../placeholders/text/text-type.placeholders";
 
 li{
-    font-family: globals.$neutralFontFamily;
-    line-height: globals.$neutralTextLine;
-    font-size: globals.$neutralTextHeight;
+    @extend %neutralText;
 }
 
 li+li,

@@ -1,0 +1,69 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _text-type.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../g_variables.scss" as globals;
+
+%bodyText-base{
+    font-size: globals.$bodyTextHeight;
+    line-height: globals.$bodyTextLine;
+    color: globals.$neutralTextColour;
+}
+
+%headerText-base{
+    font-size: globals.$headerTextHeight;
+    line-height: globals.$headerTextLine;
+    color: globals.$neutralTextColour;
+}
+
+%neutralText-base{
+    font-size: globals.$neutralTextHeight;
+    line-height: globals.$neutralTextLine;
+    color: globals.$neutralTextColour;
+}
+
+%displayText-base{
+    font-size: globals.$displayTextHeight;
+    line-height: globals.$displayTextLine;
+    color: globals.$neutralTextColour;
+}
+
+%bodyText{
+    @extend %bodyText-base;
+    font-family: globals.$bodyFontFamily;
+}
+%bodyText-italic{
+    @extend %bodyText-base;
+    font-family: globals.$bodyFontFamily-italic;
+}
+%bodyText-bold{
+    @extend %bodyText-base;
+    font-family: globals.$bodyFontFamily-bold;
+}
+
+%headerText{
+    @extend %headerText-base;
+    font-family: globals.$headerFontFamily;
+}
+%headerText-bold{
+    @extend %headerText-base;
+    font-family: globals.$headerFontFamily-bold;
+}
+
+%neutralText{
+    @extend %neutralText-base;
+    font-family: globals.$neutralFontFamily;
+}
+%neutralText-bold{
+    @extend %neutralText-base;
+    font-family: globals.$neutralFontFamily-bold;
+}
+
+
+%displayText{
+    @extend %displayText-base;
+    font-family: globals.$displayFontFamily;
+}
+%displayText-bold{
+    @extend %displayText-base;
+    font-family: globals.$displayFontFamily-bold;
+}

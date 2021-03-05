@@ -1,0 +1,154 @@
+StageHands Change-Log | March-2021
+=
+This file outlines changes made to [StageHands](https://github.com/staticBanter/StageHands)
+for the month of March-2021
+
+# March-2021
+
+## March-2-2021(v:1.0.0-Development)
+- Updated Bundling Method: This version contains a major change to how the package handles bundling files. Previously this package used the older *@import* SCSS syntax for bundling files through out the package, this causes repeated code and increased package size. So we have now updated to the proper *@use* and *@forward* syntax that SCSS recommends. 
+  - ALL SCSS files have been updated to this format.
+- Global Variables;
+  - Added:
+    - hoverTextColour
+    - visitedTextColour
+    - linkedTextColour
+    - displayTextHeight
+    - displayTextLine
+    - headerFontFamily-bold
+    - bodyFontFamily-bold
+    - bodyFontFamily-italic
+    - neutralFontFamily-bold
+    - displayFontFamily-bold
+  - Removed;
+    - bodyTextColour
+    - headerTextColour
+    - displayTextColour
+- Data;
+  - Removed:
+    - _stringReplace-errors.map.scss.
+- Mixins;
+  - FontFaceData:
+    - Removed parameter *isVariable* replaced with *fontGroup*
+    - Added parameter *fontGroup* a string that will define what group the font belongs to, defaults to "static".
+    - Add parameter *fontType* a string that will define what type the font is, defaults to regular.
+    - Modified how the mixin returns data. Now returns a single src, format pair per font-name.
+- Functions;
+  - TestFunction:
+    - Function can now only test other functions that are accessable to the *stagehands/src/scss/functions/_index.scss* file.
+  - TestFunction was removed from the functions index file.
+- Placeholders;
+  - Added:
+    - list-section
+    - list-section-nested
+  - Modified:
+    - nav-control;
+      - updated color
+      - updated font-size
+      - added line-height
+      - added text-decoration
+    - nav-control:hover;
+      - updated color
+- Styles;
+  - Address:
+    - Added color.
+    - Added line-height
+    - Added font-size
+  - Article:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Footer:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Header:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Headings:
+    - Added line-height
+    - Added font-size 
+  - Main:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Nav:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Button:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Textarea:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Body:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size
+  - Anchor:
+    - Added font-family
+    - Added color
+    - Added line-height
+    - Added font-size 
+    - Removed text-decoration on visited links
+    - Added color to visited links
+    - Added color to hover links
+    - Added color to active links
+  - Created the following new SCSS style files:
+    - blockquote
+    - description-definition
+    - description-term
+    - figcaption
+    - list-item
+    - ordered-list
+    - paragraph
+    - unordered-list
+- Change-Log
+  - Fixed versioning issue with prior update.
+- Readme
+  - Fixed date issue for when readme was last updated.(no that does not count as an update.)
+
+## March-04-2021(v1.1.0-Development)
+- Documentation;
+  - Seperated the Change-Log files.
+  - Added new documentation files.
+- Global Variables;
+  - Added:
+    - border-rounded-small.
+- Placeholders;
+  - Renamed list-section file, due to spelling mistake.
+  - Created *text-types* placeholders.
+- Styles;
+  - Moved all the font/text styles to the *text-types* placeholders, each style then extends their needed font/text styles from the placeholder.
+  - Created initial styles for inline text elements:
+    - abbreviations
+    - bolds
+    - citations
+    - codes
+    - datas
+    - definitions
+    - emphases
+    - idiomatics
+    - keyboard-inputs
+    - quotes
+    - ruby-text
+    - samples
+    - strikethroughs
+    - times
+    - unarticulateds
+    - variables
+  - Renamed anchor style file due to spelling mistake.
+  - paragraphs now use small top and bottom padding.
+- Updated documentation styles

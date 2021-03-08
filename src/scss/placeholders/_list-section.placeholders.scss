@@ -5,8 +5,9 @@ StageHands | _list-sections.placeholder.scss | Placeholder
 @use "../g_variables.scss" as globals;
 
 %list-section{
-    margin:globals.$margin;
+    margin:globals.$margin-small;
     padding:globals.$padding;
+    width: max-content;
 }
 
 

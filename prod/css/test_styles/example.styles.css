@@ -319,9 +319,17 @@ StageHands | _example.styles.scss | Style
 * over-lap. IDK why it loads the entire globals when we just need some
 * vars but eh.
 */
+body {
+  color: blue;
+}
+
 section {
   width: 94%;
   margin: 0 auto;
+}
+
+.droppable {
+  color: red;
 }
 
 section + section {
@@ -358,6 +366,7 @@ section > .subSection + .subSection {
   border-radius: 10px;
   box-shadow: 0px 0px 20px -10px black;
   padding: 0.5rem;
+  display: inline-block;
 }
 
 code.styleCodeBlock {
@@ -366,6 +375,7 @@ code.styleCodeBlock {
   background-color: lightgray;
   display: inline-block;
   margin: 0 0.5rem;
+  width: max-content;
 }
 
 pre + pre {

@@ -152,3 +152,21 @@ for the month of March-2021
   - Renamed anchor style file due to spelling mistake.
   - paragraphs now use small top and bottom padding.
 - Updated documentation styles
+
+## March-07-2021(v1.2.0-Development)
+- Styles;
+  - Created initial styles for *embedded_content* elements, this includes:
+    - embed
+    - iframe
+    - object
+    - portal
+  - Created initial styles for *images_and_multimedia* elements, this includes:
+    - audio
+    - img
+    - picture
+    - video
+  - Renamed *'/src/scss/styles/images_multimedia'* directory to *'images_and_multimedia'*
+  - List-Section Placeholders:
+    - updated margin to *$margin-small*
+    - updated width to *max-width*
+- Added new documentation for the style files

@@ -1,0 +1,10 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _embed.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+embed{
+    border: globals.$border;
+    padding: globals.$padding;
+}

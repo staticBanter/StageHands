@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _portal.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+portal{
+    display: block;
+    height: 250px;
+    width: 250px;
+    border: globals.$border;
+}

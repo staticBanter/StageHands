@@ -1,0 +1,7 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/embedded_content
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@forward "embed.styles";
+@forward "iframe.styles";
+@forward "object.styles";
+@forward "portal.styles";

@@ -1,0 +1,10 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _iframe.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+iframe{
+    border: globals.$border;
+    padding: globals.$padding;
+}

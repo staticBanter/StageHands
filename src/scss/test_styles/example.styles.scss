@@ -10,10 +10,19 @@ StageHands | _example.styles.scss | Style
 
 @use "../g_variables.scss" as globals;
 
+body{
+    color:blue;
+}
+
 section{
     width: 94%;
     margin: 0 auto;
     
+}
+
+
+.droppable{
+    color:red;
 }
 
 section + section {
@@ -49,6 +58,7 @@ section > .subSection + .subSection{
     border-radius: 10px;
     box-shadow: globals.$boxShadow;
     padding: globals.$padding;
+    display: inline-block;
 }
 
 code.styleCodeBlock{
@@ -57,6 +67,7 @@ code.styleCodeBlock{
     background-color: rgba(211, 211, 211, 1);
     display: inline-block;
     margin: 0 globals.$margin;
+    width: max-content;
 }
 
 pre + pre {

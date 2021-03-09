@@ -1,0 +1,9 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _mathml.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../placeholders/text/text-type.placeholders";
+
+math{
+    @extend %neutralText;
+    display: inline;
+}

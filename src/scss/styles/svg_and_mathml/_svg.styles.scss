@@ -1,0 +1,14 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _svg.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+//Inline svgs
+p svg,
+a svg
+li svg,
+dd svg{
+    height: globals.$bodyTextHeight;
+    width: globals.$bodyTextHeight;
+}

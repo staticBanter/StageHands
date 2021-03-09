@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _no-script.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+noscript{
+    height: 100vh;
+    position: absolute;
+    background-color: globals.$white;
+    width: 100%;
+}

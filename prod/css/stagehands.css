@@ -689,7 +689,7 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-samp kbd, nav button,
+samp kbd, math, nav button,
 nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-size: 1rem;
   line-height: 1.2rem;
@@ -715,7 +715,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
 }
 
-nav button,
+math, nav button,
 nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-family: "Inconsolata-regular", "Sans Serif";
 }
@@ -1165,6 +1165,95 @@ portal {
 StageHands | _index.scss | Indexes: dist/scss/styles/embedded_content
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _svg.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+p svg,
+a svg li svg,
+dd svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _mathml.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+math {
+  display: inline;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/svg_and_mathml
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _no-script.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+noscript {
+  height: 100vh;
+  position: absolute;
+  background-color: #f6f6f6;
+  width: 100%;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/scripting
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _insert.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+ins {
+  text-decoration: none;
+  background-color: lightgreen;
+}
+
+ins::before,
+ins::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+ins::before {
+  content: " [insertion start] ";
+}
+
+ins::after {
+  content: " [insertion end] ";
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _no-script.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+del {
+  background-color: #ff5353;
+}
+
+del::before,
+del::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+del::before {
+  content: " [deletion start] ";
+}
+
+del::after {
+  content: " [deletion end] ";
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/demarcating_edits
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1215,7 +1304,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.2.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.3.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

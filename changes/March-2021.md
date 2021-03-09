@@ -170,3 +170,19 @@ for the month of March-2021
     - updated margin to *$margin-small*
     - updated width to *max-width*
 - Added new documentation for the style files
+
+## March-08-2021(v1.3.0-Development)
+- Styles;
+  - Created initial styles for *demarcating edits* elements, this include:
+    - delete
+    - insert
+  - Created initial styles for *scripting* elements, this include:
+    - no-script
+  - Created initial styles for *svg and mathML* elements, this include;
+    - mathml
+    - svg
+- Documentation;
+    - Created documentation for the following styles;
+      - demarcating edits
+      - scripting
+      - svg and mathML

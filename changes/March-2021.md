@@ -186,3 +186,23 @@ for the month of March-2021
       - demarcating edits
       - scripting
       - svg and mathML
+
+
+## March-10-2021(v1.4.0-Development)
+- Placeholders;
+  - Created:
+    - table-cell placeholder
+- Styles;
+  - Created initial styles for *table-content* elements, this includes the following;
+    - caption
+    - column-group
+    - table-body
+    - table-data
+    - table-foot
+    - table-head
+    - table-heading
+    - table-row
+    - table
+- Documentation;
+  - Created documentation for the new styles.
+  - Updated documentation structure.

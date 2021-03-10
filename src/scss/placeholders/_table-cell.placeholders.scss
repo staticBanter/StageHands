@@ -1,0 +1,11 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-cell.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../g_variables.scss" as globals;
+
+%table-cell{
+    border: globals.$border;
+    box-sizing: border-box;
+    padding: globals.$padding-small;
+}

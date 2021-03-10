@@ -1,0 +1,11 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-data.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../placeholders/table-cell.placeholders";
+@use "../../placeholders/text/text-type.placeholders";
+
+td{
+    @extend %table-cell;
+    @extend %bodyText;
+}

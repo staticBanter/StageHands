@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+table{
+    border: globals.$border;
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow: auto;
+}

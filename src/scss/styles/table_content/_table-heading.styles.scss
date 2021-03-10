@@ -1,0 +1,12 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-heading.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../placeholders/table-cell.placeholders";
+@use "../../placeholders/text/text-type.placeholders";
+
+th{
+    @extend %table-cell;
+    @extend %headerText;
+    font-size: 1.5rem;
+}

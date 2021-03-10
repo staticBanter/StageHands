@@ -1,0 +1,15 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-body.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../placeholders/text/text-type.placeholders";
+@use "../../g_variables.scss" as globals;
+
+tbody{
+    @extend %bodyText;
+    background-color: globals.$white;
+}
+
+colgroup + tbody{
+    background-color: transparent;
+}

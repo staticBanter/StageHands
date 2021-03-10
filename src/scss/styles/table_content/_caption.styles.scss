@@ -1,0 +1,13 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _caption.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../placeholders/text/text-type.placeholders";
+@use "../../g_variables.scss" as globals;
+
+caption{
+    @extend %neutralText;
+    caption-side: bottom;
+    background-color: globals.$accent;
+    padding: globals.$padding-small;
+}

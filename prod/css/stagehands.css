@@ -675,7 +675,7 @@ nav button:hover, nav a:hover {
 StageHands | _text-type.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 dt, b, blockquote,
-blockquote *, q, i, em, abbr, textarea, footer, article, address, aside, body main,
+blockquote *, q, i, em, abbr, tfoot, tbody, td, textarea, footer, article, address, aside, body main,
 body *[role=main]:first-of-type, body header:first-of-type,
 body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   font-size: 1rem;
@@ -683,20 +683,20 @@ body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   color: black;
 }
 
-h1, h2, h3, h4, h5, h6 {
+thead, th, h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   line-height: 2.6rem;
   color: black;
 }
 
-samp kbd, math, nav button,
+samp kbd, caption, math, nav button,
 nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-size: 1rem;
   line-height: 1.2rem;
   color: black;
 }
 
-textarea, footer, article, address, aside, body main,
+tfoot, tbody, td, textarea, footer, article, address, aside, body main,
 body *[role=main]:first-of-type, body header:first-of-type,
 body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
@@ -711,11 +711,11 @@ dt, b {
   font-family: "JetBrains_Mono-bold";
 }
 
-h1, h2, h3, h4, h5, h6 {
+thead, th, h1, h2, h3, h4, h5, h6 {
   font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
 }
 
-math, nav button,
+caption, math, nav button,
 nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-family: "Inconsolata-regular", "Sans Serif";
 }
@@ -1254,6 +1254,84 @@ del::after {
 StageHands | _index.scss | Indexes: dist/scss/styles/demarcating_edits
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _caption.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+caption {
+  caption-side: bottom;
+  background-color: #a3a3a3;
+  padding: 0.25rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+table {
+  border: 3px solid #a3a3a3;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-cell.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+th, td {
+  border: 3px solid #a3a3a3;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-data.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-heading.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+th {
+  font-size: 1.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-row.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-body.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+tbody {
+  background-color: #f6f6f6;
+}
+
+colgroup + tbody {
+  background-color: transparent;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-body.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+tfoot td {
+  background-color: #5c5c5c;
+  color: white;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _table-body.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+thead tr:first-of-type th {
+  background-color: #5c5c5c;
+  color: #f6f6f6;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _caption.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+colgroup {
+  background-color: #f6f6f6;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: /dist/scss/styles/table_content
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1304,7 +1382,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.3.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.4.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

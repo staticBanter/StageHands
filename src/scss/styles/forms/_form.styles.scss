@@ -1,0 +1,17 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _form.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
+
+form{
+    @extend %neutralText;
+    padding: globals.$padding;
+}
+
+form > * + *,
+form > fieldset * + *,
+form > div * + *,
+form > section * + * {
+    margin: globals.$margin-large auto;
+}

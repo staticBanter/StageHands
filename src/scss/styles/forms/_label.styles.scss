@@ -1,0 +1,32 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _label.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../placeholders/text/text-type.placeholders";
+@use "../../placeholders/form/form-separator.placeholders";
+@use "../../g_variables.scss" as globals;
+
+label{
+    @extend %neutralText-bold;
+    text-transform: capitalize;
+}
+
+
+form > label{ 
+    @extend %form-separator;
+}
+
+form  label + label{
+    margin: globals.$margin-large auto;
+
+}
+
+form fieldset label{
+    padding-top: globals.$padding;
+    padding-bottom: globals.$padding;
+}
+
+form fieldset label + label{
+    margin: globals.$margin;
+}
+

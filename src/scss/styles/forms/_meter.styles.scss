@@ -1,0 +1,13 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _meter.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+form label > meter,
+form > section label + meter,
+form > div label + meter{
+    vertical-align: bottom;
+    margin: auto;
+    margin-left: globals.$margin;
+}

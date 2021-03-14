@@ -1,0 +1,45 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _input.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../placeholders/form/bool-input.placeholders";
+@use "../../placeholders/text/text-type.placeholders";
+@use "../../g_variables.scss" as globals;
+
+input{
+    @extend %neutralText;
+    display: inline-block;
+}
+
+input + input,
+label + label input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+section + section label + input input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+div + div label + input input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]){
+    margin: globals.$margin 0;
+    display: block;
+}
+
+form  label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+form > div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+form > section  input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]){
+    width: 100%; 
+}
+
+
+form label > input[type=checkbox],
+form label > input[type=radio],
+form fieldset label > input[type=checkbox],
+form fieldset label > input[type=radio],
+form fieldset section > input[type=checkbox],
+form fieldset section > input[type=radio],
+form fieldset div > input[type=checkbox],
+form fieldset div > input[type=radio] {
+    @extend %bool-input;
+}
+
+form label > input[type=color]{
+    height: globals.$neutralTextHeight;
+}
+
+datalist + input{
+    margin: auto globals.$margin;
+}

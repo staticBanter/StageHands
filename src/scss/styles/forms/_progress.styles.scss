@@ -1,0 +1,19 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _progress.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+
+form label > progress{
+    margin: auto 0.5rem;
+    display: inline; 
+    vertical-align: bottom;
+    height: 1.2rem;
+}
+
+form > section label + progress,
+form > div label + progress{
+    vertical-align: bottom;
+    margin: auto;
+    margin-left: globals.$margin;
+}

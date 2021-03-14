@@ -2,7 +2,7 @@ StageHands
 =
 A Typescript &amp; SCSS Framework
 
-> Version: 1.4.0 - Development
+> Version: 1.5.0 - Development
 > Last Update: Jan 22, 2021.
 > Readme Last Updated: February 25, 2021.
 
@@ -25,6 +25,8 @@ StageHands another handy framework :smile:
 The documentation for StageHands comes packaged with the project. 
 
 To view the documentation files locally and have the links work properly, it is required you use some sort of local server and point the entry to the *StageHands/tests* directory then view the files from the port you have setup for your local server. Otherwise the document links will not work, so styling and moving from page to page internally will not work properly.
+
+> **NOTE[Work In Progress]** : The documentation for this framework is currently a work in progress. That is that certain project related definitions or terms used may change or be removed. We understand this is one of the biggest inconveniences when it comes to learning a new framework 😔, but we are trying to provide meaningful terminology that can accurately describe what the framework is achieving without being to 'wordy'. Please if you have any recommendations, comments, or issues about this documentation please create an issue on this projects Github repo and it will be looked into and considered.
 
 
 # Contributions

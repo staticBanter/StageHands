@@ -1,0 +1,30 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _section.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../../placeholders/form/form-separator.placeholders";
+@use "../../g_variables.scss" as globals;
+
+
+form > section{
+    @extend %form-separator;
+    margin: globals.$margin-large auto;
+}
+
+form > section > * + *{
+    margin: globals.$margin auto;
+}
+
+form fieldset > section{
+    display: inline-block;
+    width: auto;
+}
+
+
+form fieldset > section + section {
+    margin:  globals.$margin;
+}
+
+form fieldset > section{
+    padding-top: globals.$padding;
+    padding-bottom: globals.$padding;
+}

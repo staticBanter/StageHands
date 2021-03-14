@@ -2,4 +2,14 @@
 StageHands | _index.scss | Indexes: dist/scss/styles/forms
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @forward "button.styles";
+@forward "datalist.styles";
+@forward "fieldset.styles";
+@forward "legend.styles";
+@forward "option.styles";
 @forward "textarea.styles";
+@forward "label.styles";
+@forward "input.styles";
+@forward "select.styles";
+@forward "progress.styles";
+@forward "form.styles";
+@forward "meter.styles";

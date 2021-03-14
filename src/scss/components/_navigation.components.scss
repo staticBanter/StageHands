@@ -7,7 +7,7 @@ StageHands | _nav.components.scss | Component
 // Navigation Controls Inline
 .navControls-flex{
     width: 100%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     background-color: inherit;
     list-style-type: none;
@@ -26,6 +26,21 @@ StageHands | _nav.components.scss | Component
         background-color: inherit;
     }
 
+    .dropDownMenu:hover{
+        color: white;
+    }
+
+    .dropDownMenu:active{
+        border: 1px solid;
+        color: white;
+    }
+
+    .dropDownMenu:hover > button
+    .dropDownMenu:active > button{
+        border: 1px solid;
+        color: white;
+    }
+
     > .dropDownMenu > .dropDownBreak > *:nth-of-type(odd){
         background-color: globals.$accent;
     }
@@ -34,6 +49,11 @@ StageHands | _nav.components.scss | Component
     > .dropDownMenu > .dropDownBreak:first-of-type{
         position: absolute;
         background-color: inherit;
+    }
+
+    .dropDownMenu .dropDownMenu,
+    .dropDownMenu *{
+        margin: auto;
     }
 
 }

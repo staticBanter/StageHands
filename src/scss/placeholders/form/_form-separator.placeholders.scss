@@ -1,0 +1,24 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _form-separator.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+@use "bool-input.placeholders";
+
+%form-separator{
+    display: block;
+    width: 80%;
+}
+
+%form-separator > label{
+    display: inline;
+}
+
+%form-separator >  input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]){
+    width: 100%;
+}
+
+%form-separator > input[type=checkbox],
+%form-separator > input[type=radio]{
+    @extend %bool-input !optional;
+}

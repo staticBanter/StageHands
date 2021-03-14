@@ -35,7 +35,7 @@ for the month of March-2021
     - Modified how the mixin returns data. Now returns a single src, format pair per font-name.
 - Functions;
   - TestFunction:
-    - Function can now only test other functions that are accessable to the *stagehands/src/scss/functions/_index.scss* file.
+    - Function can now only test other functions that are accessible to the *stagehands/src/scss/functions/_index.scss* file.
   - TestFunction was removed from the functions index file.
 - Placeholders;
   - Added:
@@ -122,7 +122,7 @@ for the month of March-2021
 
 ## March-04-2021(v1.1.0-Development)
 - Documentation;
-  - Seperated the Change-Log files.
+  - Separated the Change-Log files.
   - Added new documentation files.
 - Global Variables;
   - Added:
@@ -206,3 +206,50 @@ for the month of March-2021
 - Documentation;
   - Created documentation for the new styles.
   - Updated documentation structure.
+
+## March-13-2021(1.5.0-Development)
+- Components;
+  - Updated navigation components:
+    - navControl-flex now has; ```display:inline-flex```
+    - Created *dropDownMenu* hover and active state styles.
+    - Created styles for buttons that are a child of a hover or active *dropDownMenu*
+    - Created styles for *dropDownMenu*'s or any element that are a child of a *dropDownMenu*
+- Placeholders;
+  - Updated nav placeholders:
+    - nav-control;
+      - Padding now uses global padding
+      - Removed ```text-align:center```
+      - Added ```box-sizing:border-box;```
+      - Added ```text-transform: capitalize```
+      - Added styles for *nav-control* active state:
+      - Added styles for multiple sibling *nav-control*'s
+  - Created *bool-input* placeholders
+  - Created *form-separator* placeholders
+- Styles;
+  - Created initial styles for Forms elements, this includes the following elements:
+    - datalist
+    - fieldset
+    - form
+    - input
+    - label
+    - legend
+    - meter
+    - option
+    - output
+    - progress
+    - select
+  - Updated the following Form Elements styles:
+    - button;
+      - Created default styles
+      - Created styles for *Icon Buttons*
+  - Updated the following Content Sectioning Elements styles;
+  - Created initial styles for the following Text Content Elements:
+    - div
+  - Updated the documentation styles.
+- Scripts;
+  - Created some scripts to help with some of the documentation examples.
+- Documentation;
+  - Created documentation for Form element styles
+  - Fixed missing Table Content ```table-head``` documentation.
+  - Updated README, added notice that the documentation is in a work in progress state.
+  - Fixed some spelling mistakes in the change-logs.

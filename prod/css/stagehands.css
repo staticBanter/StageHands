@@ -658,17 +658,30 @@ nav button:focus, nav a {
   font-size: 1rem;
   line-height: 1.2rem;
   padding: 0;
-  padding: 0.5rem;
+  padding: 1rem;
   display: block;
   width: auto;
   text-align: center;
   cursor: pointer;
-  text-align: center;
   text-decoration: none;
+  box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 nav button:hover, nav a:hover {
   color: white;
+}
+
+nav button:active, nav a:active {
+  border: 1px solid;
+}
+
+nav button + button,
+nav button:focus + button, nav a + button,
+nav button + button:focus,
+nav a + button:focus, nav button + a,
+nav button:focus + a, nav a + a {
+  margin: auto 1rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -689,8 +702,8 @@ thead, th, h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-samp kbd, caption, math, nav button,
-nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
+label, legend, samp kbd, caption, math, form, select, input, option, fieldset, datalist, button,
+input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-size: 1rem;
   line-height: 1.2rem;
   color: black;
@@ -715,12 +728,12 @@ thead, th, h1, h2, h3, h4, h5, h6 {
   font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
 }
 
-caption, math, nav button,
-nav button:focus, nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
+caption, math, form, select, input, option, fieldset, datalist, button,
+input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-family: "Inconsolata-regular", "Sans Serif";
 }
 
-samp kbd {
+label, legend, samp kbd {
   font-family: "Inconsolata-bold";
 }
 
@@ -905,6 +918,67 @@ StageHands | _blockquote.styles.scss | Styles
 StageHands | _figcaption.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _bool-input.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form label > input[type=checkbox],
+form label > input[type=radio],
+form fieldset label > input[type=checkbox],
+form fieldset label > input[type=radio],
+form fieldset section > input[type=checkbox],
+form fieldset section > input[type=radio],
+form fieldset div > input[type=checkbox],
+form fieldset div > input[type=radio], form > label > input[type=checkbox], form > section > input[type=checkbox], form > div > input[type=checkbox],
+form > label > input[type=radio],
+form > section > input[type=radio],
+form > div > input[type=radio] {
+  margin: auto 0.5rem;
+  display: inline;
+  vertical-align: bottom;
+  height: 1.2rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _form-separator.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form > label, form > section, form > div {
+  display: block;
+  width: 80%;
+}
+
+form > label > label, form > section > label, form > div > label {
+  display: inline;
+}
+
+form > label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]), form > section > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]), form > div > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]) {
+  width: 100%;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _div.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form > div {
+  margin: 1rem auto;
+}
+
+form > div > * + * {
+  margin: 0.5rem auto;
+}
+
+form fieldset > div {
+  display: inline-block;
+  width: auto;
+}
+
+form fieldset > div + div {
+  margin: 0.5rem;
+}
+
+form fieldset > div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles/text/text_content
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1063,6 +1137,31 @@ footer {
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _section.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form > section {
+  margin: 1rem auto;
+}
+
+form > section > * + * {
+  margin: 0.5rem auto;
+}
+
+form fieldset > section {
+  display: inline-block;
+  width: auto;
+}
+
+form fieldset > section + section {
+  margin: 0.5rem;
+}
+
+form fieldset > section {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: dist/scss/styles/content_sectioning
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1102,14 +1201,48 @@ StageHands | _index.scss | Indexes: dist/scss/styles/images_multimedia
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _button.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+button,
+input[type=button] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+button + button,
+input[type=button] + input[type=button],
+input[type=button] + button,
+button + input[type=button] {
+  margin: auto 1rem;
+}
+
 nav button,
 nav button:focus {
   background-color: transparent;
   border: none;
   outline: none;
-  width: 100%;
 }
 
+button > img + p,
+button > svg + p {
+  margin: 0;
+  padding: 0;
+  width: 0;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _datalist.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _fieldset.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _legend.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _option.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _textarea.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -1121,6 +1254,126 @@ textarea {
   word-break: unset;
   word-spacing: unset;
   overflow: hidden;
+  padding: 0.25rem;
+}
+
+form label > textarea,
+form > section textarea,
+form > div textarea {
+  width: 100%;
+  min-height: 6rem;
+  margin: auto;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _label.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+label {
+  text-transform: capitalize;
+}
+
+form label + label {
+  margin: 1rem auto;
+}
+
+form fieldset label {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+form fieldset label + label {
+  margin: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _input.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+input {
+  display: inline-block;
+}
+
+input + input,
+label + label input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+section + section label + input input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+div + div label + input input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]) {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+form label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+form > div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+form > section input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]) {
+  width: 100%;
+}
+
+form label > input[type=color] {
+  height: 1rem;
+}
+
+datalist + input {
+  margin: auto 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _select.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form select {
+  width: auto;
+  max-width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+form label > select,
+form div label + select,
+form section label + select {
+  margin: auto 0.5rem;
+  display: inline;
+  vertical-align: bottom;
+  height: 1.2rem;
+  width: max-content;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _progress.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form label > progress {
+  margin: auto 0.5rem;
+  display: inline;
+  vertical-align: bottom;
+  height: 1.2rem;
+}
+
+form > section label + progress,
+form > div label + progress {
+  vertical-align: bottom;
+  margin: auto;
+  margin-left: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _form.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form {
+  padding: 0.5rem;
+}
+
+form > * + *,
+form > fieldset * + *,
+form > div * + *,
+form > section * + * {
+  margin: 1rem auto;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _meter.styles.scss | Styles
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form label > meter,
+form > section label + meter,
+form > div label + meter {
+  vertical-align: bottom;
+  margin: auto;
+  margin-left: 0.5rem;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1339,7 +1592,7 @@ StageHands | _nav.components.scss | Component
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 .navControls-flex {
   width: 100%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   background-color: inherit;
   list-style-type: none;
@@ -1353,12 +1606,27 @@ StageHands | _nav.components.scss | Component
 .navControls-flex .dropDownMenu {
   background-color: inherit;
 }
+.navControls-flex .dropDownMenu:hover {
+  color: white;
+}
+.navControls-flex .dropDownMenu:active {
+  border: 1px solid;
+  color: white;
+}
+.navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button {
+  border: 1px solid;
+  color: white;
+}
 .navControls-flex > .dropDownMenu > .dropDownBreak > *:nth-of-type(odd) {
   background-color: #a3a3a3;
 }
 .navControls-flex > .dropDownMenu > .dropDownBreak:first-of-type {
   position: absolute;
   background-color: inherit;
+}
+.navControls-flex .dropDownMenu .dropDownMenu,
+.navControls-flex .dropDownMenu * {
+  margin: auto;
 }
 
 .dropDownMenu > .dropDownBreak {
@@ -1382,7 +1650,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.4.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.5.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

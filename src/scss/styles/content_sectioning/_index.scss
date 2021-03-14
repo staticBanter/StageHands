@@ -9,3 +9,4 @@ StageHands | _index.scss | Indexes: dist/scss/styles/content_sectioning
 @use "address.styles";
 @use "article.styles";
 @use "footer.styles";
+@forward "section.styles";

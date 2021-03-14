@@ -8,15 +8,24 @@ StageHands | _nav.placeholders.scss | Placeholder
     font-size: globals.$neutralTextHeight;
     line-height: globals.$neutralTextLine;
     padding: 0;
-    padding: 0.5rem;
+    padding: globals.$padding-large;
     display: block;
     width: auto;
     text-align: center;
     cursor: pointer;
-    text-align: center;
     text-decoration: none;
+    box-sizing: border-box;
+    text-transform: capitalize;
 }
 
 %nav-control:hover{
     color: white;
+}
+
+%nav-control:active{
+    border: 1px solid;
+}
+
+%nav-control + %nav-control{
+    margin: auto globals.$margin-large;
 }

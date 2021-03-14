@@ -4,15 +4,39 @@ StageHands | _button.styles.scss | Styles
 @use "../../placeholders/nav.placeholders";
 @use "../../placeholders/text/text-type.placeholders";
 @use "../../g_variables.scss" as globals;
+@use "sass:color";
+
+button,
+input[type=button]{
+    @extend %neutralText;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+button + button,
+input[type=button] + input[type=button],
+input[type=button] + button,
+button + input[type=button]{
+    margin: auto globals.$margin-large;
+}
 
 // Buttons inside of navigations
 // Display them like normal text.scss
 nav button,
 nav button:focus{
     @extend %nav-control;
-    @extend %neutralText;
     background-color: transparent;
     border:none;
     outline: none;
-    width: 100%;
+}
+
+
+button > img + p,
+button > svg + p{
+    margin: 0;
+    padding: 0;
+    width: 0;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
 }

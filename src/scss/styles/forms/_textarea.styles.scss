@@ -14,4 +14,13 @@ textarea{
     word-break: unset;
     word-spacing: unset;
     overflow: hidden;
+    padding: globals.$padding-small;
+}
+
+form label > textarea,
+form > section textarea,
+form > div textarea{
+    width: 100%;
+    min-height: 6rem;
+    margin: auto;
 }

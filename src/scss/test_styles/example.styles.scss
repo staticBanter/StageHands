@@ -74,3 +74,9 @@ pre + pre {
     border-top: globals.$border-grooved;
     padding-top: globals.$padding;
 }
+
+
+.example > dialog.defaultDialogs{
+    position: absolute;
+    bottom: unset;
+}

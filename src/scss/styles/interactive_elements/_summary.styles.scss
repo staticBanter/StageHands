@@ -1,0 +1,18 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _summary.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
+
+details > summary:first-of-type{
+    @extend %neutralText-bold;
+    margin: globals.$margin 0;
+    padding: globals.$padding
+}
+
+details[open] > summary:first-of-type{
+    border: none;
+    border-bottom: 1px solid;
+    box-sizing: border-box;
+}

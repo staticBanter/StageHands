@@ -1,0 +1,18 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _details.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+@use "../../placeholders/text/text-type.placeholders";
+
+
+details{
+    @extend %neutralText;
+    border: 1px solid black;
+    width: max-content;
+    box-sizing: border-box;
+}
+
+details > *{
+    margin: globals.$margin;
+}

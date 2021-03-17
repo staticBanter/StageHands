@@ -1,0 +1,14 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _menu.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../../g_variables.scss" as globals;
+menu{
+    padding-left: unset;
+    list-style-type: none;
+}
+
+menu li > *,
+menu menu{
+    padding-left: globals.$padding-large;
+}

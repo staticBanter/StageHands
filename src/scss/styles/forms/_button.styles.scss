@@ -40,3 +40,7 @@ button > svg + p{
     height: 0;
     line-height: 0;
 }
+
+menu button {
+    margin: globals.$margin;
+}

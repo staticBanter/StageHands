@@ -253,3 +253,18 @@ for the month of March-2021
   - Fixed missing Table Content ```table-head``` documentation.
   - Updated README, added notice that the documentation is in a work in progress state.
   - Fixed some spelling mistakes in the change-logs.
+
+## March-16-2021(1.6.0-Development)
+- Styles;
+  - Created initial styles for *Interactive Elements*, this includes the following:
+    - details
+    - dialog
+    - menu
+    - summary
+  - Updated:
+    - button
+  - Updated documentation styles
+- Documentation;
+  - Created documentation for new styles
+- Scripts;
+  - Added some more scripts for the documentation.

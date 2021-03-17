@@ -383,4 +383,9 @@ pre + pre {
   padding-top: 0.5rem;
 }
 
+.example > dialog.defaultDialogs {
+  position: absolute;
+  bottom: unset;
+}
+
 /*# sourceMappingURL=example.styles.css.map */

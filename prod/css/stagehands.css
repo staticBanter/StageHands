@@ -702,7 +702,7 @@ thead, th, h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-label, legend, samp kbd, caption, math, form, select, input, option, fieldset, datalist, button,
+details > summary:first-of-type, label, legend, samp kbd, details, caption, math, form, select, input, option, fieldset, datalist, button,
 input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-size: 1rem;
   line-height: 1.2rem;
@@ -728,12 +728,12 @@ thead, th, h1, h2, h3, h4, h5, h6 {
   font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
 }
 
-caption, math, form, select, input, option, fieldset, datalist, button,
+details, caption, math, form, select, input, option, fieldset, datalist, button,
 input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-family: "Inconsolata-regular", "Sans Serif";
 }
 
-label, legend, samp kbd {
+details > summary:first-of-type, label, legend, samp kbd {
   font-family: "Inconsolata-bold";
 }
 
@@ -1231,6 +1231,10 @@ button > svg + p {
   line-height: 0;
 }
 
+menu button {
+  margin: 0.5rem;
+}
+
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _datalist.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -1585,6 +1589,57 @@ colgroup {
 StageHands | _index.scss | Indexes: /dist/scss/styles/table_content
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _dialog.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+dialog {
+  position: fixed;
+  bottom: 33vh;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _details.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+details {
+  border: 1px solid black;
+  width: max-content;
+  box-sizing: border-box;
+}
+
+details > * {
+  margin: 0.5rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _summary.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+details > summary:first-of-type {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+details[open] > summary:first-of-type {
+  border: none;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _menu.styles.scss | Style
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+menu {
+  padding-left: unset;
+  list-style-type: none;
+}
+
+menu li > *,
+menu menu {
+  padding-left: 1rem;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _index.scss | Indexes: dist/scss/styles/interactive_elements
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1650,7 +1705,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.5.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.6.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

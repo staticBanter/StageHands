@@ -3,7 +3,12 @@ StageHands | _fieldset.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 
 @use "../../placeholders/text/text-type.placeholders";
+@use "../../g_variables.scss" as globals;
 
 fieldset{
     @extend %neutralText;
+}
+
+fieldset > * + * {
+    margin:  globals.$margin-large;
 }

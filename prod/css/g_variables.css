@@ -59,180 +59,40 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
 * Font and Line Heights.
 */
 @font-face {
-  font-family: "DancingScript-regular";
-  src: url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype");
-}
-@font-face {
   font-family: "DancingScript-bold";
   src: url("/fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "DancingScript-medium";
-  src: url("/fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "DancingScript-regular";
   src: url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "DancingScript-semi-bold";
-  src: url("/fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inconsolata-bold";
   src: url("/fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Inconsolata-medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "Inconsolata-regular";
   src: url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Inconsolata-semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
-}
-@font-face {
   font-family: "JetBrains_Mono-italic";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-regular";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_bold";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_light";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_light_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-thin_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-light_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-medium_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-semi-bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype");
 }
 @font-face {
   font-family: "JetBrains_Mono-bold";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "JetBrains_Mono-thin";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-light";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-medium";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "JetBrains_Mono-regular";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-semi-bold";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-regular";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-extra_bold";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-black";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype");
 }
 @font-face {
   font-family: "Sansita_Swashed-bold";
   src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Sansita_Swashed-light";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-medium";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "Sansita_Swashed-regular";
   src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-semi-bold";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
 }
 /*
 * Bind The Variables To The :root pseudo-element.
@@ -252,22 +112,22 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --success: lime;
   --white: #f6f6f6;
   --black: black;
-  --primary: #5c5c5c;
-  --secondary: #5c5c5c;
-  --accent: #a3a3a3;
+  --primary: #9600fA;
+  --secondary: #C71497;
+  --accent: #C7AA14;
   --neutralTextColour: black;
-  --activeTextColour: #a3a3a3;
-  --hoverTextColour: #5c5c5c;
-  --visitedTextColour: #a3a3a3;
+  --activeTextColour: #f6f6f6;
+  --hoverTextColour: #C71497;
+  --visitedTextColour: #C7AA14;
   --linkedTextColour: black;
   /*
   * Borders
   */
-  --border-colour: #a3a3a3;
+  --border-colour: #C7AA14;
   --border-rounded: 10px;
   --border-thickness:3px;
-  --border: 3px solid #a3a3a3;
-  --border-grooved: 3px groove #a3a3a3;
+  --border: 3px solid #C7AA14;
+  --border-grooved: 3px groove #C7AA14;
   /*
   * Box Shadow
   */

@@ -170,11 +170,25 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --displayFontFamily-bold: "Sansita_Swashed-bold";
 }
 
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _example.styles.scss | Style
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-.example > nav {
+#testing div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+#testing div + div {
+  margin: auto 0.5rem;
+}
+#testing .primary {
+  background-color: #9600fA;
+}
+#testing .secondary {
   background-color: #C71497;
 }
+#testing .accent {
+  background-color: #C7AA14;
+}
+#testing .shade {
+  background-color: #943B7C;
+}
 
-/*# sourceMappingURL=navigation.styles.css.map */
+/*# sourceMappingURL=colors.styles.css.map */

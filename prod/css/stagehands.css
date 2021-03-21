@@ -398,180 +398,40 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
 * Font and Line Heights.
 */
 @font-face {
-  font-family: "DancingScript-regular";
-  src: url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype");
-}
-@font-face {
   font-family: "DancingScript-bold";
   src: url("/fonts/Dancing_Script/static/DancingScript-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "DancingScript-medium";
-  src: url("/fonts/Dancing_Script/static/DancingScript-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "DancingScript-regular";
   src: url("/fonts/Dancing_Script/static/DancingScript-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "DancingScript-semi-bold";
-  src: url("/fonts/Dancing_Script/static/DancingScript-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-condensed_semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Condensed-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_regular";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inconsolata-expanded_semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata_Expanded-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inconsolata-bold";
   src: url("/fonts/Inconsolata/static/Inconsolata-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Inconsolata-medium";
-  src: url("/fonts/Inconsolata/static/Inconsolata-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "Inconsolata-regular";
   src: url("/fonts/Inconsolata/static/Inconsolata-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Inconsolata-semi-bold";
-  src: url("/fonts/Inconsolata/static/Inconsolata-SemiBold.ttf") format("truetype");
-}
-@font-face {
   font-family: "JetBrains_Mono-italic";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-regular";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_bold";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_light";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLight.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-extra_light_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ExtraLightItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-thin_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-ThinItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-light_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-LightItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-BoldItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-medium_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-MediumItalic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-semi-bold_italic";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBoldItalic.ttf") format("truetype");
 }
 @font-face {
   font-family: "JetBrains_Mono-bold";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "JetBrains_Mono-thin";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Thin.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-light";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-medium";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "JetBrains_Mono-regular";
   src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JetBrains_Mono-semi-bold";
-  src: url("/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-regular";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-extra_bold";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-black";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-black.ttf") format("truetype");
 }
 @font-face {
   font-family: "Sansita_Swashed-bold";
   src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Sansita_Swashed-light";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-medium";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype");
-}
-@font-face {
   font-family: "Sansita_Swashed-regular";
   src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sansita_Swashed-semi-bold";
-  src: url("/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
 }
 /*
 * Bind The Variables To The :root pseudo-element.
@@ -591,22 +451,22 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --success: lime;
   --white: #f6f6f6;
   --black: black;
-  --primary: #5c5c5c;
-  --secondary: #5c5c5c;
-  --accent: #a3a3a3;
+  --primary: #9600fA;
+  --secondary: #C71497;
+  --accent: #C7AA14;
   --neutralTextColour: black;
-  --activeTextColour: #a3a3a3;
-  --hoverTextColour: #5c5c5c;
-  --visitedTextColour: #a3a3a3;
+  --activeTextColour: #f6f6f6;
+  --hoverTextColour: #C71497;
+  --visitedTextColour: #C7AA14;
   --linkedTextColour: black;
   /*
   * Borders
   */
-  --border-colour: #a3a3a3;
+  --border-colour: #C7AA14;
   --border-rounded: 10px;
   --border-thickness:3px;
-  --border: 3px solid #a3a3a3;
-  --border-grooved: 3px groove #a3a3a3;
+  --border: 3px solid #C7AA14;
+  --border-grooved: 3px groove #C7AA14;
   /*
   * Box Shadow
   */
@@ -650,6 +510,21 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _border.placeholder.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+.navControls-flex .dropDownMenu:active, .navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button, details[open] > summary:first-of-type, details, nav button:active,
+nav button:active:focus, nav a:active {
+  border-width: 3px;
+  border-color: #C7AA14;
+  border-style: solid;
+}
+
+.navControls-flex .dropDownMenu:active, .navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button, details[open] > summary:first-of-type, details, nav button:active,
+nav button:active:focus, nav a:active {
+  border-width: 1.5px;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _nav.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 nav button,
@@ -660,7 +535,6 @@ nav button:focus, nav a {
   padding: 0;
   padding: 1rem;
   display: block;
-  width: auto;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
@@ -670,10 +544,6 @@ nav button:focus, nav a {
 
 nav button:hover, nav a:hover {
   color: white;
-}
-
-nav button:active, nav a:active {
-  border: 1px solid;
 }
 
 nav button + button,
@@ -687,8 +557,8 @@ nav button:focus + a, nav a + a {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _text-type.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-dt, b, blockquote,
-blockquote *, q, i, em, abbr, tfoot, tbody, td, textarea, footer, article, address, aside, body main,
+dt, b, address, address *, blockquote,
+blockquote *, q, i, em, abbr, tfoot, tbody, td, textarea, footer, article, aside, body main,
 body *[role=main]:first-of-type, body header:first-of-type,
 body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   font-size: 1rem;
@@ -709,13 +579,13 @@ input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite,
   color: black;
 }
 
-tfoot, tbody, td, textarea, footer, article, address, aside, body main,
+tfoot, tbody, td, textarea, footer, article, aside, body main,
 body *[role=main]:first-of-type, body header:first-of-type,
 body *[role=banner]:first-of-type, body, dd, p, rt, dfn {
   font-family: "JetBrains_Mono-regular", "Times New Roman", "Times";
 }
 
-blockquote,
+address, address *, blockquote,
 blockquote *, q, i, em, abbr {
   font-family: "JetBrains_Mono-italic";
 }
@@ -741,15 +611,15 @@ details > summary:first-of-type, label, legend, samp kbd {
 StageHands | _anchor.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 a:visited {
-  color: #a3a3a3;
+  color: #C7AA14;
 }
 
 a:hover {
-  color: #5c5c5c;
+  color: #C71497;
 }
 
 a:active {
-  color: #a3a3a3;
+  color: #f6f6f6;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -795,7 +665,7 @@ kbd {
   border-radius: 5px;
   padding: 0.25rem;
   margin: auto 0.25rem;
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
 }
 
 samp kbd {
@@ -920,14 +790,14 @@ StageHands | _figcaption.styles.scss | Styles
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _bool-input.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-form label > input[type=checkbox],
-form label > input[type=radio],
-form fieldset label > input[type=checkbox],
-form fieldset label > input[type=radio],
-form fieldset section > input[type=checkbox],
-form fieldset section > input[type=radio],
-form fieldset div > input[type=checkbox],
-form fieldset div > input[type=radio], form > label > input[type=checkbox], form > section > input[type=checkbox], form > div > input[type=checkbox],
+label > input[type=checkbox],
+label > input[type=radio],
+fieldset label > input[type=checkbox],
+fieldset label > input[type=radio],
+fieldset section > input[type=checkbox],
+fieldset section > input[type=radio],
+fieldset div > input[type=checkbox],
+fieldset div > input[type=radio], form > label > input[type=checkbox], form > section > input[type=checkbox], form > div > input[type=checkbox],
 form > label > input[type=radio],
 form > section > input[type=radio],
 form > div > input[type=radio] {
@@ -954,6 +824,13 @@ form > label > input:not([type=checkbox]):not([type=button]):not([type=color]):n
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _fieldset.placeholders.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+form fieldset > section, form fieldset > div {
+  display: inline-block;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _div.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 form > div {
@@ -962,15 +839,6 @@ form > div {
 
 form > div > * + * {
   margin: 0.5rem auto;
-}
-
-form fieldset > div {
-  display: inline-block;
-  width: auto;
-}
-
-form fieldset > div + div {
-  margin: 0.5rem;
 }
 
 form fieldset > div {
@@ -1011,7 +879,7 @@ StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 body header:first-of-type,
 body *[role=banner]:first-of-type {
-  background-color: #5c5c5c;
+  background-color: #9600fA;
   color: #f6f6f6;
   min-height: 10%;
   height: 10%;
@@ -1028,11 +896,11 @@ nav {
 }
 
 body header:first-of-type nav:first-of-type {
-  background-color: #5c5c5c;
-  display: flex;
   width: 100%;
   height: 100%;
-  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: inherit;
 }
 
 /*! StageHands | Headings
@@ -1043,6 +911,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem;
 }
 
+nav h1:first-of-type {
+  align-self: center;
+}
+
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _main.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -1050,7 +922,6 @@ body main,
 body *[role=main]:first-of-type {
   overflow: auto;
   min-height: 80%;
-  max-height: max-content;
   padding: 0.5rem;
   box-sizing: border-box;
 }
@@ -1069,7 +940,7 @@ body *[role=complementary] {
   display: inline-block;
   padding: 0.5rem;
   box-sizing: border-box;
-  background-color: #5c5c5c;
+  background-color: #C71497;
   border-radius: 0 10px 10px 0;
 }
 
@@ -1092,9 +963,7 @@ StageHands | _address.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 address {
   display: inline-block;
-  width: max-content;
   padding: 0.5rem;
-  box-sizing: border-box;
 }
 
 address + address {
@@ -1130,8 +999,7 @@ StageHands | _footer.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 footer {
   min-height: 10%;
-  max-height: max-content;
-  background-color: #5c5c5c;
+  background-color: #C71497;
   clear: both;
   margin-top: 0.5rem;
 }
@@ -1145,15 +1013,6 @@ form > section {
 
 form > section > * + * {
   margin: 0.5rem auto;
-}
-
-form fieldset > section {
-  display: inline-block;
-  width: auto;
-}
-
-form fieldset > section + section {
-  margin: 0.5rem;
 }
 
 form fieldset > section {
@@ -1241,6 +1100,10 @@ StageHands | _datalist.styles.scss | Styles
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _fieldset.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+fieldset > * + * {
+  margin: 1rem;
+}
+
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _legend.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -1304,13 +1167,13 @@ div + div label + input input:not([type=checkbox]):not([type=button]):not([type=
   display: block;
 }
 
-form label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
-form > div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
-form > section input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]) {
+label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+section input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]) {
   width: 100%;
 }
 
-form label > input[type=color] {
+label > input[type=color] {
   height: 1rem;
 }
 
@@ -1333,9 +1196,7 @@ form div label + select,
 form section label + select {
   margin: auto 0.5rem;
   display: inline;
-  vertical-align: bottom;
   height: 1.2rem;
-  width: max-content;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1387,7 +1248,7 @@ StageHands | _index.scss | Indexes: dist/scss/styles/forms
 StageHands | _embed.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 embed {
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
   padding: 0.5rem;
 }
 
@@ -1395,7 +1256,7 @@ embed {
 StageHands | _iframe.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 iframe {
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
   padding: 0.5rem;
 }
 
@@ -1415,7 +1276,7 @@ portal {
   display: block;
   height: 250px;
   width: 250px;
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1515,7 +1376,7 @@ StageHands | _caption.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 caption {
   caption-side: bottom;
-  background-color: #a3a3a3;
+  background-color: #C7AA14;
   padding: 0.25rem;
 }
 
@@ -1523,7 +1384,7 @@ caption {
 StageHands | _table.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 table {
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
   border-spacing: 0;
   border-collapse: collapse;
   overflow: auto;
@@ -1533,7 +1394,7 @@ table {
 StageHands | _table-cell.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 th, td {
-  border: 3px solid #a3a3a3;
+  border: 3px solid #C7AA14;
   box-sizing: border-box;
   padding: 0.25rem;
 }
@@ -1549,9 +1410,6 @@ th {
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-StageHands | _table-row.styles.scss | Styles
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _table-body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 tbody {
@@ -1566,7 +1424,7 @@ colgroup + tbody {
 StageHands | _table-body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 tfoot td {
-  background-color: #5c5c5c;
+  background-color: #C71497;
   color: white;
 }
 
@@ -1574,7 +1432,7 @@ tfoot td {
 StageHands | _table-body.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 thead tr:first-of-type th {
-  background-color: #5c5c5c;
+  background-color: #9600fA;
   color: #f6f6f6;
 }
 
@@ -1600,8 +1458,6 @@ dialog {
 StageHands | _details.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 details {
-  border: 1px solid black;
-  width: max-content;
   box-sizing: border-box;
 }
 
@@ -1618,8 +1474,9 @@ details > summary:first-of-type {
 }
 
 details[open] > summary:first-of-type {
-  border: none;
-  border-bottom: 1px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   box-sizing: border-box;
 }
 
@@ -1657,23 +1514,22 @@ StageHands | _nav.components.scss | Component
 .navControls-flex .dropDownBreak {
   list-style-type: none;
   padding-left: 0;
+  box-sizing: border-box;
+  background-color: inherit;
 }
 .navControls-flex .dropDownMenu {
+  background-color: inherit;
+  box-sizing: border-box;
   background-color: inherit;
 }
 .navControls-flex .dropDownMenu:hover {
   color: white;
 }
 .navControls-flex .dropDownMenu:active {
-  border: 1px solid;
   color: white;
 }
 .navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button {
-  border: 1px solid;
   color: white;
-}
-.navControls-flex > .dropDownMenu > .dropDownBreak > *:nth-of-type(odd) {
-  background-color: #a3a3a3;
 }
 .navControls-flex > .dropDownMenu > .dropDownBreak:first-of-type {
   position: absolute;
@@ -1699,13 +1555,12 @@ StageHands | _nav.components.scss | Component
 .dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover > .dropDownBreak {
   position: absolute;
   left: 100%;
-  background-color: #a3a3a3;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.6.0 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.6.1 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

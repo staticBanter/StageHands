@@ -268,3 +268,20 @@ for the month of March-2021
   - Created documentation for new styles
 - Scripts;
   - Added some more scripts for the documentation.
+
+## March-21-2021(1.6.1-Development)
+- Styles;
+  - Cleaned up and removed some styles.
+  - Added new styles for:
+    - heading,
+    - fieldset
+- Placeholders;
+  - Created a new border placeholder
+  - Created fieldset-separator placeholder
+  - Added missing index for form placeholders
+- Data;
+  - Commented out unused fonts.
+- Test styles;
+  - Updated test styles.
+- Made public
+- Updated the contribution guide.

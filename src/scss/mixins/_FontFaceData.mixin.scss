@@ -30,9 +30,9 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 /// @returns - @font-face data.
 @mixin FontFaceData($fontName,$fontList,$fontGroup:"static",$fontType:"regular",$debug:null){
 
-    @if($debug){
-        @debug("~StageHands:FontFaceDataMixin~ was called with the following, fontName:",$fontName,"fontList:",$fontList,"fontGroup:",$fontGroup);
-    }
+    // @if($debug){
+    //     @debug("~StageHands:FontFaceDataMixin~ was called with the following, fontName:",$fontName,"fontList:",$fontList,"fontGroup:",$fontGroup);
+    // }
 
     // If the font name does not meet constraints,
     // throw error.
@@ -62,6 +62,10 @@ StageHands | _FontFaceData.mixin.scss | Mixin
     // I really don't like how this looks -.-
     @if meta.type-of($fontList) == "list"{
 
+        @if $debug{
+            @debug('Type was a list');
+        }
+
         $currentGroup:null;
         @each $fName, $valueGroup in $fontList{
             @if($fName == $fontName){
@@ -86,10 +90,15 @@ StageHands | _FontFaceData.mixin.scss | Mixin
 
     }@else{
 
+        @if($debug){
+            @debug('Type was a Map');
+        }
+
         // $font: map.get($fontList,$fontName);
         // $fontGroup: map.get($font,"static");
         // $fontUrl: map.get($fontGroup,"regular");
         $fontValues: map.get($fontList,$fontName,$fontGroup,$fontType);
+        // @debug(map.get($fontList,$fontName,$fontGroup));
         $srcList:list.append($srcList,(url(list.nth($fontValues,1)) format(list.nth($fontValues,2))));
 
     }

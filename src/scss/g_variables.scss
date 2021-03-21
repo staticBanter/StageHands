@@ -27,13 +27,15 @@ $danger: rgba(255,0,0,1) !default;
 $success: rgba(0,255,0,1) !default;
 $white: rgba(246,246,246,1) !default;
 $black: rgba(0,0,0,1) !default;
-$primary: rgb(92,92,92,1) !default;
-$secondary: color.complement($primary) !default;
-$accent: color.invert($secondary) !default;
+$primary: #9600fA !default;
+$secondary: #C71497 !default;
+$accent: #C7AA14 !default;
+$shade: #943B7C !default;
+$highlight: #FBEF3F !default;
 
 //Text Colours.
 $neutralTextColour: rgba(0,0,0,1) !default;
-$activeTextColour: $accent !default;
+$activeTextColour: $white !default;
 $hoverTextColour: $secondary !default;
 $visitedTextColour: $accent !default;
 $linkedTextColour: $neutralTextColour !default;

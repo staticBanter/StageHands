@@ -18,25 +18,24 @@ div + div label + input input:not([type=checkbox]):not([type=button]):not([type=
     display: block;
 }
 
-form  label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
-form > div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
-form > section  input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]){
+label > input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+div input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]),
+section  input:not([type=checkbox]):not([type=button]):not([type=color]):not([type=radio]):not([type=reset]):not([type=submit]){
     width: 100%; 
 }
 
-
-form label > input[type=checkbox],
-form label > input[type=radio],
-form fieldset label > input[type=checkbox],
-form fieldset label > input[type=radio],
-form fieldset section > input[type=checkbox],
-form fieldset section > input[type=radio],
-form fieldset div > input[type=checkbox],
-form fieldset div > input[type=radio] {
+label > input[type=checkbox],
+label > input[type=radio],
+fieldset label > input[type=checkbox],
+fieldset label > input[type=radio],
+fieldset section > input[type=checkbox],
+fieldset section > input[type=radio],
+fieldset div > input[type=checkbox],
+fieldset div > input[type=radio] {
     @extend %bool-input;
 }
 
-form label > input[type=color]{
+label > input[type=color]{
     height: globals.$neutralTextHeight;
 }
 

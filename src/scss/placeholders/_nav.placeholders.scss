@@ -2,6 +2,7 @@
 StageHands | _nav.placeholders.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @use  "../g_variables.scss" as globals;
+@use "../placeholders/border.placeholders";
 
 %nav-control{
     color: globals.$neutralTextColour;
@@ -10,7 +11,6 @@ StageHands | _nav.placeholders.scss | Placeholder
     padding: 0;
     padding: globals.$padding-large;
     display: block;
-    width: auto;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
@@ -23,7 +23,7 @@ StageHands | _nav.placeholders.scss | Placeholder
 }
 
 %nav-control:active{
-    border: 1px solid;
+    @extend %border-thin !optional;
 }
 
 %nav-control + %nav-control{

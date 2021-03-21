@@ -4,6 +4,7 @@ StageHands | _summary.styles.scss | Style
 
 @use "../../g_variables.scss" as globals;
 @use "../../placeholders/text/text-type.placeholders";
+@use "../../placeholders/border.placeholders";
 
 details > summary:first-of-type{
     @extend %neutralText-bold;
@@ -12,7 +13,9 @@ details > summary:first-of-type{
 }
 
 details[open] > summary:first-of-type{
-    border: none;
-    border-bottom: 1px solid;
+    @extend %border-thin;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     box-sizing: border-box;
 }

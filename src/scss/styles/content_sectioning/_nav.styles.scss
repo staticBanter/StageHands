@@ -14,9 +14,9 @@ nav{
 
 // The first(main) navigation on the page.
 body header:first-of-type nav:first-of-type{
-    background-color: globals.$secondary;
-    display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
+    display: -ms-flexbox; //(IE:8-11)
+    display: flex;
+    background-color: inherit;
 }

@@ -8,7 +8,6 @@ StageHands | _footer.styles.scss | Style
 footer{
     @extend %bodyText;
     min-height: 10%;
-    max-height: max-content;
     background-color: globals.$secondary;
     clear: both;
     margin-top: globals.$margin;

@@ -6,11 +6,13 @@ StageHands | _address.styles.scss | Style
 @use "../../placeholders/text/text-type.placeholders";
 
 address{
-    @extend %bodyText;
+    @extend %bodyText-italic;
     display: inline-block;
-    width: max-content;
     padding: globals.$padding;
-    box-sizing: border-box;
+}
+
+address * {
+    @extend %bodyText-italic;
 }
 
 address + address{

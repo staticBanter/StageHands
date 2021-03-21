@@ -2,6 +2,7 @@
 StageHands | _section.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
 @use "../../placeholders/form/form-separator.placeholders";
+@use "../../placeholders/form/fieldset-separator.placeholders";
 @use "../../g_variables.scss" as globals;
 
 
@@ -15,13 +16,7 @@ form > section > * + *{
 }
 
 form fieldset > section{
-    display: inline-block;
-    width: auto;
-}
-
-
-form fieldset > section + section {
-    margin:  globals.$margin;
+    @extend %fieldset-separator;
 }
 
 form fieldset > section{

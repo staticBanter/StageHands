@@ -1,0 +1,39 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _border.placeholder.scss | Placeholder
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+@use "../g_variables.scss" as globals;
+
+%border-base{
+    border-width: globals.$border-thickness;
+    border-color: globals.$accent;
+    border-style: solid;
+}
+
+%border-thin{
+    @extend %border-base;
+    border-width: (globals.$border-thickness / 2);
+}
+
+
+%border-thick{
+    @extend %border-base;
+    border-width: (globals.$border-thickness * 1.5);
+}
+
+%border-round{
+    @extend %border-base;
+    border-radius: globals.$border-rounded;
+}
+
+%border-thin-round{
+    @extend %border-base;
+    border-width: (globals.$border-thickness / 2);
+    border-radius: globals.$border-rounded;
+}
+
+
+%border-thick-round{
+    @extend %border-base;
+    border-width: (globals.$border-thickness * 1.5);
+    border-radius: globals.$border-rounded;
+}

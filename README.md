@@ -2,7 +2,7 @@ StageHands
 =
 A Typescript &amp; SCSS Framework
 
-> Version: 1.6.0 - Development
+> Version: 1.6.1 - Development
 > Last Update: Jan 22, 2021.
 > Readme Last Updated: March 13, 2021.
 
@@ -30,8 +30,7 @@ To view the documentation files locally and have the links work properly, it is 
 
 
 # Contributions
-StageHands is currently not accepting external contributions at this point as the project is too early in development 😥. Buuuttt....
-Before the initial release of the project we will have a community opener where we will see what everyone wants and what needs to be improved or dropped. Then we hope to move to a full initial launch were we will have a more stable, but probably less frequent update schedule. After that it will be the community's 🥳🎊🎉
+Currently there is no documented method to properly contribute, this will be out soon though!
 
 
 # Changes

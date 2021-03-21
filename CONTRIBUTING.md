@@ -12,7 +12,7 @@ Documentation on how to contribute, list issues and bug-reports, for [StageHands
 
 # Contributing to StageHands
 
-Currently, this project is not taking any other contributors at the moment, as it is to early in development and a clear goal still has not been established. Please check-back at a future time.
+Sorry we don't have a contribution standard at this point 😕, but once we have one we will post it here!
 
 # Issues & Bug-Reporting
 

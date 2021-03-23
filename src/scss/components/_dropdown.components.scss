@@ -1,0 +1,80 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _dropdown.components.scss | Component
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+@use "../placeholders/border.placeholders";
+@use "../placeholders/text/text-type.placeholders";
+@use "../g_variables.scss" as globals;
+
+.dropDownMenu *{
+    @extend %neutralText;
+}
+
+.dropDownMenu > .dropDownBreak:first-of-type{
+    display: none;
+    background-color: inherit;
+    @extend %border-thin;
+}
+
+.dropDownMenu{
+
+    .dropDownBreak{
+        width: max-content;
+    }
+
+    button{
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        border:none;
+    }
+
+    a,
+    p{
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        line-break: none;
+        padding-left: globals.$padding;
+        padding-right: globals.$padding;
+    }
+
+    * + *,
+    .dropDownBreak :first-child{
+        @extend %border-thin;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .dropDownBreak > :last-child{
+        border-bottom: none;
+    }
+
+    .dropDownBreak .dropDownMenu button:first-of-type{
+        border: none;
+    }
+
+}
+
+.dropDownMenu > .dropDownBreak:first-of-type .dropDownMenu{
+    display: flex;
+}
+
+.dropDownMenu:hover >{
+
+    .dropDownBreak:first-of-type{
+        display: flex;
+        flex-flow: column;
+        position: absolute;
+    }
+
+    .dropDownBreak .dropDownMenu:hover > .dropDownBreak{
+        position: absolute;
+        left: 100%;
+    }
+
+}

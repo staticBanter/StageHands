@@ -15,67 +15,6 @@ StageHands | _nav.components.scss | Component
     padding-left: globals.$padding;
 }
 
-
-.navControls-flex{
-
-
-    .dropDownBreak {
-        list-style-type: none;
-        padding-left: 0;
-        box-sizing: border-box;
-        background-color: inherit;
-    }
-
-    .dropDownMenu{
-        background-color: inherit;
-        box-sizing: border-box;
-        background-color: inherit;
-    }
-
-
-    .dropDownMenu:hover{
-        color: white;
-    }
-
-    .dropDownMenu:active{
-        @extend %border-thin;
-        color: white;
-    }
-
-    .dropDownMenu:hover > button
-    .dropDownMenu:active > button{
-        @extend %border-thin;
-        color: white;
-    }
-
-
-    > .dropDownMenu > .dropDownBreak:first-of-type{
-        position: absolute;
-        background-color: inherit;
-    }
-
-    .dropDownMenu .dropDownMenu,
-    .dropDownMenu *{
-        margin: auto;
-    }
-
-}
-
-
-
-.dropDownMenu > .dropDownBreak{
-    display: none;
-}
-
-.dropDownMenu:hover > .dropDownBreak{
-    display: block;
-}
-
-.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover{
-    display: flex;
-}
-
-.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover > .dropDownBreak{
-    position: absolute;
-    left: 100%;
+.navControls-flex  *{
+    background-color: inherit;
 }

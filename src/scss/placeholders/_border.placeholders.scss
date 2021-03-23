@@ -7,6 +7,7 @@ StageHands | _border.placeholder.scss | Placeholder
     border-width: globals.$border-thickness;
     border-color: globals.$accent;
     border-style: solid;
+    box-sizing: border-box;
 }
 
 %border-thin{

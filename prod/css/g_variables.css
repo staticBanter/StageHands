@@ -115,8 +115,10 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --primary: #9600fA;
   --secondary: #C71497;
   --accent: #C7AA14;
+  --shade: #943B7C;
+  --highlight: #FBEF3F;
   --neutralTextColour: black;
-  --activeTextColour: #f6f6f6;
+  --activeTextColour: #FBEF3F;
   --hoverTextColour: #C71497;
   --visitedTextColour: #C7AA14;
   --linkedTextColour: black;
@@ -159,15 +161,15 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --neutralTextLine: 1.2rem;
   --displayTextHeight: 2rem;
   --displayTextLine: 2.6rem;
-  --headerFontFamily: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
-  --headerFontFamily-bold: "DancingScript-bold";
+  --headerFontFamily: "Sansita_Swashed-regular", "Lucida Handwriting", "Times New Roman", Times;
+  --headerFontFamily-bold: "Sansita_Swashed-bold";
   --bodyFontFamily: "JetBrains_Mono-regular", "Times New Roman", "Times";
   --bodyFontFamily-bold: "JetBrains_Mono-bold";
   --bodyFontFamily-italic: "JetBrains_Mono-italic";
   --neutralFontFamily: "Inconsolata-regular", "Sans Serif";
   --neutralFontFamily-bold: "Inconsolata-bold";
-  --displayFontFamily: "Sansita_Swashed-regular";
-  --displayFontFamily-bold: "Sansita_Swashed-bold";
+  --displayFontFamily: "DancingScript-regular";
+  --displayFontFamily-bold: "DancingScript-bold";
 }
 
 /*# sourceMappingURL=g_variables.css.map */

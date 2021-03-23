@@ -454,8 +454,10 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --primary: #9600fA;
   --secondary: #C71497;
   --accent: #C7AA14;
+  --shade: #943B7C;
+  --highlight: #FBEF3F;
   --neutralTextColour: black;
-  --activeTextColour: #f6f6f6;
+  --activeTextColour: #FBEF3F;
   --hoverTextColour: #C71497;
   --visitedTextColour: #C7AA14;
   --linkedTextColour: black;
@@ -498,28 +500,31 @@ StageHands | _index.scss | Indexes: dist/scss/mixins
   --neutralTextLine: 1.2rem;
   --displayTextHeight: 2rem;
   --displayTextLine: 2.6rem;
-  --headerFontFamily: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
-  --headerFontFamily-bold: "DancingScript-bold";
+  --headerFontFamily: "Sansita_Swashed-regular", "Lucida Handwriting", "Times New Roman", Times;
+  --headerFontFamily-bold: "Sansita_Swashed-bold";
   --bodyFontFamily: "JetBrains_Mono-regular", "Times New Roman", "Times";
   --bodyFontFamily-bold: "JetBrains_Mono-bold";
   --bodyFontFamily-italic: "JetBrains_Mono-italic";
   --neutralFontFamily: "Inconsolata-regular", "Sans Serif";
   --neutralFontFamily-bold: "Inconsolata-bold";
-  --displayFontFamily: "Sansita_Swashed-regular";
-  --displayFontFamily-bold: "Sansita_Swashed-bold";
+  --displayFontFamily: "DancingScript-regular";
+  --displayFontFamily-bold: "DancingScript-bold";
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _border.placeholder.scss | Placeholder
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-.navControls-flex .dropDownMenu:active, .navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button, details[open] > summary:first-of-type, details, nav button:active,
+.dropDownMenu > .dropDownBreak:first-of-type, .dropDownMenu * + *,
+.dropDownMenu .dropDownBreak :first-child, details[open] > summary:first-of-type, details, aside > footer, nav button:active,
 nav button:active:focus, nav a:active {
   border-width: 3px;
   border-color: #C7AA14;
   border-style: solid;
+  box-sizing: border-box;
 }
 
-.navControls-flex .dropDownMenu:active, .navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button, details[open] > summary:first-of-type, details, nav button:active,
+.dropDownMenu > .dropDownBreak:first-of-type, .dropDownMenu * + *,
+.dropDownMenu .dropDownBreak :first-child, details[open] > summary:first-of-type, details, aside > footer, nav button:active,
 nav button:active:focus, nav a:active {
   border-width: 1.5px;
 }
@@ -572,7 +577,7 @@ thead, th, h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-details > summary:first-of-type, label, legend, samp kbd, details, caption, math, form, select, input, option, fieldset, datalist, button,
+details > summary:first-of-type, label, legend, samp kbd, .dropDownMenu *, details, caption, math, form, select, input, option, fieldset, datalist, button,
 input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-size: 1rem;
   line-height: 1.2rem;
@@ -595,10 +600,10 @@ dt, b {
 }
 
 thead, th, h1, h2, h3, h4, h5, h6 {
-  font-family: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
+  font-family: "Sansita_Swashed-regular", "Lucida Handwriting", "Times New Roman", Times;
 }
 
-details, caption, math, form, select, input, option, fieldset, datalist, button,
+.dropDownMenu *, details, caption, math, form, select, input, option, fieldset, datalist, button,
 input[type=button], nav, figcaption, li, var, time, samp, kbd, data, code, cite, a {
   font-family: "Inconsolata-regular", "Sans Serif";
 }
@@ -619,7 +624,7 @@ a:hover {
 }
 
 a:active {
-  color: #f6f6f6;
+  color: #FBEF3F;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -888,6 +893,16 @@ body *[role=banner]:first-of-type {
   margin-bottom: 0.5rem;
 }
 
+form > header:first-of-type {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+aside > header:first-of-type {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _header.styles.scss | Style
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -938,7 +953,6 @@ body aside:first-of-type,
 body *[role=complementary] {
   width: 20%;
   display: inline-block;
-  padding: 0.5rem;
   box-sizing: border-box;
   background-color: #C71497;
   border-radius: 0 10px 10px 0;
@@ -1002,6 +1016,19 @@ footer {
   background-color: #C71497;
   clear: both;
   margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+form > footer {
+  margin-bottom: 0;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+aside > footer {
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
 }
 
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -1064,6 +1091,10 @@ button,
 input[type=button] {
   min-height: 44px;
   min-width: 44px;
+}
+
+button:active {
+  color: #FBEF3F;
 }
 
 button + button,
@@ -1219,10 +1250,6 @@ form > div label + progress {
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _form.styles.scss | Styles
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-form {
-  padding: 0.5rem;
-}
-
 form > * + *,
 form > fieldset * + *,
 form > div * + *,
@@ -1511,48 +1538,62 @@ StageHands | _nav.components.scss | Component
   padding-left: 0.5rem;
 }
 
-.navControls-flex .dropDownBreak {
-  list-style-type: none;
-  padding-left: 0;
-  box-sizing: border-box;
+.navControls-flex * {
   background-color: inherit;
-}
-.navControls-flex .dropDownMenu {
-  background-color: inherit;
-  box-sizing: border-box;
-  background-color: inherit;
-}
-.navControls-flex .dropDownMenu:hover {
-  color: white;
-}
-.navControls-flex .dropDownMenu:active {
-  color: white;
-}
-.navControls-flex .dropDownMenu:hover > button .dropDownMenu:active > button {
-  color: white;
-}
-.navControls-flex > .dropDownMenu > .dropDownBreak:first-of-type {
-  position: absolute;
-  background-color: inherit;
-}
-.navControls-flex .dropDownMenu .dropDownMenu,
-.navControls-flex .dropDownMenu * {
-  margin: auto;
 }
 
-.dropDownMenu > .dropDownBreak {
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+StageHands | _dropdown.components.scss | Component
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+.dropDownMenu > .dropDownBreak:first-of-type {
   display: none;
+  background-color: inherit;
 }
 
-.dropDownMenu:hover > .dropDownBreak {
+.dropDownMenu .dropDownBreak {
+  width: max-content;
+}
+.dropDownMenu button {
   display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.dropDownMenu a,
+.dropDownMenu p {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  line-break: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.dropDownMenu * + *,
+.dropDownMenu .dropDownBreak :first-child {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.dropDownMenu .dropDownBreak > :last-child {
+  border-bottom: none;
+}
+.dropDownMenu .dropDownBreak .dropDownMenu button:first-of-type {
+  border: none;
 }
 
-.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover {
+.dropDownMenu > .dropDownBreak:first-of-type .dropDownMenu {
   display: flex;
 }
 
-.dropDownMenu:hover > .dropDownBreak > .dropDownMenu:hover > .dropDownBreak {
+.dropDownMenu:hover > .dropDownBreak:first-of-type {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+}
+.dropDownMenu:hover > .dropDownBreak .dropDownMenu:hover > .dropDownBreak {
   position: absolute;
   left: 100%;
 }
@@ -1560,7 +1601,7 @@ StageHands | _nav.components.scss | Component
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 StageHands | _index.scss | Indexes: /dist/scss/components/
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-/*! | StageHands : v1.6.1 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
+/*! | StageHands : v1.6.2 - Development | MIT License  | https://github.com/staticBanter/StageHands | Jordan Vezina(staticBanter) |*/
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 * Main File.
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/

@@ -35,7 +35,7 @@ $highlight: #FBEF3F !default;
 
 //Text Colours.
 $neutralTextColour: rgba(0,0,0,1) !default;
-$activeTextColour: $white !default;
+$activeTextColour: $highlight !default;
 $hoverTextColour: $secondary !default;
 $visitedTextColour: $accent !default;
 $linkedTextColour: $neutralTextColour !default;
@@ -112,8 +112,8 @@ $variableFonts: false; // If true fonts will use variable versions. WARNING! Ens
 }
 
 // Header And Title Fonts
-$headerFontFamily: "DancingScript-regular", "Lucida Handwriting", "Times New Roman", Times;
-$headerFontFamily-bold: "DancingScript-bold";
+$headerFontFamily: "Sansita_Swashed-regular", "Lucida Handwriting", "Times New Roman", Times;
+$headerFontFamily-bold: "Sansita_Swashed-bold";
 
 // Body Text Fonts(TODO).
 $bodyFontFamily: "JetBrains_Mono-regular", "Times New Roman", "Times";
@@ -126,8 +126,8 @@ $neutralFontFamily: "Inconsolata-regular", "Sans Serif";
 $neutralFontFamily-bold: "Inconsolata-bold";
 
 // Display Font Text.
-$displayFontFamily: "Sansita_Swashed-regular";
-$displayFontFamily-bold: "Sansita_Swashed-bold";
+$displayFontFamily: "DancingScript-regular";
+$displayFontFamily-bold: "DancingScript-bold";
 
 
 /*
@@ -154,6 +154,8 @@ $displayFontFamily-bold: "Sansita_Swashed-bold";
     --primary: #{$primary};
     --secondary: #{$secondary};
     --accent: #{$accent};
+    --shade: #{$shade};
+    --highlight: #{$highlight};
 
     //Text Colours.
     --neutralTextColour: #{$neutralTextColour};

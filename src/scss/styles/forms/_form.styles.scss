@@ -6,7 +6,6 @@ StageHands | _form.styles.scss | Styles
 
 form{
     @extend %neutralText;
-    padding: globals.$padding;
 }
 
 form > * + *,

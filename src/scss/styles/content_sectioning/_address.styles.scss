@@ -11,12 +11,12 @@ address{
     padding: globals.$padding;
 }
 
-address * {
-    @extend %bodyText-italic;
-}
-
 address + address{
     margin: auto globals.$margin;
+}
+
+address * {
+    @extend %bodyText-italic;
 }
 
 address > *{

@@ -13,6 +13,10 @@ input[type=button]{
     min-width: 44px;
 }
 
+button:active{
+    color: globals.$activeTextColour;
+}
+
 button + button,
 input[type=button] + input[type=button],
 input[type=button] + button,

@@ -14,7 +14,6 @@ body aside:first-of-type,
 body *[role=complementary] {
     width: 20%;
     display: inline-block;
-    padding: globals.$padding;
     box-sizing: border-box;
     background-color: globals.$secondary;
     border-radius: 0 10px 10px 0;

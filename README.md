@@ -2,7 +2,7 @@ StageHands
 =
 A Typescript &amp; SCSS Framework
 
-> Version: 1.6.1 - Development
+> Version: 1.6.2 - Development
 > Last Update: Jan 22, 2021.
 > Readme Last Updated: March 13, 2021.
 

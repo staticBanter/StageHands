@@ -1,0 +1,7 @@
+@use "../g_variables.scss" as globals;
+@use "../placeholders/border.placeholders";
+
+.example{
+    @extend %border-thick;
+    width: max-content;
+}

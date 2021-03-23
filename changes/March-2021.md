@@ -285,3 +285,20 @@ for the month of March-2021
   - Updated test styles.
 - Made public
 - Updated the contribution guide.
+
+## March-23-2021(1.6.2.-Development)
+- Documentation;
+  - Removed all of the code from the documentation, leaving only the examples
+- Components;
+  - Moved drop-downs into their own file separated from navigation
+  - Updated the overall drop-down menus.
+- Placeholders;
+  - added ```box-sizing:border-box``` to border placeholder base.
+- Styles;
+  - Cleaned up some code.
+  - Added new styles for *form-footers* and *aside-footers*
+  - Added new styles for *form-headers* and *aside-headers*
+  - Added styles for active state of buttons
+  - Removed the default padding from forms.
+  - Added missing shade and highlight colours to ::root psuedo class. 
+  - Updated documentation styles

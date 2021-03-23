@@ -4,6 +4,7 @@ StageHands | _footer.styles.scss | Style
 
 @use "../../g_variables.scss" as globals;
 @use "../../placeholders/text/text-type.placeholders";
+@use "../../placeholders//border.placeholders";
 
 footer{
     @extend %bodyText;
@@ -11,4 +12,18 @@ footer{
     background-color: globals.$secondary;
     clear: both;
     margin-top: globals.$margin;
+    padding: globals.$padding;
+}
+
+form > footer{
+    margin-bottom: 0;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+aside > footer {
+    @extend %border-thin;
+    border-bottom:none;
+    border-right: none;
+    border-left: none;
 }

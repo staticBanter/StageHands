@@ -6,7 +6,6 @@
             throw new Error("-toggleModal()- Could not find target modal");
         }
         modals.forEach((modal) => {
-            console.log(modal.getAttribute("open"));
             if (modal.getAttribute("open") === "open" || modal.dataset.open === "open") {
                 modal.removeAttribute("open");
                 modal.dataset.toggleOpen = "closed";

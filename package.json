@@ -1,0 +1,68 @@
+{
+  "name": "stagehands",
+  "readme": "./README.md",
+  "maintainers": [
+    {
+      "name": "Jordan Vezina(staticBanter)",
+      "email": "staticbanter@gmail.com"
+    }
+  ],
+  "version": "1.7.0-Development",
+  "description": "A client-side framework.",
+  "private": false,
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "jstransformer-markdown-it": "^2.1.0",
+    "markdown-it": "^12.0.4"
+  },
+  "scripts": {
+    "sass":"sass --quiet --watch --update --source-map -c ./src/scss/:./prod/css/",
+    "tsc":"tsc --watch",
+    "browser-sync":"browser-sync start --config bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staticBanter/StageHands.git"
+  },
+  "keywords": [
+    "SCSS",
+    "Typescript",
+    "HTML",
+    "CSS",
+    "Javascript"
+  ],
+  "author": {
+    "name": "Jordan Vezina(staticBanter)",
+    "email": "staticbanter@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/staticBanter/StageHands/issues"
+  },
+  "homepage": "https://github.com/staticBanter/StageHands#readme",
+  "files": [
+    "tsconfig.example.json",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "bs-config.example.js",
+    ".gitignore",
+    "./tests/",
+    "./src/",
+    "./prod/",
+    "./fonts/",
+    "./changes"
+  ],
+  "browser":true,
+  "os": [
+    "win64"
+  ]
+}

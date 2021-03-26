@@ -286,7 +286,7 @@ for the month of March-2021
 - Made public
 - Updated the contribution guide.
 
-## March-23-2021(1.6.2.-Development)
+## March-23-2021(1.6.2-Development)
 - Documentation;
   - Removed all of the code from the documentation, leaving only the examples
 - Components;
@@ -302,3 +302,26 @@ for the month of March-2021
   - Removed the default padding from forms.
   - Added missing shade and highlight colours to ::root psuedo class. 
   - Updated documentation styles
+
+## March-25-2021(1.7.0-Development)
+- Documentation;
+  - Updated the README, added insctructions to help with viewing documentation and developing for the package.
+  - Created the following example files;
+    - *tsconfig.example.json*
+    - *bs-config.example.js*
+  - Added a *package.json* file
+- Styles;
+  - Created styles for carousel component.
+  - Cleaned up dropdown styles
+  - Changed button styles; direct sibling 
+  - buttons now a only apply a margin-left.
+  - Added new global variables;
+    - border-thickness-thin;
+    - border-thickness-thick;
+- Scripts
+  - Moved documentation scripts from *ts/test_scripts* -> *ts/documentation_scripts* for clarity.
+  - Created scripts for Carousel Component, this includes the following;
+    - carousel.component.ts
+    - carousel-active-slide-object.interface.ts
+    - carousel-control.interface.ts
+    - carousel.interface.ts

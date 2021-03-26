@@ -48,6 +48,10 @@ $border-colour: $accent !default;
 $border-rounded: 10px !default;
 $border-rounded-small: ($border-rounded / 2) !default;
 $border-thickness: 3px !default;
+$border-thickness-thin: ($border-thickness / 2);
+$border-thickness-thick: ($border-thickness * (1.5));
+
+
 
 $border: $border-thickness solid $border-colour !default;
 $border-grooved: $border-thickness groove $border-colour !default;

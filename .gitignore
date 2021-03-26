@@ -93,4 +93,3 @@ config/testing.*
 # Porject Specific Files And Dirs.
 __*
 package-lock.json
-package.json

@@ -58,6 +58,13 @@ StageHands | _dropdown.components.scss | Component
         border: none;
     }
 
+    .dropDownBreak .dropDownMenu:hover > .dropDownBreak{position: absolute;}
+
+    .dropDownBreak .dropDownMenu:hover > .dropDownBreak,
+    .dropDownBreak[data-drift=left] .dropDownMenu:hover > .dropDownBreak{
+        left: 100%;
+    }
+
 }
 
 .dropDownMenu > .dropDownBreak:first-of-type .dropDownMenu{
@@ -70,11 +77,6 @@ StageHands | _dropdown.components.scss | Component
         display: flex;
         flex-flow: column;
         position: absolute;
-    }
-
-    .dropDownBreak .dropDownMenu:hover > .dropDownBreak{
-        position: absolute;
-        left: 100%;
     }
 
 }

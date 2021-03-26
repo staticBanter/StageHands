@@ -21,7 +21,7 @@ button + button,
 input[type=button] + input[type=button],
 input[type=button] + button,
 button + input[type=button]{
-    margin: auto globals.$margin-large;
+    margin-left: globals.$margin-large;
 }
 
 // Buttons inside of navigations
